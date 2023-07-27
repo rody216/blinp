@@ -1,0 +1,67 @@
+.login-box-body{
+
+	background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+}
+
+body{
+	background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ) !important;
+}
+
+.mt20{
+  	margin-top:20px;
+}
+.result{
+  	font-size:20px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.bien{
+	margin-top: 5%;
+    color: #ffff;
+}
+
+.login-logo{
+	color: #ffff !important;
+}
+
+.boton{
+     border-radius: 10px !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	padding: 5px;
+	width: 122%;
+	color: #000000;
+	margin-left: 50px;
+}
+
+.boton2{
+	border-radius: 10px !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	padding: 5px;
+	margin-left: 50px;
+	color: #000000;
+}
+
+.boton:hover{
+	color: #000000 !important;
+}
+
+.boton2:hover{
+	color: #000000 !important;
+}
+
+.imagen{
+	width: 320px;
+	 height: 200px;
+	 margin-top: -6.6%;
+}

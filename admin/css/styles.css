@@ -1,0 +1,126 @@
+body{
+    background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ) !important;
+}
+
+
+.login-box-body{
+    background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ) !important;
+}
+
+.mt20{
+    margin-top:20px;
+}
+.bold{
+font-weight:bold;
+}
+
+/* chart style*/
+#legend ul {
+list-style: none;
+}
+
+#legend ul li {
+display: inline;
+padding-left: 30px;
+position: relative;
+margin-bottom: 4px;
+border-radius: 5px;
+padding: 2px 8px 2px 28px;
+font-size: 14px;
+cursor: default;
+-webkit-transition: background-color 200ms ease-in-out;
+-moz-transition: background-color 200ms ease-in-out;
+-o-transition: background-color 200ms ease-in-out;
+transition: background-color 200ms ease-in-out;
+}
+
+#legend li span {
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+width: 20px;
+height: 100%;
+border-radius: 5px;
+}
+
+.login-logo{
+    color: #ffff;
+}
+
+.login-box-msg{
+    color: #fff;
+}
+
+.blin{
+    margin-left: 45%;
+    color: blue;
+}
+
+.hora{
+    margin-left: 45.5%;  
+    color: #fff;
+    margin-top: 5px; 
+}
+
+.dropdown-toggle{
+    margin-top: -20% !important;
+}
+
+.bienvenido{
+    color: #00A65A;
+    text-align: center;
+}
+
+.imagen{
+	width: 320px;
+	 height: 200px;
+	 margin-top: -6.6%;
+}
+
+.skin-blue .main-sidebar{
+    background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ) !important;
+}
+
+.skin-blue .main-header .logo{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(21,180,189,1) 3.1%, rgba(1,159,168,1) 90% );
+}
+
+.skin-blue .main-header .navbar {
+    background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+}
+
+.skin-blue .sidebar-menu>li.header {
+    color: #00a65a;
+}
+
+.skin-blue .sidebar-menu .treeview-menu>li>a {
+    color: #00a65a;
+}
+
+.desplegable{ 
+background-color: #2C3B41;
+color: aliceblue;
+padding: 5px;
+border: none;
+}
+
+.desplegable1{    
+    background-color: #2C3B41;
+    color: aliceblue;
+    padding: 5px;
+    border: none;
+    }
+
+.dropdown {
+    padding: 10px;
+}
+
+.val{
+    color: #00a65a;
+}
+
+.otro{
+    color: #fff !important;
+    margin-left: 5%;
+}
