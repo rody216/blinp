@@ -92,12 +92,12 @@
                 echo "<h3>".number_format($percentage, 2)."<sup style='font-size: 20px'>%</sup></h3>";
               ?>
           
-              <p>Formación Academica</p>
+              <p>Entrada del Personal</p>
             </div>
             <div class="icon">
-            <i class="icon ion-university"></i>
+              <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="formacion.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -112,12 +112,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
              
-              <p>Antecedentes Judiciales</p>
+              <p>Asistencia del Personal</p>
             </div>
             <div class="icon">
-            <i class="icon ion-document"></i>
+              <i class="ion ion-clock"></i>
             </div>
-            <a href="antecedentes.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -132,12 +132,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
 
-              <p>Rama Judicial</p>
+              <p>Entrada Tarde Personal</p>
             </div>
             <div class="icon">
-            <i class="icon ion-folder"></i>
+              <i class="ion ion-alert-circled"></i>
             </div>
-            <a href="rama_judicial_p.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
