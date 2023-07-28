@@ -22,6 +22,14 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+CREATE TABLE `icth` (
+  `id` integer PRIMARY KEY,
+  `tipoExamen` varchar(255),
+  `fRealizacion` date,
+  `archivo` blob,
+  `personas_id` integer
+);
+
 
 --
 -- Estructura de tabla para la tabla `academicos`

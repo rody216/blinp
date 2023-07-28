@@ -98,7 +98,7 @@ border-radius: 5px;
 }
 
 .skin-blue .sidebar-menu .treeview-menu>li>a {
-    color: #00a65a;
+    color: #ffff;
 }
 
 .desplegable{ 
@@ -120,7 +120,7 @@ border: none;
 }
 
 .val{
-    color: #00a65a;
+    color: #ffff;
 }
 
 .otro{
@@ -134,4 +134,9 @@ border: none;
 
 .opcion{
     color: #FFCE46;
+}
+
+.skin-blue .sidebar-menu>li.header {
+    color: #fff;
+    background: none !important;
 }
