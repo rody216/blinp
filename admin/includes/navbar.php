@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="home.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>C</b>W</span>
+      <span class="logo-mini"><b>BLIN</b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>BLIN -</b> NP</span>
     </a>
@@ -12,16 +12,17 @@
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
        
-      </a>      
-      <div  class="hora" id="hora-local"></div>
-      <p class="bienvenido">Bienvendido <?php echo $user['firstname'].' '.$user['lastname'];?></p>
+      </a> 
+      <p class="bienvenido">Bienvendido <?php echo $user['firstname'].' '.$user['lastname'];?></p>     
+      <div class="hora" id="hora-local"></div>    
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/profile.jpg'; ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $user['firstname'].' '.$user['lastname']; ?></span>
+              <span class="hidden-xs">Admin</span>
+              <!-- <span class="hidden-xs"><?php echo $user['firstname'].' '.$user['lastname']; ?></span> -->
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -55,8 +56,9 @@
   var fecha = new Date();
   var hora = fecha.toLocaleTimeString();
   var fechaFormatted = fecha.toLocaleDateString();
-   document.getElementById("hora-local").innerHTML = "Hora de ingreso: " + hora + "<br>Fecha de ingreso: " + fechaFormatted;
+   document.getElementById("hora-local").innerHTML = "Fecha de ingreso: " + fechaFormatted;
+   // "Hora de ingreso: " + hora + 
  }
- // Actualizar la hora y fecha cada segundo (1000 milisegundos)
+ //  Actualizar la hora y fecha cada segundo (1000 milisegundos)
 setInterval(mostrarHoraYFechaLocal, 1000);
 </script>

@@ -14,7 +14,7 @@
     echo '<img src="images/icon.png" class="imagen">';
     ?>
     <h1 class="bien text-center">Bienvenido</h1>
-    	<h4 class="login-box-msg text-success">Ingrese su ID de Empleado</h4>
+    	<h4 class="text-primary">Ingrese su ID de Empleado</h4>
 
     	<form id="attendance">
           <div class="form-group">

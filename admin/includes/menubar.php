@@ -49,22 +49,20 @@
 <!-- desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria -->
              <div class="dropdown">           
              <select id="linkSelect" class="desplegable1" aria-label="Default select example">
-            <option selected disabled><i class="fa fa-circle-o"></i>Anotaciones Confidenciales</option>
-            <option class="val" value="#">Espoa</option>
-            <option class="val" value="#">Enmc</option>
-            <option class="val" value="#">Mmp</option>
+            <option class="opcion">Anotaciones Confidenciales</option>
+            <option class="val" value="espoa.php">Espoa</option>
+            <option class="val" value="rnmc.php">Enmc</option>
+            <option class="val" value="mmp.php">Mmp</option>
+           <br /><br />           
+            <option class="opcion">Antecedentes Publicos</option>
+            <option class="val" value="ponal.php">Antecentes Ponal</option>
+            <option class="val" value="procuraduria.php">Procuraduria</option>
+            <option class="val" value="rama_judicial_p.php">Rama Judial P</option>
+            <option class="val" value="judicial_radicacion.php">Rama Judial R</option>
+            <option class="val" value="simit.php">Simit</option>
+            <option class="val" value="contraloria.php">Contraloria</option>
           </select>
-           <br />
-          <select id="linkSelect" class="desplegable" aria-label="Default select example">
-            <option selected disabled>Antecedentes Publicos</option>
-            <option class="val" value="#">Antecentes Ponal</option>
-            <option class="val" value="#">Procuraduria</option>
-            <option class="val" value="#">Rama Judial P</option>
-            <option class="val" value="#">Rama Judial R</option>
-            <option class="val" value="#">Simit</option>
-            <option class="val" value="#">Contralaria</option>
-          </select>
-          <h5><a class="otro" href="employee.php">Antecedentes Diciplinarios</a>/<h5>
+          <h5><a class="otro" href="antecedentes.php">Antecedentes Diciplinarios</a>/<h5>
       </ul>
         </li>
         <li class="treeview">
