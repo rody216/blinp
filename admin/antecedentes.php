@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Propiedades Inmuebles
+        Antecedentes Diciplinarios
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Familia</li>
-        <li class="active">Lista de Familia</li>
+        <li> Antecedente</li>
+        <li class="active">Lista de Antecedente</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -47,51 +47,46 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#inmuebles" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#vehiculos" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
-  <table id="example1" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Ciudad</th>
-        <th>Oficina</th>
-        <th>Matricula</th>
-        <th>Direccion</th>
-        <th>Documento</th>
-        <th>Fecha de Actualización</th>
-        <th>Personas ID</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        // Suponiendo que ya tienes la conexión a la base de datos en $conn
-        $sql = "SELECT * FROM propiedades";
-        $query = $conn->query($sql);
-        while($row = $query->fetch_assoc()){
-          ?>
-          <tr>
-            <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['ciudad']; ?></td>
-            <td><?php echo $row['oficina']; ?></td>
-            <td><?php echo $row['matricula']; ?></td>
-            <td><?php echo $row['direccion']; ?></td>
-            <td><?php echo $row['documento']; ?></td>
-            <td><?php echo $row['fechaActualizacion']; ?></td>
-            <td><?php echo $row['personas_id']; ?></td>
-            <td>
-              <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-              <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-            </td>
-          </tr>
-          <?php
-        }
-      ?>
-    </tbody>
-  </table>
-</div>
-
+             <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
+                <table id="example1" class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Infracción</th>
+                    <th>Correctivo</th>
+                    <th>Fecha</th>
+                    <th>Observaciones</th>
+                    <th>PDF</th>
+                    <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Suponiendo que ya tienes la conexión a la base de datos en $conn
+                    $sql = "SELECT * FROM disciplinarios";
+                    $query = $conn->query($sql);
+                    while ($row = $query->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['infraccion']; ?></td>
+                        <td><?php echo $row['correctivo']; ?></td>
+                        <td><?php echo $row['fecha']; ?></td>
+                        <td><?php echo $row['obs']; ?></td>
+                        <td><?php echo $row['pdf']; ?></td>
+                        <td>
+                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+                </table>
                 </tbody>
               </table>
             </div>
@@ -102,7 +97,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/inmueble_modal.php'; ?>
+  <?php include 'includes/vehiculos_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>

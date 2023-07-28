@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Propiedades Inmuebles
+        Antecedentes Mmp
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Familia</li>
-        <li class="active">Lista de Familia</li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li>Mmp</li>
+        <li class="active">Lista de Antecedentes</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -43,55 +43,63 @@
           unset($_SESSION['success']);
         }
       ?>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header with-border">
-               <a href="#inmuebles" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
-            </div>
-            <div class="box-body">
-  <table id="example1" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Ciudad</th>
-        <th>Oficina</th>
-        <th>Matricula</th>
-        <th>Direccion</th>
-        <th>Documento</th>
-        <th>Fecha de Actualización</th>
-        <th>Personas ID</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
+   <div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <a href="#familia" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+      </div>
+      <div class="box-body">
+        <div class="table-responsive">
+          <table id="example1" class="table table-bordered table-condensed" style="table-layout: fixed;">
+            <thead>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Lugar</th>
+              <th>Articulo</th>
+              <th>Numeral</th>
+              <th>Ampliacion</th>
+              <th>Descargos</th>
+              <th>datos</th>
+              <th>Documento</th>
+              <th>Entrada</th>
+              <th>Personas ID</th>
+              <th>Acción</th>
+            </thead>
+            <tbody>
       <?php
-        // Suponiendo que ya tienes la conexión a la base de datos en $conn
-        $sql = "SELECT * FROM propiedades";
-        $query = $conn->query($sql);
-        while($row = $query->fetch_assoc()){
-          ?>
-          <tr>
-            <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['ciudad']; ?></td>
-            <td><?php echo $row['oficina']; ?></td>
-            <td><?php echo $row['matricula']; ?></td>
-            <td><?php echo $row['direccion']; ?></td>
-            <td><?php echo $row['documento']; ?></td>
-            <td><?php echo $row['fechaActualizacion']; ?></td>
-            <td><?php echo $row['personas_id']; ?></td>
-            <td>
-              <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-              <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-            </td>
-          </tr>
-          <?php
-        }
+      // Realizar una conexión a la base de datos (no se muestra en el código)
+      $sql = "SELECT * FROM mmpPonal";
+      $query = $conn->query($sql);
+      while ($row = $query->fetch_assoc()) {
+      ?>
+        <tr>
+          <td><?php echo $row['id']; ?></td>
+          <td><?php echo $row['fechaHechos']; ?></td>
+          <td><?php echo $row['lugarHechos']; ?></td>
+          <td><?php echo $row['articulo']; ?></td>
+          <td><?php echo $row['numeral']; ?></td>
+          <td><?php echo $row['ampliacionHechos']; ?></td>
+          <td><?php echo $row['descargos']; ?></td>
+          <td><?php echo $row['conciliaciones']; ?></td>
+          <td><?php echo $row['documento']; ?></td>
+          <td><?php echo $row['fechaActualizacion']; ?></td>
+          <td><?php echo $row['personas_id']; ?></td>
+          <td>
+            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+          </td>
+        </tr>
+      <?php
+      }
       ?>
     </tbody>
   </table>
 </div>
 
+                        </tbody>
+                    </table>
+                    </div>
                 </tbody>
               </table>
             </div>
@@ -102,7 +110,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/inmueble_modal.php'; ?>
+  <?php include 'includes/familia_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>

@@ -59,25 +59,27 @@
                   <th>Acción</th>
                 </thead>
                 <tbody>
-                  <?php
-                    $sql = "SELECT *, employees.id AS empid FROM employees LEFT JOIN position ON position.id=employees.position_id LEFT JOIN schedules ON schedules.id=employees.schedule_id";
-                    $query = $conn->query($sql);
-                    while($row = $query->fetch_assoc()){
-                      ?>
-                        <tr>
-                          <td><?php echo $row['employee_id']; ?></td>
-                          <td><img src="<?php echo (!empty($row['photo']))? '../images/'.$row['photo']:'../images/profile.jpg'; ?>" width="30px" height="30px"> <a href="#edit_photo" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>"><span class="fa fa-edit"></span></a></td>
-                          <td><?php echo $row['firstname'].' '.$row['lastname']; ?></td>
-                          <td><?php echo $row['description']; ?></td>                         
-                        
-                          <td>
-                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-                          </td>
-                        </tr>
-                      <?php
-                    }
-                  ?>
+                <?php
+// Suponiendo que ya tienes la conexión a la base de datos en $conn
+$sql = "SELECT * FROM bancarios";
+$query = $conn->query($sql);
+while ($row = $query->fetch_assoc()) {
+?>
+  <tr>
+    <td><?php echo $row['id']; ?></td>
+    <td><?php echo $row['entidad']; ?></td>
+    <td><?php echo $row['tipoProducto']; ?></td>
+    <td><?php echo $row['numeroProducto']; ?></td>
+   
+    <td>
+      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+    </td>
+  </tr>
+<?php
+}
+?>
+
                 </tbody>
               </table>
             </div>

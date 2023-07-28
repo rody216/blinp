@@ -58,18 +58,20 @@ border-radius: 5px;
 }
 
 .hora{
-    margin-left: 45.5%;  
+    margin-left: 44.5%;  
     color: #fff;
     margin-top: 5px; 
 }
 
 .dropdown-toggle{
-    margin-top: -20% !important;
+    margin-top: -45% !important;
 }
 
 .bienvenido{
-    color: #00A65A;
+    color: #FFCC3D;
     text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
 }
 
 .imagen{
@@ -79,6 +81,7 @@ border-radius: 5px;
 }
 
 .skin-blue .main-sidebar{
+    top: 5px;
     background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% ) !important;
 }
 
@@ -123,4 +126,12 @@ border: none;
 .otro{
     color: #fff !important;
     margin-left: 5%;
+}
+
+.skin-blue .wrapper {
+    background-color: #fff !important;
+}
+
+.opcion{
+    color: #FFCE46;
 }
