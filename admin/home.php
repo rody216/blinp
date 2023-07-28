@@ -65,7 +65,7 @@
               ?>
 
               <!-- <p>Total de Empleados</p> -->
-              <p>Personal Registrado</p>
+              <p>Registro Activo</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
@@ -92,12 +92,12 @@
                 echo "<h3>".number_format($percentage, 2)."<sup style='font-size: 20px'>%</sup></h3>";
               ?>
           
-              <p>Entrada del Personal</p>
+              <p>Formación Academica</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+            <i class="icon ion-university"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="formacion.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -112,12 +112,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
              
-              <p>Entradas Registrada  </p>
+              <p>Antecedentes Judiciales</p>
             </div>
             <div class="icon">
-              <i class="ion ion-clock"></i>
+            <i class="icon ion-document"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="antecedentes.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -132,12 +132,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
 
-              <p>Entrada Tarde Personal</p>
+              <p>Rama Judicial</p>
             </div>
             <div class="icon">
-              <i class="ion ion-alert-circled"></i>
+            <i class="icon ion-folder"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="rama_judicial_p.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

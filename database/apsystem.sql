@@ -451,7 +451,7 @@ DROP TABLE IF EXISTS `icth`;
 CREATE TABLE IF NOT EXISTS `icth` (
   `id` int NOT NULL,
   `tipoExamen` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fRealizacion` date DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
   `archivo` blob,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
