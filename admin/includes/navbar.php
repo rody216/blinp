@@ -4,7 +4,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>C</b>W</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>BLIN -</b> NP</span>
+      <span class="logo-lg"><b>BLI -</b> NP</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -55,7 +55,7 @@
   var fecha = new Date();
   var hora = fecha.toLocaleTimeString();
   var fechaFormatted = fecha.toLocaleDateString();
-   document.getElementById("hora-local").innerHTML = "Hora de ingreso: " + hora + "<br>Fecha de ingreso: " + fechaFormatted;
+   document.getElementById("hora-local").innerHTML = "Fecha de ingreso: " + fechaFormatted;
  }
  // Actualizar la hora y fecha cada segundo (1000 milisegundos)
 setInterval(mostrarHoraYFechaLocal, 1000);
