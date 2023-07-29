@@ -65,7 +65,7 @@
               ?>
 
               <!-- <p>Total de Empleados</p> -->
-              <p>Personal Registrado</p>
+              <p>Registro Activo</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
@@ -112,7 +112,7 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
              
-              <p>Entradas Registrada  </p>
+              <p>Asistencia del Personal</p>
             </div>
             <div class="icon">
               <i class="ion ion-clock"></i>

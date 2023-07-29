@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Empleados
+        Lista del Personal
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Empleados</li>
-        <li class="active">Lista de Empleados</li>
+        <li> Personal</li>
+        <li class="active"> Personal</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -52,7 +52,7 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>ID Empleado</th>
+                  <th>ID </th>
                   <th>Foto</th>
                   <th>Nombre</th>
                   <th>Posición</th>

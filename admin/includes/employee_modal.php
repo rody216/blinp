@@ -5,7 +5,7 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Datos Personales</b></h4>
+            	<h4 class="modal-title"><b>Agregar Personal</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
@@ -117,7 +117,7 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>
+            	<h4 class="modal-title"><b><span class=""></span></b> Actualiza tus Datos</h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_edit.php">
@@ -229,7 +229,7 @@
             	<form class="form-horizontal" method="POST" action="employee_delete.php">
             		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>ELIMINAR EMPLEADO</p>
+	                	<p>? Estas seguro de Eliminar</p>
 	                	<h2 class="bold del_employee_name"></h2>
 	            	</div>
           	</div>

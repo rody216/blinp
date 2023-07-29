@@ -68,8 +68,8 @@
                     ?>
                     <tr>
                     <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['tipoExamen']; ?></td>
-                    <td><?php echo $row['fRealizacion']; ?></td>
+                    <td><?php echo $row['tipo_Examen']; ?></td>
+                    <td><?php echo $row['fecha']; ?></td>
                     <td><?php echo $row['archivo']; ?></td>
                     <td><?php echo $row['personas_id']; ?></td>
                     <!-- Display other columns as needed -->
@@ -123,21 +123,25 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'icth_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
+        // Asigna el valor de id a un elemento con id "edit_id".
+        $('#edit_id').val(response.id);
+
+        // Asigna el valor de tipoExamen al campo de edición correspondiente.
+        $('#edit_tipoExamen').val(response.tipoExamen);
+
+        // Asigna el valor de fecha al campo de edición correspondiente.
+        $('#edit_fRealizacion').val(response.fecha);
+
+        // Asigna el valor de archivo a un elemento con clase "edit_archivo".
+        $('.edit_archivo').html(response.archivo);
+
+        // Asigna el valor de personas_id al campo de edición correspondiente.
+        $('#edit_personas_id').val(response.personas_id);
+     
       $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
     }
   });

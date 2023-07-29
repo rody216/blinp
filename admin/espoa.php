@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#familia" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#espoa" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
             <table id="example1" class="table table-bordered">
@@ -57,10 +57,6 @@
                         <th>Calidad</th>
                         <th>Delito</th>
                         <th>Fecha Hechos</th>
-                        <th>Hechos</th>
-                        <th>Documento</th>
-                        <th>Fecha</th>
-                        <th>Personas</th>
                         <th>Acción</th>
                         </thead>
                         <tbody>
@@ -74,10 +70,7 @@
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['noticia']; ?></td>
                             <td><?php echo $row['calidad']; ?></td>
-                            <td><?php echo $row['delito']; ?></td>
-                            <td><?php echo $row['fechaHechos']; ?></td>
-                            <td><?php echo $row['ampliacionHechos']; ?></td>
-                            <td><?php echo $row['documento']; ?></td>
+                            <td><?php echo $row['delito']; ?></td>                            
                             <td><?php echo $row['fechaActualizacion']; ?></td>
                             <td><?php echo $row['personas_id']; ?></td>
                             <td>
@@ -101,7 +94,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/familia_modal.php'; ?>
+  <?php include 'includes/espoa_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
