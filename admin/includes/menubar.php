@@ -83,9 +83,11 @@
         <li><a href="position.php"><i class="fa fa-suitcase"></i>Agregar Cargos</a></li>
         <li class="header">Imprimibles</li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Reportes</span></a></li>
+        <li><a href="search.php"><i class="fa fa-files-o"></i> <span>Busqueda</span></a></li>
        <!-- <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Nómina</span></a></li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Reportes</span></a></li>
          <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Horarios</span></a></li> -->
+         
       </ul>
     </section>
     <!-- /.sidebar -->
