@@ -52,7 +52,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Título del Puesto</th>
-                  <th>Índice por hora</th>
+                  <th>Salario</th>
                   <th>Acción</th>
                 </thead>
                 <tbody>
