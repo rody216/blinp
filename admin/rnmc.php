@@ -15,7 +15,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li>Rama Judicial</li>
+        <li>Rama Rncm</li>
         <li class="active">Rnmc</li>
       </ol>
     </section>
@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#vehiculos" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#rnmc" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
              <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
@@ -78,7 +78,8 @@
                     <td><?php echo $row['fechaHechos']; ?></td>                    
                     <td><?php echo $row['departamento']; ?></td>
                     <td><?php echo $row['ciudad']; ?></td>
-                    <td><?php echo $row['municipio']; ?></td>                  
+                    <td><?php echo $row['municipio']; ?></td>  
+                    <td><?php echo $row['articulo']; ?></td>                 
                     <td><?php echo $row['fechaActualizacion']; ?></td>
                     
                     <td>
@@ -99,7 +100,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/vehiculos_modal.php'; ?>
+  <?php include 'includes/rncm_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>

@@ -8,55 +8,55 @@
             	<h4 class="modal-title"><b>Datos Vehiculares</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
+            	<form class="form-horizontal" method="POST" action="vehiculo_add.php" enctype="multipart/form-data">
           		  <div class="form-group">
-                  	<label for="firstname" class="col-sm-3 control-label">Tipo Vehículo</label>
+                  	<label for="tipo_vehiculo" class="col-sm-3 control-label">Tipo Vehículo</label>
 
                   	<div class="col-sm-9">
-                      <select class="form-control" name="gender" id="edit_gender">
+                      <select class="form-control" name="tipo_Vehiculo" id="tipo_vehiculo">
                         <option selected id="gender_val"></option>
-                        <option value="Male">Moto</option>
-                        <option value="Female">Automovil</option>
-                        <option value="Female">Camioneta</option>
-                        <option value="Female">Camión</option>
-                        <option value="Female">Volqueta</option>
-                        <option value="Female">Retroescabadora</option>
+                        <option value="Moto">Moto</option>
+                        <option value="Automovil">Automovil</option>
+                        <option value="Camioneta">Camioneta</option>
+                        <option value="Camión">Camión</option>
+                        <option value="Volqueta">Volqueta</option>
+                        <option value="Retro">Retroescabadora</option>
                       </select>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="lastname" class="col-sm-3 control-label">Placas</label>
+                  	<label for="placas" class="col-sm-3 control-label">Placas</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="lastname" name="lastname" required>
+                    	<input type="text" class="form-control" id="placas" name="placas" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="address" class="col-sm-3 control-label">Modelo</label>
+                  	<label for="modelo" class="col-sm-3 control-label">Modelo</label>
 
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
+                      <input type="text" class="form-control" id="modelo" name="modelo" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="address" class="col-sm-3 control-label">Marca</label>
+                  	<label for="marca" class="col-sm-3 control-label">Marca</label>
 
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
+                      <input type="text" class="form-control" id="marca" name="marca" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="address" class="col-sm-3 control-label">Linea</label>
+                  	<label for="linea" class="col-sm-3 control-label">Linea</label>
 
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
+                      <input type="text" class="form-control" id="linea" name="linea" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="address" class="col-sm-3 control-label">Transito</label>
+                  	<label for="secretaria_Transito" class="col-sm-3 control-label">Secretaria de Tránsito</label>
 
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
+                      <input type="text" class="form-control" id="secretaria_Transito" name="secretaria_Transito" required>
                   	</div>
                 </div>
                 
@@ -77,100 +77,74 @@
     </div>
 </div>
 
-<!-- Edit -->
+
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>
+            	<h4 class="modal-title"><b><span class="employee_id"></span></b>Actualiza tus Datos</h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="employee_edit.php">
+            	<form class="form-horizontal" method="POST" action="vehiculs_add.php" enctype="multipart/form-data">
             		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Nombre</label>
+                  	<label for="tipo_vehiculo" class="col-sm-3 control-label">Tipo Vehículo</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_firstname" name="firstname">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_lastname" class="col-sm-3 control-label">Apellido</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_lastname" name="lastname">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_address" class="col-sm-3 control-label">Dirección</label>
-
-                    <div class="col-sm-9">
-                      <textarea class="form-control" name="address" id="edit_address"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="datepicker_edit" class="col-sm-3 control-label">Fecha de Nacimiento</label>
-
-                    <div class="col-sm-9"> 
-                      <div class="date">
-                        <input type="text" class="form-control" id="datepicker_edit" name="birthdate">
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_contact" class="col-sm-3 control-label">Información de Contacto</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_contact" name="contact">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_gender" class="col-sm-3 control-label">Género</label>
-
-                    <div class="col-sm-9"> 
-                      <select class="form-control" name="gender" id="edit_gender">
-                        <option selected id="gender_val"></option>
-                        <option value="Male">Hombre</option>
-                        <option value="Female">Mujer</option>
+                  	<div class="col-sm-9">
+                      <select class="form-control" name="tipo_Vehiculo" id="edit_gender">
+                        <option selected id="tipo_modelo"></option>
+                        <option value="Moto">Moto</option>
+                        <option value="Automovil">Automovil</option>
+                        <option value="Camioneta">Camioneta</option>
+                        <option value="Camión">Camión</option>
+                        <option value="Volqueta">Volqueta</option>
+                        <option value="Retro">Retroescabadora</option>
                       </select>
-                    </div>
+                  	</div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_position" class="col-sm-3 control-label">Cargo</label>
+                  	<label for="placas" class="col-sm-3 control-label">Placas</label>
 
-                    <div class="col-sm-9">
-                      <select class="form-control" name="position" id="edit_position">
-                        <option selected id="position_val"></option>
-                        <?php
-                          $sql = "SELECT * FROM position";
-                          $query = $conn->query($sql);
-                          while($prow = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$prow['id']."'>".$prow['description']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
-                    </div>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="placas" name="placas" required>
+                  	</div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_schedule" class="col-sm-3 control-label">Horario</label>
+                  	<label for="modelo" class="col-sm-3 control-label">Modelo</label>
+
+                  	<div class="col-sm-9">
+                      <input type="text" class="form-control" id="modelo" name="modelo" required>
+                  	</div>
+                </div>
+                <div class="form-group">
+                  	<label for="marca" class="col-sm-3 control-label">Marca</label>
+
+                  	<div class="col-sm-9">
+                      <input type="text" class="form-control" id="marca" name="marca" required>
+                  	</div>
+                </div>
+                <div class="form-group">
+                  	<label for="linea" class="col-sm-3 control-label">Linea</label>
+
+                  	<div class="col-sm-9">
+                      <input type="text" class="form-control" id="linea" name="linea" required>
+                  	</div>
+                </div>
+                <div class="form-group">
+                  	<label for="secretaria_Transito" class="col-sm-3 control-label">Secretaria de Tránsito</label>
+
+                  	<div class="col-sm-9">
+                      <input type="text" class="form-control" id="secretaria_Transito" name="secretaria_Transito" required>
+                  	</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo" class="col-sm-3 control-label">Archivo</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_schedule" name="schedule">
-                        <option selected id="schedule_val"></option>
-                        <?php
-                          $sql = "SELECT * FROM schedules";
-                          $query = $conn->query($sql);
-                          while($srow = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$srow['id']."'>".$srow['time_in'].' - '.$srow['time_out']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
+                      <input type="file" name="photo" id="photo">
                     </div>
                 </div>
           	</div>
@@ -182,6 +156,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">
@@ -196,7 +171,7 @@
             	<form class="form-horizontal" method="POST" action="employee_delete.php">
             		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>ELIMINAR EMPLEADO</p>
+	                	<p>? Estas seguro de elimnar tus datos</p>
 	                	<h2 class="bold del_employee_name"></h2>
 	            	</div>
           	</div>

@@ -68,8 +68,8 @@
                     ?>
                     <tr>
                     <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['tipoExamen']; ?></td>
-                    <td><?php echo $row['fRealizacion']; ?></td>
+                    <td><?php echo $row['tipo_Examen']; ?></td>
+                    <td><?php echo $row['fecha']; ?></td>
                     <td><?php echo $row['archivo']; ?></td>
                     <td><?php echo $row['personas_id']; ?></td>
                     <!-- Display other columns as needed -->

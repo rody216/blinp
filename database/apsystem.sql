@@ -24,11 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 CREATE TABLE `icth` (
   `id` integer PRIMARY KEY,
-  `tipoExamen` varchar(255),
-  `fRealizacion` date,
+  `tipo_Examen` varchar(255),
+  `fecha` date DEFAULT NULL,
   `archivo` blob,
   `personas_id` integer
 );
+
+INSERT INTO icth (id, tipo_Examen, fecha, archivo, personas_id)
+VALUES
+  (1, 'Examen de Matemáticas', '2023-07-28', NULL, 101),
+  (2, 'Examen de Programación', '2023-07-29', NULL, 102),
+  (3, 'Examen de Inglés', '2023-07-30', NULL, 103);
 
 
 --
@@ -440,31 +446,6 @@ INSERT INTO `gsanguineo` (`id`, `grupo`, `rh`, `personas_id`, `created_at`) VALU
 (1, 'A', '+', 101, '2023-07-15 10:30:00'),
 (2, 'B', '-', 102, '2023-06-20 11:45:00'),
 (3, 'AB', '+', 103, '2023-07-10 09:15:00');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `icth`
---
-
-DROP TABLE IF EXISTS `icth`;
-CREATE TABLE IF NOT EXISTS `icth` (
-  `id` int NOT NULL,
-  `tipoExamen` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
-  `archivo` blob,
-  `personas_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `icth`
---
-
-INSERT INTO `icth` (`id`, `tipoExamen`, `fRealizacion`, `archivo`, `personas_id`) VALUES
-(1, 'Examen de aptitud técnica', '2023-07-15', NULL, 101),
-(2, 'Examen práctico de programación', '2023-06-20', NULL, 102),
-(3, 'Examen teórico de redes', '2023-07-10', NULL, 103);
 
 -- --------------------------------------------------------
 
@@ -996,18 +977,16 @@ INSERT INTO `tipodocumento` (`id`, `nombre`, `personas_id`) VALUES
 --
 -- Estructura de tabla para la tabla `vehiculos`
 --
-
-DROP TABLE IF EXISTS `vehiculos`;
 CREATE TABLE IF NOT EXISTS `vehiculos` (
   `id` int NOT NULL,
-  `tipoVehiculo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tipo_Vehiculo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `placas` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `modelo` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `marca` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `linea` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `secretariaTransito` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `secretaria_Transito` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `documento` blob,
-  `fechaActualizacion` timestamp NULL DEFAULT NULL,
+  `fecha_Actualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -1016,11 +995,66 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 -- Volcado de datos para la tabla `vehiculos`
 --
 
-INSERT INTO `vehiculos` (`id`, `tipoVehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretariaTransito`, `documento`, `fechaActualizacion`, `personas_id`) VALUES
-(1, 'Automóvil', 'ABC123', '2020', 'Toyota', 'Corolla', 'Secretaría de Tránsito Bogotá', NULL, '2023-07-27 14:00:00', 101),
-(2, 'Motocicleta', 'XYZ987', '2022', 'Honda', 'CBR 500', 'Secretaría de Tránsito Medellín', NULL, '2023-07-27 14:30:00', 102),
-(3, 'Camioneta', '123XYZ', '2019', 'Ford', 'Ranger', 'Secretaría de Tránsito Cali', NULL, '2023-07-27 15:00:00', 103);
-COMMIT;
+INSERT INTO `vehiculos` (`id`, `tipo_Vehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretaria_Transito`, `documento`, `fecha_Actualizacion`, `personas_id`) VALUES
+(1, 'Automóvil', 'ABC123', '2020', 'Toyota', 'Corolla', 'Secretaría de Tránsito Bogotá', NULL, '2023-07-27 14:00:00', 101);
+
+ALTER TABLE `personas_parentesco_personas` ADD FOREIGN KEY (`personas_id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `personas_parentesco_personas` ADD FOREIGN KEY (`parentesco_personas_id`) REFERENCES `parentesco_personas` (`id`);
+
+
+ALTER TABLE `telefono` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `icth` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `bancarios` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `juridicos` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `academicos` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `paises` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `departamentos` ADD FOREIGN KEY (`id`) REFERENCES `paises` (`id`);
+
+ALTER TABLE `municipios` ADD FOREIGN KEY (`id`) REFERENCES `departamentos` (`id`);
+
+ALTER TABLE `tipoDocumento` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `eps` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `arl` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `fondoPension` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `cajaCompensacion` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `foto` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `propiedades` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `vehiculos` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `spoa` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `rnmcPonal` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `mmpPonal` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `antecedentesPonal` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `delitos` ADD FOREIGN KEY (`id`) REFERENCES `procuraduria` (`id`);
+
+ALTER TABLE `procuraduria` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `ramaJudicialProcesos` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `ramaJudicialRadicacion` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `simit` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
+ALTER TABLE `disciplinarios` ADD FOREIGN KEY (`id`) REFERENCES `personas` (`id`);
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

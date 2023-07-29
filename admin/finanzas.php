@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Datos Bancarios
+       Datos Financieros
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Finanzas</li>
-        <li class="active">Lista Financiera</li>
+        <li class="active">Lista de Finanzas</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -50,35 +50,37 @@
                <a href="#finanzas" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
-                <thead>
+            <table id="example1" class="table table-bordered">
+              <thead>
+                <tr>
                   <th>ID</th>
                   <th>Entidad Financiera</th>
-                  <th>Tipo Producto</th>
+                  <th>Tipo Prodcuto</th>
                   <th>Numero de Producto</th>                  
                   <th>Acción</th>
-                </thead>
-                <tbody>
+                </tr>
+              </thead>
+              <tbody>
                 <?php
-// Suponiendo que ya tienes la conexión a la base de datos en $conn
-$sql = "SELECT * FROM bancarios";
-$query = $conn->query($sql);
-while ($row = $query->fetch_assoc()) {
-?>
-  <tr>
-    <td><?php echo $row['id']; ?></td>
-    <td><?php echo $row['entidad']; ?></td>
-    <td><?php echo $row['tipoProducto']; ?></td>
-    <td><?php echo $row['numeroProducto']; ?></td>
-   
-    <td>
-      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-    </td>
-  </tr>
-<?php
-}
-?>
+                  // Suponiendo que ya tienes la conexión a la base de datos en $conn
+                  $sql = "SELECT * FROM bancarios";
+                  $query = $conn->query($sql);
+                  while($row = $query->fetch_assoc()){
+                ?>
+                  <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['entidad']; ?></td>
+                    <td><?php echo $row['tipoProducto']; ?></td>
+                    <td><?php echo $row['numeroProducto']; ?></td>                    
+                    <td>
+                      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                    </td>
+                  </tr>
+                <?php
+                  }
+                ?>
+             
 
                 </tbody>
               </table>
@@ -124,8 +126,8 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
+      $('.id').val(response.id);
+      $('.id').html(response.id);
       $('.del_employee_name').html(response.firstname+' '+response.lastname);
       $('#employee_name').html(response.firstname+' '+response.lastname);
       $('#edit_firstname').val(response.firstname);

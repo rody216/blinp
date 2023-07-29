@@ -13,7 +13,7 @@
         <span class="sr-only">Toggle navigation</span>
        
       </a> 
-      <p class="bienvenido">Bienvendido <?php echo $user['firstname'].' '.$user['lastname'];?></p>     
+      <p class="bienvenido">Bienvenido <?php echo $user['firstname'].' '.$user['lastname'];?></p>     
       <div class="hora" id="hora-local"></div>    
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">

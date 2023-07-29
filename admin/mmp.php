@@ -57,49 +57,35 @@
               <th>Fecha</th>
               <th>Lugar</th>
               <th>Articulo</th>
-              <th>Numeral</th>
-              <th>Ampliacion</th>
-              <th>Descargos</th>
-              <th>datos</th>
-              <th>Documento</th>
-              <th>Entrada</th>
+              <th>Numeral</th>                        
+              <th>Fecha</th>
               <th>Personas ID</th>
-              <th>Acción</th>
+              <th>Acciónes</th>
             </thead>
             <tbody>
-      <?php
-      // Realizar una conexión a la base de datos (no se muestra en el código)
-      $sql = "SELECT * FROM mmpPonal";
-      $query = $conn->query($sql);
-      while ($row = $query->fetch_assoc()) {
-      ?>
-        <tr>
-          <td><?php echo $row['id']; ?></td>
-          <td><?php echo $row['fechaHechos']; ?></td>
-          <td><?php echo $row['lugarHechos']; ?></td>
-          <td><?php echo $row['articulo']; ?></td>
-          <td><?php echo $row['numeral']; ?></td>
-          <td><?php echo $row['ampliacionHechos']; ?></td>
-          <td><?php echo $row['descargos']; ?></td>
-          <td><?php echo $row['conciliaciones']; ?></td>
-          <td><?php echo $row['documento']; ?></td>
-          <td><?php echo $row['fechaActualizacion']; ?></td>
-          <td><?php echo $row['personas_id']; ?></td>
-          <td>
-            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-          </td>
-        </tr>
-      <?php
-      }
-      ?>
-    </tbody>
-  </table>
-</div>
-
-                        </tbody>
-                    </table>
-                    </div>
+                      <?php
+                      // Realizar una conexión a la base de datos
+                      $sql = "SELECT * FROM mmpPonal";
+                      $query = $conn->query($sql);
+                      while ($row = $query->fetch_assoc()) {
+                      ?>
+                        <tr>
+                          <td><?php echo $row['id']; ?></td>
+                          <td><?php echo $row['fechaHechos']; ?></td>
+                          <td><?php echo $row['lugarHechos']; ?></td>
+                          <td><?php echo $row['articulo']; ?></td>
+                          <td><?php echo $row['numeral']; ?></td>                
+                          <td><?php echo $row['fechaActualizacion']; ?></td>
+                          <td><?php echo $row['personas_id']; ?></td>
+                          <td>
+                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                          </td>
+                        </tr>
+                      <?php
+                      }
+                      ?>
+                   
                 </tbody>
               </table>
             </div>

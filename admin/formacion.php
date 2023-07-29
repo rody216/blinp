@@ -51,39 +51,38 @@
             </div>
             <div class="box-body">
             <table id="example1" class="table table-bordered">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Institución</th>
-      <th>Nivel</th>
-      <th>Título</th>
-      <th>Fecha de Graduación</th>
-      <th>Acción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-      // Suponiendo que ya tienes la conexión a la base de datos en $conn
-      $sql = "SELECT * FROM academicos";
-      $query = $conn->query($sql);
-      while($row = $query->fetch_assoc()){
-    ?>
-      <tr>
-        <td><?php echo $row['id']; ?></td>
-        <td><?php echo $row['institucion']; ?></td>
-        <td><?php echo $row['nivel']; ?></td>
-        <td><?php echo $row['titulo']; ?></td>
-        <td><?php echo $row['fechaGraduacion']; ?></td>
-        <td>
-          <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-          <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-        </td>
-      </tr>
-    <?php
-      }
-    ?>
-  </tbody>
-</table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Institución</th>
+                  <th>Nivel</th>
+                  <th>Título</th>
+                  <th>Fecha de Graduación</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  // Suponiendo que ya tienes la conexión a la base de datos en $conn
+                  $sql = "SELECT * FROM academicos";
+                  $query = $conn->query($sql);
+                  while($row = $query->fetch_assoc()){
+                ?>
+                  <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['institucion']; ?></td>
+                    <td><?php echo $row['nivel']; ?></td>
+                    <td><?php echo $row['titulo']; ?></td>
+                    <td><?php echo $row['fechaGraduacion']; ?></td>
+                    <td>
+                      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                    </td>
+                  </tr>
+                <?php
+                  }
+                ?>
+             
 
                 </tbody>
               </table>

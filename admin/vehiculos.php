@@ -63,28 +63,28 @@
                 </thead>
                 <tbody>
                 <?php
-// Suponiendo que ya tienes la conexión a la base de datos en $conn
-$sql = "SELECT * FROM vehiculos";
-$query = $conn->query($sql);
-while ($row = $query->fetch_assoc()) {
-?>
-  <tr>
-    <td><?php echo $row['id']; ?></td>
-    <td><?php echo $row['tipoVehiculo']; ?></td>
-    <td><?php echo $row['placas']; ?></td>
-    <td><?php echo $row['modelo']; ?></td>
-    <td><?php echo $row['marca']; ?></td>
-    <td><?php echo $row['linea']; ?></td>
-    <td><?php echo $row['secretariaTransito']; ?></td>
-    <td>
-    
-      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-    </td>
-  </tr>
-<?php
-}
-?>
+                  // Suponiendo que ya tienes la conexión a la base de datos en $conn
+                  $sql = "SELECT * FROM vehiculos";
+                  $query = $conn->query($sql);
+                  while ($row = $query->fetch_assoc()) {
+                  ?>
+                    <tr>
+                      <td><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['tipo_Vehiculo']; ?></td>
+                      <td><?php echo $row['placas']; ?></td>
+                      <td><?php echo $row['modelo']; ?></td>
+                      <td><?php echo $row['marca']; ?></td>
+                      <td><?php echo $row['linea']; ?></td>
+                      <td><?php echo $row['secretaria_Transito']; ?></td>
+                      <td>
+                      
+                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                      </td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
 
                 </tbody>
               </table>
