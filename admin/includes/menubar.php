@@ -16,7 +16,7 @@
         <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Panel de Control</span></a></li>
         <li class="header text-success">ADMINISTRACIÓN</li>
         
-        <li><a href="attendance.php"><i class="fa fa-calendar"></i> <span>Asistencia del Personal</span></a></li>
+        <!--<li><a href="attendance.php"><i class="fa fa-calendar"></i> <span>Asistencia del Personal</span></a></li>-->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
