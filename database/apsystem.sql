@@ -998,6 +998,57 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 INSERT INTO `vehiculos` (`id`, `tipo_Vehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretaria_Transito`, `documento`, `fecha_Actualizacion`, `personas_id`) VALUES
 (1, 'Automóvil', 'ABC123', '2020', 'Toyota', 'Corolla', 'Secretaría de Tránsito Bogotá', NULL, '2023-07-27 14:00:00', 101);
 
+--
+-- Tabla `Detalle_Permisos`
+--
+DROP TABLE IF EXISTS `detalle_permisos`;
+CREATE TABLE IF NOT EXISTS `detalle_permisos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_permiso` int NOT NULL,
+  `id_usuario` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_permiso` (`id_permiso`),
+  KEY `id_usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_permisos`
+--
+
+INSERT INTO `detalle_permisos` (`id`, `id_permiso`, `id_usuario`) VALUES
+(35, 3, 9),
+(36, 4, 9),
+(37, 5, 9),
+(38, 6, 9);
+
+-- ---------
+
+--
+-- Estructura de tabla para la tabla `permisos`
+--
+
+DROP TABLE IF EXISTS `permisos`;
+CREATE TABLE IF NOT EXISTS `permisos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id`, `nombre`) VALUES
+(1, 'usuarios'),
+(2, 'personal'),
+(3, 'familiar'),
+(4, 'formacion'),
+(5, 'finanzas'),
+(6, 'antecentes'),
+(7, 'vehiculos'),
+
+
+
 ALTER TABLE `personas_parentesco_personas` ADD FOREIGN KEY (`personas_id`) REFERENCES `personas` (`id`);
 
 ALTER TABLE `personas_parentesco_personas` ADD FOREIGN KEY (`parentesco_personas_id`) REFERENCES `parentesco_personas` (`id`);

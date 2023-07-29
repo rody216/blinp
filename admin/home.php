@@ -65,12 +65,12 @@
               ?>
 
               <!-- <p>Total de Empleados</p> -->
-              <p>Registro Activo</p>
+              <p>Usuarios del Sistema</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
             </div>
-            <a href="employee.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <!--<a href="employee.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>-->
           </div>
         </div>
         <!-- ./col -->
@@ -92,12 +92,12 @@
                 echo "<h3>".number_format($percentage, 2)."<sup style='font-size: 20px'>%</sup></h3>";
               ?>
           
-              <p>Entrada del Personal</p>
+              <p>Familiares</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
         <!-- ./col -->
@@ -112,12 +112,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
              
-              <p>Asistencia del Personal</p>
+              <p>Vehiculos</p>
             </div>
             <div class="icon">
               <i class="ion ion-clock"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+           <!-- <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
         <!-- ./col -->
@@ -132,12 +132,12 @@
                 echo "<h3>".$query->num_rows."</h3>"
               ?>
 
-              <p>Entrada Tarde Personal</p>
+              <p>Antecedentes</p>
             </div>
             <div class="icon">
               <i class="ion ion-alert-circled"></i>
             </div>
-            <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
         <!-- ./col -->
@@ -147,7 +147,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Informe de asistencia personal del mes</h3>
+              <h3 class="box-title">Estadisticas Generales</h3>
               <div class="box-tools pull-right">
                 <form class="form-inline">
                   <div class="form-group">
@@ -220,7 +220,7 @@ $(function(){
     labels  : <?php echo $months; ?>,
     datasets: [
       {
-        label               : 'Tarde',
+        label               : 'Usuarios',
         fillColor           : 'rgba(210, 214, 222, 1)',
         strokeColor         : 'rgba(210, 214, 222, 1)',
         pointColor          : 'rgba(210, 214, 222, 1)',
@@ -230,7 +230,7 @@ $(function(){
         data                : <?php echo $late; ?>
       },
       {
-        label               : 'A tiempo',
+        label               : 'Empleados',
         fillColor           : 'rgba(60,141,188,0.9)',
         strokeColor         : 'rgba(60,141,188,0.8)',
         pointColor          : '#3b8bba',
