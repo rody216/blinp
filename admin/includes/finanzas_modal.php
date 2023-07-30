@@ -50,21 +50,21 @@
             	<form class="form-horizontal" method="POST" action="finanzas_edit.php">
             		<input type="hidden" class="empid" name="id">
 					<div class="form-group">
-                  	<label for="entidad" class="col-sm-3 control-label">Entidad Financiera</label>
+                  	<label for="edit_entidad" class="col-sm-3 control-label">Entidad Financiera</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="entidad" name="entidad" required>
+                      <input type="text" class="form-control" id="edit_entidad" name="entidad" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="tipoProducto" class="col-sm-3 control-label">Tipo de Producto</label>
+                  	<label for="edit_tipo" class="col-sm-3 control-label">Tipo de Producto</label>
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="tipoProducto" name="tipoProducto" required>
+                    	<input type="text" class="form-control" id="edit_tipo" name="tipoProducto" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="numeroProducto" class="col-sm-3 control-label">Numero Producto</label>
+                  	<label for="edit_numero" class="col-sm-3 control-label">Numero Producto</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="numeroProducto" name="numeroProducto" required>
+                      <input type="text" class="form-control" id="edit_numero" name="numeroProducto" required>
                   	</div>
                 </div>
           	<div class="modal-footer">

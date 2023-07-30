@@ -123,28 +123,29 @@ $(function(){
 
 });
 
-function getRow(id){
+function getRow(id) {
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
-    data: {id:id},
+    url: 'vehiculos_row.php', // Replace 'formation_row.php' with the correct path to your PHP file
+    data: { id: id },
     dataType: 'json',
-    success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    success: function (response) {
+      // Assuming the response is valid JSON with fields gender, institution, graduation_date, degree_obtained, etc.
+      $('#edit_tipo').val(response.tipo_Vehiculo);
+      $('#edit_placa').val(response.placas);
+      $('#edit_modelo').val(response.modelo);
+      $('#edit_marca').val(response.marca);
+      $('#edit_linea').val(response.linea);
+      $('#edit_cede').val(response.secretaria_Transito);
+      $('#edit_documento').val(response.documento);
+      // Populate other form fields as needed
+    },
+    error: function (error) {
+      console.error('Error fetching academic record:', error);
     }
   });
 }
+
 </script>
 </body>
 </html>

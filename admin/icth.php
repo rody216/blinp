@@ -109,6 +109,7 @@ $(function(){
     e.preventDefault();
     $('#delete').modal('show');
     var id = $(this).data('id');
+    console.log('Eliminar ID:', id);
     getRow(id);
   });
 
@@ -120,32 +121,26 @@ $(function(){
 
 });
 
-function getRow(id){
+function getRow(id) {
   $.ajax({
     type: 'POST',
-    url: 'icth_row.php',
-    data: {id:id},
+    url: 'icth_row.php', // Replace 'formation_row.php' with the correct path to your PHP file
+    data: { id: id },
     dataType: 'json',
-    success: function(response){
-        // Asigna el valor de id a un elemento con id "edit_id".
-        $('#edit_id').val(response.id);
-
-        // Asigna el valor de tipoExamen al campo de edición correspondiente.
-        $('#edit_tipoExamen').val(response.tipoExamen);
-
-        // Asigna el valor de fecha al campo de edición correspondiente.
-        $('#edit_fRealizacion').val(response.fecha);
-
-        // Asigna el valor de archivo a un elemento con clase "edit_archivo".
-        $('.edit_archivo').html(response.archivo);
-
-        // Asigna el valor de personas_id al campo de edición correspondiente.
-        $('#edit_personas_id').val(response.personas_id);
-     
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    success: function (response) {
+      // Assuming the response is valid JSON with fields gender, institution, graduation_date, degree_obtained, etc.
+      $('#edit_gender').val(response.tipo_Examen);
+      $('#edit_fecha').val(response.fecha);
+      $('#archivo_date').val(response.archivo);
+      $('#degree_obtained').val(response.titulo);
+      // Populate other form fields as needed
+    },
+    error: function (error) {
+      console.error('Error fetching academic record:', error);
     }
   });
 }
+
 </script>
 </body>
 </html>

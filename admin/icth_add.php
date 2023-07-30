@@ -1,39 +1,35 @@
 <?php
-	include 'includes/session.php';
+include 'includes/session.php';
 
-	if(isset($_POST['edit'])){
-        $position = $_POST['id'];	
-		$position = $_POST['tipoExamen'];
-		$schedule = $_POST['personas_id'];
-		$filename = $_FILES['archivo']['name'];
-		if(!empty($filename)){
-			move_uploaded_file($_FILES['archivo']['tmp_name'], '../archive/'.$filename);	
-		}
-		//creating employeeid
-		$letters = '';
-		$numbers = '';
-		foreach (range('A', 'Z') as $char) {
-		    $letters .= $char;
-		}
-		for($i = 0; $i < 10; $i++){
-			$numbers .= $i;
-		}
-		$id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
-		//
-		$sql = "INSERT INTO icth (id, tipoExamen, archivo, personas_id) VALUES ('$id', '$tipoExamen', '$archivo', '$personas_id', NOW())";
-		if($conn->query($sql)){
-			$_SESSION['success'] = 'Icth añadido Correctamente';
-		}
-		else{
-			$_SESSION['error'] = $conn->error;
-		}
+if (isset($_POST['add'])) {
+    $tipo_Examen = $_POST['tipo_Examen'];
+    $fecha = $_POST['fecha'];
+    $filename = $_FILES['archivo']['name'];
+    if(!empty($filename)){
+        move_uploaded_file($_FILES['archivo']['tmp_name'], '../archive/'.$filename);	
+    }
+    $personas_id = $_POST['personas_id'];
+    $fechaCreacion = date('Y-m-d H:i:s'); // Obtener la fecha y hora actual en el formato adecuado
 
-	}
-	else{
-		$_SESSION['error'] = 'Campos Faltantes';
-	}
+    // Resto del código para crear la conexión y ejecutar la consulta
+    // ...
 
-	header('location: icth.php');
+    // Preparar la consulta
+    $sql = "INSERT INTO icth (tipo_Examen, fecha, archivo, personas_id, fechaCreacion) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    // Vincular los parámetros
+    $stmt->bind_param("sssss", $tipo_Examen, $fecha, $filename, $personas_id, $fechaCreacion);
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+        $_SESSION['success'] = 'ICTH agregado satisfactoriamente';
+    } else {
+        $_SESSION['error'] = $conn->error;
+    }
+} else {
+    $_SESSION['error'] = 'Llena el formulario de agregar primero';
+}
+
+header('location: icth.php');
 ?>
-
-

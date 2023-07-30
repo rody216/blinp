@@ -6,14 +6,14 @@
 		$placas = $_POST['placas'];
 		$modelo = $_POST['modelo'];
 		$marca = $_POST['marca'];
-		$tipo_modelo = $_POST['tipo_modelo'];
+		$modelo = $_POST['modelo'];
 		$linea = $_POST['linea'];
 		$secretaria_Transito = $_POST['secretaria_Transito'];
 		$documento = $_POST['documento'];
 		$fecha_Actualizacion = $_POST['fecha_Actualizacion'];
 		$personas_id = $_POST['personas_id'];
 
-		$sql = "INSERT INTO vehiculos (tipo_Vehiculo, placas, modelo, marca, tipo_modelo, linea, secretaria_Transito, documento, fecha_Actualizacion, personas_id) VALUES ('$tipo_Vehiculo', '$placas', '$modelo', '$marca', '$tipo_modelo', '$linea', '$secretaria_Transito', '$documento', '$fecha_Actualizacion', '$personas_id')";
+		$sql = "INSERT INTO vehiculos (tipo_Vehiculo, placas, modelo, marca, linea, secretaria_Transito, documento, fecha_Actualizacion, personas_id) VALUES ('$tipo_Vehiculo', '$placas', '$modelo', '$marca', '$linea', '$secretaria_Transito', '$documento', '$fecha_Actualizacion', '$personas_id')";
 
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Vehículo añadido satisfactoriamente';

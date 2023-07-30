@@ -14,9 +14,9 @@
         Formacion Academica
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Empleados</li>
-        <li class="active">Lista de Empleados</li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li> Formacion</li>
+        <li class="active">Formacion Academica</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -73,7 +73,7 @@
                     <td><?php echo $row['institucion']; ?></td>
                     <td><?php echo $row['nivel']; ?></td>
                     <td><?php echo $row['titulo']; ?></td>
-                    <td><?php echo $row['fechaGraduacion']; ?></td>
+                    <td><?php echo $row['fecha']; ?></td>
                     <td>
                       <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
                       <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
@@ -82,11 +82,8 @@
                 <?php
                   }
                 ?>
-             
-
-                </tbody>
-              </table>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -103,7 +100,7 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    getRow(id); // Call the correct function to fetch and populate the data in the "Edit" modal
   });
 
   $('.delete').click(function(e){
@@ -113,36 +110,30 @@ $(function(){
     getRow(id);
   });
 
-  $('.photo').click(function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
+ 
 
 });
 
-function getRow(id){
+function getRow(id) {
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
-    data: {id:id},
+    url: 'formation_row.php', // Replace 'formation_row.php' with the correct path to your PHP file
+    data: { id: id },
     dataType: 'json',
-    success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    success: function (response) {
+      // Assuming the response is valid JSON with fields gender, institution, graduation_date, degree_obtained, etc.
+      $('#edit_gender').val(response.nivel);
+      $('#edit_institution').val(response.institucion);
+      $('#graduation_date').val(response.fecha);
+      $('#degree_obtained').val(response.titulo);
+      // Populate other form fields as needed
+    },
+    error: function (error) {
+      console.error('Error fetching academic record:', error);
     }
   });
 }
+
 </script>
 </body>
 </html>

@@ -73,7 +73,7 @@
                     <td><?php echo $row['tipoProducto']; ?></td>
                     <td><?php echo $row['numeroProducto']; ?></td>                    
                     <td>
-                      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                    <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
                       <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                     </td>
                   </tr>
@@ -122,22 +122,15 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'finanzas_row.php',
     data: {id:id},
     dataType: 'json',
-    success: function(response){
-      $('.id').val(response.id);
-      $('.id').html(response.id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    success: function(response){            
+      $('#edit_entidad').val(response.entidad);
+      $('#edit_tipo').val(response.tipoProducto);
+      $('#edit_numero').val(response.numeroProducto);
+      $('#edit_archivo').val(response.archivo);
+      
     }
   });
 }

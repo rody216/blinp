@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 29-07-2023 a las 20:37:11
+-- Tiempo de generación: 30-07-2023 a las 22:10:13
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.33
 
@@ -29,22 +29,20 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `academicos`;
 CREATE TABLE IF NOT EXISTS `academicos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `institucion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `nivel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `titulo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fechaGraduacion` date DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `academicos`
 --
 
-INSERT INTO `academicos` (`id`, `institucion`, `nivel`, `titulo`, `fechaGraduacion`) VALUES
-(1, 'Universidad de XYZ', 'Licenciatura', 'Licenciatura en Ciencias de la Computación', '2021-05-15'),
-(2, 'Colegio ABC', 'Maestría', 'Maestría en Economía', '2022-12-20'),
-(3, 'Instituto XYZ', 'Doctorado', 'Doctorado en Física', '2023-03-10');
+INSERT INTO `academicos` (`id`, `institucion`, `nivel`, `titulo`, `fecha`) VALUES
+(1, ' Universidad Internacional de la Rioja', 'Doctorado', 'Doctorado', '2023-07-30');
 
 -- --------------------------------------------------------
 
@@ -79,14 +77,14 @@ INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `pho
 
 DROP TABLE IF EXISTS `antecedentesponal`;
 CREATE TABLE IF NOT EXISTS `antecedentesponal` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `fecha` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
   `resultado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fechaActualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `antecedentesponal`
@@ -105,11 +103,11 @@ INSERT INTO `antecedentesponal` (`id`, `fecha`, `hora`, `resultado`, `fechaActua
 
 DROP TABLE IF EXISTS `arl`;
 CREATE TABLE IF NOT EXISTS `arl` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `arl`
@@ -154,23 +152,21 @@ INSERT INTO `attendance` (`id`, `employee_id`, `date`, `time_in`, `status`, `tim
 
 DROP TABLE IF EXISTS `bancarios`;
 CREATE TABLE IF NOT EXISTS `bancarios` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `entidad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `tipoProducto` date DEFAULT NULL,
+  `tipoProducto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `numeroProducto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `archivo` blob,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `bancarios`
 --
 
 INSERT INTO `bancarios` (`id`, `entidad`, `tipoProducto`, `numeroProducto`, `archivo`, `personas_id`) VALUES
-(1, 'Banco ABC', '0000-00-00', '123456789', NULL, 101),
-(2, 'Banco XYZ', '0000-00-00', '987654321', NULL, 102),
-(3, 'Banco 123', '0000-00-00', '456789123', NULL, 103);
+(1, 'bancolombia', 'targeta', '1242352325', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -180,11 +176,11 @@ INSERT INTO `bancarios` (`id`, `entidad`, `tipoProducto`, `numeroProducto`, `arc
 
 DROP TABLE IF EXISTS `cajacompensacion`;
 CREATE TABLE IF NOT EXISTS `cajacompensacion` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cajacompensacion`
@@ -246,10 +242,10 @@ INSERT INTO `deductions` (`id`, `description`, `amount`) VALUES
 
 DROP TABLE IF EXISTS `delitos`;
 CREATE TABLE IF NOT EXISTS `delitos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `delitos`
@@ -270,11 +266,11 @@ INSERT INTO `delitos` (`id`, `nombre`) VALUES
 
 DROP TABLE IF EXISTS `departamentos`;
 CREATE TABLE IF NOT EXISTS `departamentos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `paises_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `departamentos`
@@ -296,14 +292,14 @@ INSERT INTO `departamentos` (`id`, `nombre`, `paises_id`) VALUES
 
 DROP TABLE IF EXISTS `disciplinarios`;
 CREATE TABLE IF NOT EXISTS `disciplinarios` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `infraccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `correctivo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `obs` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pdf` blob,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `disciplinarios`
@@ -664,22 +660,21 @@ INSERT INTO `gsanguineo` (`id`, `grupo`, `rh`, `personas_id`, `created_at`) VALU
 
 DROP TABLE IF EXISTS `icth`;
 CREATE TABLE IF NOT EXISTS `icth` (
-  `id` int NOT NULL,
-  `tipo_Examen` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tipo_Examen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `archivo` blob,
   `personas_id` int DEFAULT NULL,
+  `fechaCreacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `icth`
 --
 
-INSERT INTO `icth` (`id`, `tipo_Examen`, `fecha`, `archivo`, `personas_id`) VALUES
-(1, 'Examen de Matemáticas', '2023-07-28', NULL, 101),
-(2, 'Examen de Programación', '2023-07-29', NULL, 102),
-(3, 'Examen de Inglés', '2023-07-30', NULL, 103);
+INSERT INTO `icth` (`id`, `tipo_Examen`, `fecha`, `archivo`, `personas_id`, `fechaCreacion`) VALUES
+(6, 'Antecedentes', '2023-07-30', 0x6c6f676f7574312e706e67, NULL, '2023-07-30 22:06:48');
 
 -- --------------------------------------------------------
 
@@ -969,25 +964,24 @@ INSERT INTO `procuraduria` (`id`, `numeroCertificado`, `fecha`, `hora`, `resulta
 
 DROP TABLE IF EXISTS `propiedades`;
 CREATE TABLE IF NOT EXISTS `propiedades` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `ciudad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `oficina` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `matricula` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `documento` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `documento` blob,
   `fechaActualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `propiedades`
 --
 
 INSERT INTO `propiedades` (`id`, `ciudad`, `oficina`, `matricula`, `direccion`, `documento`, `fechaActualizacion`, `personas_id`) VALUES
-(1, 'Bogotá', 'Oficina 101', '123456789', 'Calle 123, Carrera 45', 'Documento 1', '2023-07-27 10:30:00', 101),
-(2, 'Medellín', 'Oficina 202', '987654321', 'Avenida XYZ, Calle 67', 'Documento 2', '2023-07-27 11:15:00', 102),
-(3, 'Cali', 'Oficina 303', '456789123', 'Carrera ABC, Calle 89', 'Documento 3', '2023-07-27 09:45:00', 103);
+(1, 'Bogotá', 'Oficina 101', '123456789', 'Calle 123, Carrera 45', 0x446f63756d656e746f2031, '2023-07-27 10:30:00', 101),
+(6, 'La Unión  Sucre', 'Inmuebles', '3425', 'calle 14b 35', 0x6c6f676f7574312e706e67, '2023-07-30 05:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -997,14 +991,14 @@ INSERT INTO `propiedades` (`id`, `ciudad`, `oficina`, `matricula`, `direccion`, 
 
 DROP TABLE IF EXISTS `ramajudicialprocesos`;
 CREATE TABLE IF NOT EXISTS `ramajudicialprocesos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `numeroProceso` int DEFAULT NULL,
   `fechaRadicacion` date DEFAULT NULL,
   `tipoProceso` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `clase` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `estatus` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ramajudicialprocesos`
@@ -1023,7 +1017,7 @@ INSERT INTO `ramajudicialprocesos` (`id`, `numeroProceso`, `fechaRadicacion`, `t
 
 DROP TABLE IF EXISTS `ramajudicialradicacion`;
 CREATE TABLE IF NOT EXISTS `ramajudicialradicacion` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `numeroRadicacion` int DEFAULT NULL,
   `delitos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `penaPrivativaAnos` int DEFAULT NULL,
@@ -1033,7 +1027,7 @@ CREATE TABLE IF NOT EXISTS `ramajudicialradicacion` (
   `ciudad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ramajudicialradicacion`
@@ -1052,7 +1046,7 @@ INSERT INTO `ramajudicialradicacion` (`id`, `numeroRadicacion`, `delitos`, `pena
 
 DROP TABLE IF EXISTS `rnmcponal`;
 CREATE TABLE IF NOT EXISTS `rnmcponal` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `expediente` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fechaHechos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `lugarHechos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -1068,7 +1062,7 @@ CREATE TABLE IF NOT EXISTS `rnmcponal` (
   `fechaActualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rnmcponal`
@@ -1111,7 +1105,7 @@ INSERT INTO `schedules` (`id`, `time_in`, `time_out`) VALUES
 
 DROP TABLE IF EXISTS `simit`;
 CREATE TABLE IF NOT EXISTS `simit` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `numeroComparendo` int DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `secretaria` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -1119,7 +1113,7 @@ CREATE TABLE IF NOT EXISTS `simit` (
   `valor` int DEFAULT NULL,
   `pdf` blob,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `simit`
@@ -1138,7 +1132,7 @@ INSERT INTO `simit` (`id`, `numeroComparendo`, `fecha`, `secretaria`, `infraccio
 
 DROP TABLE IF EXISTS `spoa`;
 CREATE TABLE IF NOT EXISTS `spoa` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `noticia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `calidad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `delito` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -1148,7 +1142,7 @@ CREATE TABLE IF NOT EXISTS `spoa` (
   `fechaActualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `spoa`
@@ -1167,12 +1161,12 @@ INSERT INTO `spoa` (`id`, `noticia`, `calidad`, `delito`, `fechaHechos`, `amplia
 
 DROP TABLE IF EXISTS `telefono`;
 CREATE TABLE IF NOT EXISTS `telefono` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `numero` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descripcion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `telefono`
@@ -1191,11 +1185,11 @@ INSERT INTO `telefono` (`id`, `numero`, `descripcion`, `personas_id`) VALUES
 
 DROP TABLE IF EXISTS `tipodocumento`;
 CREATE TABLE IF NOT EXISTS `tipodocumento` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipodocumento`
@@ -1214,7 +1208,7 @@ INSERT INTO `tipodocumento` (`id`, `nombre`, `personas_id`) VALUES
 
 DROP TABLE IF EXISTS `vehiculos`;
 CREATE TABLE IF NOT EXISTS `vehiculos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `tipo_Vehiculo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `placas` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `modelo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -1225,14 +1219,14 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   `fecha_Actualizacion` timestamp NULL DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `vehiculos`
 --
 
 INSERT INTO `vehiculos` (`id`, `tipo_Vehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretaria_Transito`, `documento`, `fecha_Actualizacion`, `personas_id`) VALUES
-(1, 'Automóvil', 'ABC123', '2020', 'Toyota', 'Corolla', 'Secretaría de Tránsito Bogotá', NULL, '2023-07-27 14:00:00', 101);
+(1, 'Camioneta', 'ABC0981', '2093', 'Toyota', 'española', 'cali', '', '0000-00-00 00:00:00', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

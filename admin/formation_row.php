@@ -8,7 +8,7 @@ if (isset($_POST['id'])) {
   
     // Make sure $conn is a valid database connection before executing the query
     // Replace 'your_db_table_name' with the actual table name where your data is stored
-    $stmt = $conn->prepare("SELECT * FROM icth WHERE id = ?");
+    $stmt = $conn->prepare("SELECT * FROM  academicos WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
