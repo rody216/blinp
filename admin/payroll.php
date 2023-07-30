@@ -16,11 +16,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Nómina
+        Imprimir Reportes
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Nómina</li>
+        <li class="active">Reportes</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -59,8 +59,8 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range" value="<?php echo (isset($_GET['range'])) ? $_GET['range'] : $range_from.' - '.$range_to; ?>">
                   </div>
-                  <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Nómina de Sueldo</button>
-                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Recibo de Sueldo</button>
+                  <button type="button" class="btn btn-success btn-sm btn-flat" id="payroll"><span class="glyphicon glyphicon-print"></span> Reporte de Personal</button>
+                  <button type="button" class="btn btn-primary btn-sm btn-flat" id="payslip"><span class="glyphicon glyphicon-print"></span> Reporte General</button>
                 </form>
               </div>
             </div>

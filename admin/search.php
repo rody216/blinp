@@ -16,11 +16,11 @@
 <div class="row g-4">
 
     <div class="col-xs-12">
-        <label for="num_registros" class="col-form-label">Mostrar: </label>
+        <label for="num_registros" class="col-form-label">Mostrar Registros: </label>
     </div>
 
-    <div class="col-xs-12">
-        <select name="num_registros" id="num_registros" class="form-select">
+    <div class="col-xs-2">
+        <select name="num_registros" id="num_registros" class="form-control input-sm">
             <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
@@ -28,9 +28,7 @@
         </select>
     </div>
 
-    <div class="box-body">
-        <label for="num_registros" class="col-form-label">Registros </label>
-    </div>
+  
 
     <div class="col-5"></div>
 
