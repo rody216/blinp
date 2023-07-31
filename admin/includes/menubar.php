@@ -46,7 +46,7 @@
             </span>
           </a>
           <ul class="treeview-menu">          
-<!-- desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria -->
+         <!-- desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria -->
              <div class="dropdown">           
              <select id="" class="desplegable1" aria-label="Default select example">
             <option class="opcion">Anotaciones Confidenciales</option>
