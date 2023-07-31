@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#vehiculos" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#ponal" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
              <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
@@ -100,7 +100,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/vehiculos_modal.php'; ?>
+  <?php include 'includes/ponal_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -130,22 +130,15 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'ponal_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_fecha').val(response.fecha);
+      $('#edit_hora').val(response.hora);
+      $('#edit_resultado').val(response.resultado);
+      $('#edit_fechaActualizacion').val(response.fechaActualizacion);
+      $('#edit_id').val(response.personas_id);
     }
   });
 }

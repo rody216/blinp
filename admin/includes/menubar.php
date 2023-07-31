@@ -48,7 +48,7 @@
           <ul class="treeview-menu">          
          <!-- desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria -->
              <div class="dropdown">           
-             <select id="" class="desplegable1" aria-label="Default select example">
+             <select id="linkSelect" class="desplegable1" aria-label="Default select example">
             <option class="opcion">Anotaciones Confidenciales</option>
             <option class="val" value="espoa.php">Espoa</option>
             <option class="val" value="rnmc.php">Enmc</option>
@@ -65,6 +65,7 @@
           <h5><a class="otro" href="antecedentes.php">Antecedentes Diciplinarios</a>/<h5>
       </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-money"></i>
