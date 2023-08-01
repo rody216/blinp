@@ -9,17 +9,17 @@
                 <h4 class="modal-title"><b>Antecedentes Disciplinarios</b></h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="deduction_add.php">
+                <form class="form-horizontal" method="POST" action="antecedentes_add.php">
                     <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Infracción</label>
+                        <label for="infraccion" class="col-sm-3 control-label">Infracción</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description" required>
+                            <input type="text" class="form-control" id="infraccion" name="infraccion" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Correctivo</label>
+                        <label for="correctivo" class="col-sm-3 control-label">Correctivo</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="corrective" name="corrective" required>
+                            <input type="text" class="form-control" id="correctivo" name="correctivo" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -29,9 +29,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="observations" class="col-sm-3 control-label">Observaciones</label>
+                        <label for="obs" class="col-sm-3 control-label">Observaciones</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="observations" name="observations" required>
+                            <input type="text" class="form-control" id="obs" name="obs" required>
                         </div>
                     </div>
             </div>
@@ -58,34 +58,35 @@
             	<h4 class="modal-title"><b>Actualizar  Antecedentes Diciplinarios</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="deduction_edit.php">
+            	<form class="form-horizontal" method="POST" action="antecedentes_edit.php">
             		<input type="hidden" class="decid" name="id">
                 <div class="form-group">
-                    <label for="edit_description" class="col-sm-3 control-label">infracción</label>
+                    <label for="edit_infraccion" class="col-sm-3 control-label">infracción</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_description" name="description">
+                      <input type="text" class="form-control" id="edit_infraccion" name="infraccion">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Correctivo</label>
+                    <label for="edit_correctivo" class="col-sm-3 control-label">Correctivo</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_amount" name="amount">
+                    <input type="text" class="form-control" id="edit_correctivo" name="correctivo">
+
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Fecha</label>
+                    <label for="edit_fecha" class="col-sm-3 control-label">Fecha</label>
 
                     <div class="col-sm-9">
-                      <input type="date" class="form-control" id="edit_amount" name="amount">
+                      <input type="date" class="form-control" id="edit_fecha" name="fecha">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Observaciones</label>
+                    <label for="edit_obs" class="col-sm-3 control-label">Observaciones</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_amount" name="amount">
+                      <input type="text" class="form-control" id="edit_obs" name="obs">
                     </div>
                 </div>
           	</div>
@@ -108,10 +109,10 @@
             	<h4 class="modal-title"><b>Eliminando...</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="deduction_delete.php">
+            	<form class="form-horizontal" method="POST" action="antecedentes_delete.php">
             		<input type="hidden" class="decid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar</p>
+	                	<p>? Estas seguro de Eliminar el antecedente ¿</p>
 	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
           	</div>

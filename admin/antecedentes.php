@@ -127,22 +127,16 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'antecedentes_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_infraccion').val(response.infraccion);
+      $('#edit_correctivo').val(response.correctivo);
+      $('#edit_fecha').val(response.fecha);
+      $('#edit_obs').val(response.obs);
+      $('#edit_pdf').val(response.pdf);
+     
     }
   });
 }

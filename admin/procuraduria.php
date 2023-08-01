@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#vehiculos" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#registro" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
              <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
@@ -77,15 +77,15 @@
                     ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['numeroCertificado']; ?></td>
+                        <td><?php echo $row['Certificado']; ?></td>
                         <td><?php echo $row['fecha']; ?></td>
                         <td><?php echo $row['hora']; ?></td>
                         <td><?php echo $row['resultado']; ?></td>
                         <td><?php echo $row['siri']; ?></td>
                         <td><?php echo $row['sancion']; ?></td>
-                        <td><?php echo $row['fechaProvidencia']; ?></td>
-                        <td><?php echo $row['pdf']; ?></td>
-                        <td><?php echo $row['fechaActualizacion']; ?></td>
+                        <td><?php echo $row['Providencia']; ?></td>
+                        <td><?php echo $row['documento']; ?></td>
+                        <td><?php echo $row['Actualizacion']; ?></td>
                         <td><?php echo $row['personas_id']; ?></td>
                         <td>
                         <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
@@ -107,7 +107,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/vehiculos_modal.php'; ?>
+  <?php include 'includes/procuraduria_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -137,7 +137,7 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'procuraduria_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){

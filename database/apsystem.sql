@@ -925,44 +925,20 @@ INSERT INTO `position` (`id`, `description`, `rate`) VALUES
 (3, 'Marketing ', 42000),
 (4, 'DiseÃ±ador GrÃ¡fico', 35000);
 
--- --------------------------------------------------------
+----------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `procuraduria`
+-- Estructura de tabla para la tabla `position`
 --
 
-DROP TABLE IF EXISTS `procuraduria`;
-CREATE TABLE IF NOT EXISTS `procuraduria` (
-  `id` int NOT NULL,
-  `numeroCertificado` int DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
-  `hora` time DEFAULT NULL,
-  `resultado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `siri` int DEFAULT NULL,
-  `sancion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fechaProvidencia` date DEFAULT NULL,
-  `pdf` blob,
-  `fechaActualizacion` timestamp NULL DEFAULT NULL,
-  `personas_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `procuraduria`
---
 
-INSERT INTO `procuraduria` (`id`, `numeroCertificado`, `fecha`, `hora`, `resultado`, `siri`, `sancion`, `fechaProvidencia`, `pdf`, `fechaActualizacion`, `personas_id`) VALUES
-(1, 123456, '2023-07-15', '14:30:00', 'Sancionado', 7890, 'Suspensión temporal', '2023-07-25', NULL, '2023-07-27 23:30:00', 101),
-(2, 987654, '2023-06-20', '09:45:00', 'No sancionado', 5432, 'No aplica', NULL, NULL, '2023-07-28 00:00:00', 102),
-(3, 456789, '2023-07-10', '18:15:00', 'Sancionado', 2345, 'Multa', '2023-07-20', NULL, '2023-07-28 00:30:00', 103);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `propiedades`
 --
 
-DROP TABLE IF EXISTS `propiedades`;
+
 CREATE TABLE IF NOT EXISTS `propiedades` (
   `id` int NOT NULL AUTO_INCREMENT,
   `ciudad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
