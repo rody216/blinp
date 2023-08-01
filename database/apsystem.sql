@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 30-07-2023 a las 22:10:13
+-- Tiempo de generación: 01-08-2023 a las 02:04:40
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.33
 
@@ -915,9 +915,22 @@ CREATE TABLE IF NOT EXISTS `position` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `position`
+-- Estructura de tabla para la tabla `ramajudicialprocesos`
 --
+
+DROP TABLE IF EXISTS `ramajudicialprocesos`;
+CREATE TABLE IF NOT EXISTS `ramajudicialprocesos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `numeroProceso` int DEFAULT NULL,
+  `fechaRadicacion` date DEFAULT NULL,
+  `tipoProceso` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `clase` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `estatus` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1109,25 +1122,6 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 INSERT INTO `vehiculos` (`id`, `tipo_Vehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretaria_Transito`, `documento`, `fecha_Actualizacion`, `personas_id`) VALUES
 (1, 'Camioneta', 'ABC0981', '2093', 'Toyota', 'española', 'cali', '', '0000-00-00 00:00:00', 0);
 COMMIT;
-
---
--- Estructura de tabla para la tabla `ramajudicialprocesos`
---
-
-
-CREATE TABLE IF NOT EXISTS `ramajudicialprocesos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `numeroProceso` int DEFAULT NULL,
-  `fechaRadicacion` date DEFAULT NULL,
-  `tipoProceso` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `clase` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `estatus` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

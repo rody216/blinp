@@ -66,7 +66,7 @@
                 <tbody>
                     <?php
                     // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                    $sql = "SELECT * FROM ramaJudicialProcesos";
+                    $sql = "SELECT * FROM ramajudicialprocesos";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     ?>
