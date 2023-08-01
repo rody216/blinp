@@ -919,101 +919,6 @@ CREATE TABLE IF NOT EXISTS `position` (
 -- Volcado de datos para la tabla `position`
 --
 
-INSERT INTO `position` (`id`, `description`, `rate`) VALUES
-(1, 'Programador', 100000),
-(2, 'Escritor', 28000),
-(3, 'Marketing ', 42000),
-(4, 'DiseÃ±ador GrÃ¡fico', 35000);
-
-----------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `position`
---
-
-
-
-
---
--- Estructura de tabla para la tabla `propiedades`
---
-
-
-CREATE TABLE IF NOT EXISTS `propiedades` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `ciudad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `oficina` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `matricula` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `documento` blob,
-  `fechaActualizacion` timestamp NULL DEFAULT NULL,
-  `personas_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `propiedades`
---
-
-INSERT INTO `propiedades` (`id`, `ciudad`, `oficina`, `matricula`, `direccion`, `documento`, `fechaActualizacion`, `personas_id`) VALUES
-(1, 'Bogotá', 'Oficina 101', '123456789', 'Calle 123, Carrera 45', 0x446f63756d656e746f2031, '2023-07-27 10:30:00', 101),
-(6, 'La Unión  Sucre', 'Inmuebles', '3425', 'calle 14b 35', 0x6c6f676f7574312e706e67, '2023-07-30 05:00:00', NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ramajudicialprocesos`
---
-
-DROP TABLE IF EXISTS `ramajudicialprocesos`;
-CREATE TABLE IF NOT EXISTS `ramajudicialprocesos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `numeroProceso` int DEFAULT NULL,
-  `fechaRadicacion` date DEFAULT NULL,
-  `tipoProceso` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `clase` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `estatus` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `ramajudicialprocesos`
---
-
-INSERT INTO `ramajudicialprocesos` (`id`, `numeroProceso`, `fechaRadicacion`, `tipoProceso`, `clase`, `estatus`) VALUES
-(1, 123456, '2023-07-15', 'Civil', 'Divorcio', 'En trámite'),
-(2, 789012, '2023-06-20', 'Penal', 'Homicidio', 'En juicio'),
-(3, 345678, '2023-07-10', 'Laboral', 'Despido injustificado', 'Conciliación');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ramajudicialradicacion`
---
-
-DROP TABLE IF EXISTS `ramajudicialradicacion`;
-CREATE TABLE IF NOT EXISTS `ramajudicialradicacion` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `numeroRadicacion` int DEFAULT NULL,
-  `delitos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `penaPrivativaAnos` int DEFAULT NULL,
-  `penaPrivativaMeses` int DEFAULT NULL,
-  `penaPrivativaDias` int DEFAULT NULL,
-  `sitioreclusion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ciudad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `ramajudicialradicacion`
---
-
-INSERT INTO `ramajudicialradicacion` (`id`, `numeroRadicacion`, `delitos`, `penaPrivativaAnos`, `penaPrivativaMeses`, `penaPrivativaDias`, `sitioreclusion`, `ciudad`, `fecha`) VALUES
-(1, 12345, 'Robo agravado', 5, 0, 0, 'Cárcel Nacional', 'Ciudad A', '2023-07-15'),
-(2, 67890, 'Homicidio doloso', 20, 6, 0, 'Penitenciaría Estatal', 'Ciudad B', '2023-06-20'),
-(3, 23456, 'Estafa', 2, 0, 15, 'Cárcel Municipal', 'Ciudad C', '2023-07-10');
-
 -- --------------------------------------------------------
 
 --
@@ -1204,6 +1109,25 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 INSERT INTO `vehiculos` (`id`, `tipo_Vehiculo`, `placas`, `modelo`, `marca`, `linea`, `secretaria_Transito`, `documento`, `fecha_Actualizacion`, `personas_id`) VALUES
 (1, 'Camioneta', 'ABC0981', '2093', 'Toyota', 'española', 'cali', '', '0000-00-00 00:00:00', 0);
 COMMIT;
+
+--
+-- Estructura de tabla para la tabla `ramajudicialprocesos`
+--
+
+
+CREATE TABLE IF NOT EXISTS `ramajudicialprocesos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `numeroProceso` int DEFAULT NULL,
+  `fechaRadicacion` date DEFAULT NULL,
+  `tipoProceso` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `clase` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `estatus` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

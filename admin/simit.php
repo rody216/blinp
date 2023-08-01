@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#vehiculos" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#simit" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
              <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
@@ -97,7 +97,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/vehiculos_modal.php'; ?>
+  <?php include 'includes/simit_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -127,7 +127,7 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'simit_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
