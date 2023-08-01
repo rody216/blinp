@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-08-2023 a las 02:04:40
+-- Tiempo de generación: 01-08-2023 a las 03:18:22
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.33
 
@@ -914,6 +914,25 @@ CREATE TABLE IF NOT EXISTS `position` (
   `rate` double NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `procuraduria`
+--
+
+DROP TABLE IF EXISTS `procuraduria`;
+CREATE TABLE IF NOT EXISTS `procuraduria` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `certificado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `resultado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sancion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `providencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `documento` blob,
+  `actualizacion` timestamp NULL DEFAULT NULL,
+  `personas_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
