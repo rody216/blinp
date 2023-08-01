@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label for="documento" class="col-sm-3 control-label">Pdf</label>
                     <div class="col-sm-9">
-                    <input type="file" class="form-control" id="documento" name="documentogit ">
+                    <input type="file" class="form-control" id="documento" name="documento">
                     </div>
                 </div>
                 <div class="form-group">

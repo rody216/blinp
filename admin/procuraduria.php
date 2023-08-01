@@ -56,10 +56,7 @@
                     <tr>
                     <th>ID</th>
                     <th>Certificado</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
                     <th>Resultado</th>
-                    <th>Siri</th>
                     <th>Sanción</th>
                     <th>Providencia</th>
                     <th>PDF</th>
@@ -77,11 +74,8 @@
                     ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['Certificado']; ?></td>
-                        <td><?php echo $row['fecha']; ?></td>
-                        <td><?php echo $row['hora']; ?></td>
-                        <td><?php echo $row['resultado']; ?></td>
-                        <td><?php echo $row['siri']; ?></td>
+                        <td><?php echo $row['Certificado']; ?></td>                        
+                        <td><?php echo $row['resultado']; ?></td>                       
                         <td><?php echo $row['sancion']; ?></td>
                         <td><?php echo $row['Providencia']; ?></td>
                         <td><?php echo $row['documento']; ?></td>
