@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        RNMC - PONAL
+        Antecedentes Spoa
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li>Rama Rncm</li>
-        <li class="active">Rnmc</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li>Spoa</li>
+        <li class="active">Lista de Antecedentes</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -47,51 +47,45 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#rnmc" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="#spoa" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
-             <!-- Tabla para mostrar los datos de la tabla disciplinarios -->
-             <table id="example1" class="table table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Expediente</th>
-            <th>Fecha Hechos</th>
-            <th>Departamento</th>
-            <th>Ciudad</th>
-            <th>Municipio</th>
-            <th>Articulo</th>          
-            <th>Personas ID</th>
-            <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                $sql = "SELECT * FROM rnmcPonal";
-                $query = $conn->query($sql);
-                while ($row = $query->fetch_assoc()) {
-                ?>
-                <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['expediente']; ?></td>
-                    <td><?php echo $row['fechaHechos']; ?></td>                    
-                    <td><?php echo $row['departamento']; ?></td>
-                    <td><?php echo $row['ciudad']; ?></td>
-                    <td><?php echo $row['municipio']; ?></td>  
-                    <td><?php echo $row['articulo']; ?></td>                 
-                    <td><?php echo $row['fechaActualizacion']; ?></td>
-                    
-                    <td>
-                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-                    </td>
-                </tr>
-                <?php
-                }
-                ?>
-            </tbody>
-            </table>
+            <table id="example1" class="table table-bordered">
+                        <thead>
+                        <th>ID</th>
+                        <th>Noticia</th>
+                        <th>Calidad</th>
+                        <th>Delito</th>
+                        <th>Fecha Hechos</th>
+                        <th>Acción</th>
+                        </thead>
+                        <tbody>
+                        <?php
+                        // Realizar una conexión a la base de datos (no se muestra en el código)
+                        $sql = "SELECT * FROM spoa";
+                        $query = $conn->query($sql);
+                        while ($row = $query->fetch_assoc()) {
+                        ?>
+                            <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['noticia']; ?></td>
+                            <td><?php echo $row['calidad']; ?></td>
+                            <td><?php echo $row['delito']; ?></td>                            
+                            <td><?php echo $row['fechaActualizacion']; ?></td>
+                            <td><?php echo $row['personas_id']; ?></td>
+                            <td>
+                                <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                            </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                    </div>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -100,7 +94,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/rnmc_modal.php'; ?>
+  <?php include 'includes/spoa_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
