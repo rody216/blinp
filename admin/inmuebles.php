@@ -60,7 +60,6 @@
                 <th>Direccion</th>
                 <th>Documento</th>
                 <th>Fecha de Actualización</th>
-                <th>Personas ID</th>
                 <th>Acción</th>
               </tr>
             </thead>
@@ -79,7 +78,6 @@
                     <td><?php echo $row['direccion']; ?></td>
                     <td><?php echo $row['documento']; ?></td>
                     <td><?php echo $row['fechaActualizacion']; ?></td>
-                    <td><?php echo $row['personas_id']; ?></td>
                     <td>
                       <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
                       <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>

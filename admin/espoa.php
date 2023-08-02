@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Antecedentes Espoa
+        Antecedentes Spoa
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Espoa</li>
+        <li>Spoa</li>
         <li class="active">Lista de Antecedentes</li>
       </ol>
     </section>
