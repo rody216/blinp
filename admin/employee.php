@@ -42,48 +42,60 @@
           ";
           unset($_SESSION['success']);
         }
+        
       ?>
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
-            </div>
+               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar Datos</a>
+            </div>           
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
-                <thead>
-                  <th>ID </th>
-                  <th>Foto</th>
-                  <th>Nombre</th>
-                  <th>Posición</th>
-                  <th>Horarios</th>
-                  <th>Miembro Desde</th>
-                  <th>Acción</th>
-                </thead>
-                <tbody>
-                  <?php
-                    $sql = "SELECT *, employees.id AS empid FROM employees LEFT JOIN position ON position.id=employees.position_id LEFT JOIN schedules ON schedules.id=employees.schedule_id";
-                    $query = $conn->query($sql);
-                    while($row = $query->fetch_assoc()){
-                      ?>
-                        <tr>
-                          <td><?php echo $row['employee_id']; ?></td>
-                          <td><img src="<?php echo (!empty($row['photo']))? '../images/'.$row['photo']:'../images/profile.jpg'; ?>" width="30px" height="30px"> <a href="#edit_photo" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>"><span class="fa fa-edit"></span></a></td>
-                          <td><?php echo $row['firstname'].' '.$row['lastname']; ?></td>
-                          <td><?php echo $row['description']; ?></td>
-                          <td><?php echo date('h:i A', strtotime($row['time_in'])).' - '.date('h:i A', strtotime($row['time_out'])); ?></td>
-                          <td><?php echo date('M d, Y', strtotime($row['created_on'])) ?></td>
-                          <td>
-                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-                          </td>
-                        </tr>
-                      <?php
-                    }
-                  ?>
-                </tbody>
-              </table>
-            </div>
+              
+            <div class="table-responsive">
+  <table id="example1" class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo Documento</th>
+        <th>Fechas Expedicción</th>
+        <th>Primer Nombre</th>        
+        <th>Segundo Nombre</th>
+        <th>Primer Nombre</th>
+        <th>Foto</th>
+        <th>Acciónes</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $sql = "SELECT *, id_personal AS empid FROM personal";
+      $query = $conn->query($sql);
+      while ($row = $query->fetch_assoc()) {
+      ?>
+        <tr>
+          <td><?php echo $row['id_personal']; ?></td>
+          <td><?php echo $row['numero_documento']; ?></td>
+          <td><?php echo $row['fecha_expedicion']; ?></td>
+          <td><?php echo $row['primer_nombre']; ?></td>
+          <td><?php echo $row['segundo_nombre']; ?></td>
+          <td><?php echo $row['primer_apellido']; ?></td>
+          <td><img src="<?php echo (!empty($row['foto'])) ? '../images/' . $row['foto'] : '../images/profile.jpg'; ?>" width="100px" height="100px"> <a href="#edit_photo" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>"><span class="fa fa-edit"></span></a></td>
+          <td>
+            <button class="btn btn-success btn-sm edit btn-flat" data-id_personal="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+            <button class="btn btn-danger btn-sm delete btn-flat" data-id_personal="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+
+          </td>
+        </tr>
+      <?php
+      }
+      ?>
+    </tbody>
+  </table>
+</div>
+
+                            
+            
           </div>
         </div>
       </div>
@@ -96,19 +108,26 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 $(function(){
+
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
+    var id = $(this).data('id_personal');
+    $('.empid').val(id);
+    $('.getRow').val(id);
+    //getRow(id);
   });
 
-  $('.delete').click(function(e){
+  
+$('.delete').click(function(e){
     e.preventDefault();
+    var id = $(this).data('id_personal');
     $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
+    $('.empid').val(id);
+});
+
+
+
 
   $('.photo').click(function(e){
     e.preventDefault();
@@ -126,17 +145,25 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('.emp').html(response.employee_id); 
+      $('#edit_documento').val(response.numero_documento); 
+      $('#edit_expedicion').val(response.fecha_expedicion);
+      $('#edit_primer').val(response.primer_nombre);
+      $('#edit_snombre').val(response.segundo_nombre);
+      $('#edit_papellido').val(response.primer_apellido);
+      $('#edit_sapellido').val(response.segundo_apellido);
+      $('#edit_nacimiento').val(response.fecha_nacimiento);
+      $('#edit_edad').val(response.edad);
+      $('#edit_estatura').val(response.estatura);
+      $('#edit_sangre').val(response.tipo_sangre);
+      $('#edit_rh').val(response.factor_rh);
+      $('#edit_pais').val(response.pais);
+      $('#edit_departamento').val(response.departamento);
+      $('#edit_ciudad').val(response.ciudad);
+      $('#edit_residencia').val(response.direccion_residencia);
+      $('#edit_estado').val(response.	estado_civil);
+      $('#edit_email').val(response.email);
+      $('#edit_foto').val(response.foto);
     }
   });
 }

@@ -2,23 +2,23 @@
 include 'includes/session.php';
 
 if (isset($_POST['delete'])) {
-    $id = $_POST['id'];
-    $sql = "DELETE FROM employee WHERE id = ?";
+    $id_personal = $_POST['id_personal'];
+    $sql = "DELETE FROM personal WHERE id_personal = ?";
     
     // Use prepared statement to delete the record
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
+    $stmt->bind_param("i", $id_personal);
 
     if ($stmt->execute()) {
-        $_SESSION['success'] = 'Employee eliminado con éxito';
+        $_SESSION['success'] = 'Personal eliminado con éxito';
     } else {
-        $_SESSION['error'] = 'Error al eliminar el employee: ' . $stmt->error;
+        $_SESSION['error'] = 'Error al eliminar el empleado: ' . $stmt->error;
     }
 
     // Close the prepared statement
     $stmt->close();
 } else {
-    $_SESSION['error'] = 'Seleccione el employee para eliminar primero';
+    $_SESSION['error'] = 'Seleccione el Personal para eliminar primero';
 }
 
 header('location: employee.php');

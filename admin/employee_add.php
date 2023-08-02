@@ -1,42 +1,73 @@
 <?php
-	include 'includes/session.php';
+include 'includes/session.php';
 
-	if(isset($_POST['add'])){
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$address = $_POST['address'];
-		$birthdate = $_POST['birthdate'];
-		$contact = $_POST['contact'];
-		$gender = $_POST['gender'];
-		$position = $_POST['position'];
-		$schedule = $_POST['schedule'];
-		$filename = $_FILES['photo']['name'];
-		if(!empty($filename)){
-			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
-		}
-		//creating employeeid
-		$letters = '';
-		$numbers = '';
-		foreach (range('A', 'Z') as $char) {
-		    $letters .= $char;
-		}
-		for($i = 0; $i < 10; $i++){
-			$numbers .= $i;
-		}
-		$employee_id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
-		//
-		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, birthdate, contact_info, gender, position_id, schedule_id, photo, created_on) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$birthdate', '$contact', '$gender', '$position', '$schedule', '$filename', NOW())";
-		if($conn->query($sql)){
-			$_SESSION['success'] = 'Empleado añadido satisfactoriamente';
-		}
-		else{
-			$_SESSION['error'] = $conn->error;
-		}
+if (isset($_POST['add'])) {
+    // Obtener los valores del formulario
+    $numero_documento = $_POST['numero_documento'];
+    $fecha_expedicion = $_POST['fecha_expedicion'];
+    $primer_nombre = $_POST['primer_nombre'];
+    $segundo_nombre = $_POST['segundo_nombre'];
+    $primer_apellido = $_POST['primer_apellido'];
+    $segundo_apellido = $_POST['segundo_apellido'];
+    $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $edad = $_POST['edad'];
+    $estatura = $_POST['estatura'];
+    $tipo_sangre = $_POST['tipo_sangre'];
+    $factor_rh = $_POST['factor_rh'];
+    $pais = $_POST['pais'];
+    $departamento = $_POST['departamento'];
+    $ciudad = $_POST['ciudad'];
+    $direccion_residencia = $_POST['direccion_residencia'];
+    $estado_civil = $_POST['estado_civil'];
+    $email = $_POST['email'];
+    $filename = $_FILES['foto']['name'];
 
-	}
-	else{
-		$_SESSION['error'] = 'Fill up add form first';
-	}
+    // Mover la foto a la ubicación deseada (si es necesario)
+    if (!empty($filename)) {
+        move_uploaded_file($_FILES['foto']['tmp_name'], '../images/' . $filename);
+    }
 
-	header('location: employee.php');
+    // Crear la consulta SQL con sentencias preparadas
+    $sql = "INSERT INTO personal (numero_documento, fecha_expedicion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_nacimiento, edad, estatura, tipo_sangre, factor_rh, pais, departamento, ciudad, direccion_residencia, estado_civil, email, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Preparar la sentencia SQL con los parámetros
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param(
+        "sssssssiissssssssb",
+        $numero_documento,
+        $fecha_expedicion,
+        $primer_nombre,
+        $segundo_nombre,
+        $primer_apellido,
+        $segundo_apellido,
+        $fecha_nacimiento,
+        $edad,
+        $estatura,
+        $tipo_sangre,
+        $factor_rh,
+        $pais,
+        $departamento,
+        $ciudad,
+        $direccion_residencia,
+        $estado_civil,
+        $email,
+        $filename
+    );
+
+    // Ejecutar la sentencia preparada
+    if ($stmt->execute()) {
+        $_SESSION['success'] = 'Personal añadido satisfactoriamente';
+    } else {
+        $_SESSION['error'] = $conn->error;
+    }
+
+    // Cerrar la sentencia y la conexión
+    $stmt->close();
+    $conn->close();
+} else {
+    $_SESSION['error'] = 'Error al crear';
+}
+
+// Redirigir a la página de empleados después de la inserción
+header('location: employee.php');
 ?>
