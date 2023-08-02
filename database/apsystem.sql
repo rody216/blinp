@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-08-2023 a las 03:18:22
+-- Tiempo de generación: 02-08-2023 a las 19:45:14
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.33
 
@@ -559,18 +559,15 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `employees`
 --
 
--- Inserción de datos en la tabla "employees"
-INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `country`, `department`, `municipality`, `expedition_date`, `document_number`, `address`, `birthdate`, `contact_info`, `gender`, `position_id`, `schedule_id`, `photo`, `created_on`)
-VALUES
-(24, 'MAW817094635', 'Abelardo', 'Mejia', 'País1', 'Departamento1', 'Municipio1', '1989-07-12', 'Documento1', 'Calle 54 N 12-23', '1989-07-12', 'Contacto1', 'Female', 2, 2, 'ruta_foto1.jpg', '2020-01-07'),
-(25, 'PJO724930615', 'Roberto', 'Velasquez', 'País2', 'Departamento2', 'Municipio2', '1989-06-13', 'Documento2', 'Av 15 12-72', '1989-06-13', 'Contacto2', 'Male', 1, 4, 'ruta_foto2.jpg', '2020-01-07');
-
+INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `country`, `department`, `municipality`, `expedition_date`, `document_number`, `address`, `birthdate`, `contact_info`, `gender`, `position_id`, `schedule_id`, `photo`, `created_on`) VALUES
+(24, 'MAW817094635', 'Abelardo', 'Mejia', 'País1', 'Departamento1', 'Municipio1', '1989-07-12', '0000-00-00', 'Calle 54 N 12-23', '1989-07-12', 'Contacto1', 'Female', 2, 2, 'Screenshot_10.png', '2020-01-07'),
+(26, 'LMX384296175', 'Liady', 'Martinez', '', '', '', '0000-00-00', '0000-00-00', 'Cl. 32a Nte. ### 2a-37, Cali, Valle del Cauca\r\nApto 403 Torre B', '2023-02-28', 'Cl. 32a Nte. ### 2a-37, Cali, Valle del Cauca', 'Female', 0, 4, 'logout1.png', '2023-08-02');
 
 -- --------------------------------------------------------
 
@@ -813,17 +810,17 @@ INSERT INTO `paises` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `parentesco`
 --
 
--- Eliminamos la tabla 'parentesco' si existe
 DROP TABLE IF EXISTS `parentesco`;
-
--- Creamos la tabla 'parentesco' con claves foráneas
 CREATE TABLE IF NOT EXISTS `parentesco` (
   `parentesco_id` int NOT NULL AUTO_INCREMENT,
   `parestenco_nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`parentesco_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertar datos en la tabla 'parentesco'
+--
+-- Volcado de datos para la tabla `parentesco`
+--
+
 INSERT INTO `parentesco` (`parentesco_id`, `parestenco_nombre`) VALUES
 (1, 'Padre'),
 (2, 'Madre'),
@@ -875,33 +872,39 @@ INSERT INTO `parentesco_personas` (`id`, `personas_id`, `parentesco_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `personas`
+-- Estructura de tabla para la tabla `personal`
 --
 
+DROP TABLE IF EXISTS `personal`;
 CREATE TABLE IF NOT EXISTS `personal` (
-  `id_personal` INT PRIMARY KEY AUTO_INCREMENT,
-  `numero_documento` VARCHAR(20) NOT NULL,
-  `fecha_expedicion` DATE,
-  `primer_nombre` VARCHAR(50) NOT NULL,
-  `segundo_nombre` VARCHAR(50),
-  `primer_apellido` VARCHAR(50) NOT NULL,
-  `segundo_apellido` VARCHAR(50),
-  `fecha_nacimiento` DATE,
-  `edad` INT,
-  `estatura` FLOAT,
-  `tipo_sangre` VARCHAR(3),
-  `factor_rh` CHAR(1),
-  `pais` VARCHAR(50),
-  `departamento` VARCHAR(50),
-  `ciudad` VARCHAR(50),
-  `direccion_residencia` VARCHAR(100), -- Corregido el nombre de la columna
-  `estado_civil` VARCHAR(20),
-  `email` VARCHAR(100),
+  `id_personal` int NOT NULL AUTO_INCREMENT,
+  `numero_documento` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `fecha_expedicion` date DEFAULT NULL,
+  `primer_nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `segundo_nombre` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `primer_apellido` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `segundo_apellido` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `edad` int DEFAULT NULL,
+  `estatura` float DEFAULT NULL,
+  `tipo_sangre` varchar(3) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `factor_rh` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `pais` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `departamento` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ciudad` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `direccion_residencia` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `estado_civil` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `foto` blob,
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `delito_id` int DEFAULT NULL,
+  `parentesco_id` int DEFAULT NULL,
+  PRIMARY KEY (`id_personal`),
+  KEY `delito_id` (`delito_id`),
+  KEY `parentesco_id` (`parentesco_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `personas_parentesco_personas`
