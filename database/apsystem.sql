@@ -26,6 +26,24 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `academicos`
 --
+DROP TABLE IF EXISTS `propiedades`;
+CREATE TABLE `propiedades` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ciudad` varchar(255),
+  `oficina` varchar(255),
+  `matricula` varchar(255),
+  `direccion` varchar(255),
+  `documento` varchar(255),
+  `fechaActualizacion` timestamp,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO propiedades (ciudad, oficina, matricula, direccion, documento, fechaActualizacion) VALUES
+('Ciudad A', 'Oficina 1', 'Matricula 123', 'Dirección 1', 'Documento 1', '2023-08-02 12:34:56'),
+('Ciudad B', 'Oficina 2', 'Matricula 456', 'Dirección 2', 'Documento 2', '2023-08-02 14:30:00'),
+('Ciudad C', 'Oficina 3', 'Matricula 789', 'Dirección 3', 'Documento 3', '2023-08-02 15:45:00');
+
+
 
 DROP TABLE IF EXISTS `academicos`;
 CREATE TABLE IF NOT EXISTS `academicos` (
