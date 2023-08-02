@@ -14,12 +14,12 @@
                   	<div class="col-sm-9">
                     <select class="form-control" name="numero_documento" id="numero_documento" required>
                         <option value="" selected> Seleccionar </option>
+                        <option value="registro">Registro Civil</option>
                         <option value="cedula">Cedula</option>
-                        <option value="pasaporte">Pasaporte</option>
-                        <option value="pasaporte">Registro Civil</option>
-                        <option value="pasaporte">Pasaporte</option>
-                        <option value="pasaporte">Pasaporte</option> 
-                        <option value="pasaporte">Pasaporte</option>
+                        <option value="pasaporte">Pasaporte</option>                        
+                        <option value="extrangeria">Cedula de Extrangería</option>
+                        <option value="especial">Permiso Especial de Permanencia</option> 
+                        <option value="personal">Permiso por Protección Personal</option>                       
                       </select>
                   	</div>
                 </div>
@@ -61,19 +61,43 @@
                   	</div>
               </div>
 
-                <div class="form-group">
+                 <div class="form-group">
                     <label for="fecha_nacimiento" class="col-sm-3 control-label">Fecha Nacimiento</label>
                     <div class="col-sm-9">
-                      <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
                     </div>
-                </div>
+                    </div>
 
                 <div class="form-group">
                     <label for="edad" class="col-sm-3 control-label">Edad</label>
-                    <div class="col-sm-9"> 
-                    <input type="number" class="form-control" id="edad" name="edad">
-                    </div>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="edad" name="edad" readonly>
+                  </div>
                 </div>
+
+                    <script>
+                        const fechaNacimientoInput = document.getElementById("fecha_nacimiento");
+                        const edadInput = document.getElementById("edad");
+
+                        fechaNacimientoInput.addEventListener("input", function () {
+                            const fechaNacimiento = new Date(this.value);
+                            const fechaActual = new Date();
+
+                            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+                            if (
+                            fechaNacimiento.getMonth() > fechaActual.getMonth() ||
+                            (fechaNacimiento.getMonth() === fechaActual.getMonth() &&
+                                fechaNacimiento.getDate() > fechaActual.getDate())
+                            ) {
+                            edad--;
+                            }
+
+                            edadInput.value = edad;
+                        });
+                     </script>
+
+
                
                 <div class="form-group">
                     <label for="edad" class="col-sm-3 control-label">Estatura</label>
@@ -85,15 +109,24 @@
                 <div class="form-group">
                     <label for="tipo_sangre" class="col-sm-3 control-label">Tipo Sangre</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="tipo_sangre" name="tipo_sangre">
+                    <select class="form-control" name="tipo_sangre" id="tipo_sangre" required>
+                        <option value="" selected> Seleccionar </option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="ab">AB</option>
+                        <option value="o">O</option>                        
+                      </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="factor_rh" class="col-sm-3 control-label">Factor RH</label>
-
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="factor_rh" name="factor_rh">
+                    <select class="form-control" name="factor_rh" id="factor_rh" required>
+                        <option value="" selected> Seleccionar </option>
+                        <option value="positivo">Positivo</option>
+                        <option value="negativo">Negativo</option>                     
+                      </select>
                     </div>
                 </div>
 
