@@ -242,16 +242,16 @@ INSERT INTO `deductions` (`id`, `description`, `amount`) VALUES
 
 DROP TABLE IF EXISTS `delitos`;
 CREATE TABLE IF NOT EXISTS `delitos` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `delito_id` int NOT NULL AUTO_INCREMENT,
+  `delito_nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`delito_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `delitos`
 --
 
-INSERT INTO `delitos` (`id`, `nombre`) VALUES
+INSERT INTO `delitos` (`delito_id`, `delito_nombre`) VALUES
 (1, 'Robo'),
 (2, 'Homicidio'),
 (3, 'Lesiones personales'),
@@ -545,6 +545,11 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `employee_id` varchar(15) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `municipality` varchar(50) NOT NULL,
+  `expedition_date` date NOT NULL,
+  `document_number` date NOT NULL,
   `address` text NOT NULL,
   `birthdate` date NOT NULL,
   `contact_info` varchar(100) NOT NULL,
@@ -560,9 +565,12 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `address`, `birthdate`, `contact_info`, `gender`, `position_id`, `schedule_id`, `photo`, `created_on`) VALUES
-(24, 'MAW817094635', 'Abelardo', 'Mejia', 'Calle 54 N 12-23', '1989-07-12', '', 'Female', 2, 2, '', '2020-01-07'),
-(25, 'PJO724930615', 'Roberto', 'Velasquez', 'Av 15 12-72', '1989-06-13', '', 'Male', 1, 4, '', '2020-01-07');
+-- Inserción de datos en la tabla "employees"
+INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `country`, `department`, `municipality`, `expedition_date`, `document_number`, `address`, `birthdate`, `contact_info`, `gender`, `position_id`, `schedule_id`, `photo`, `created_on`)
+VALUES
+(24, 'MAW817094635', 'Abelardo', 'Mejia', 'País1', 'Departamento1', 'Municipio1', '1989-07-12', 'Documento1', 'Calle 54 N 12-23', '1989-07-12', 'Contacto1', 'Female', 2, 2, 'ruta_foto1.jpg', '2020-01-07'),
+(25, 'PJO724930615', 'Roberto', 'Velasquez', 'País2', 'Departamento2', 'Municipio2', '1989-06-13', 'Documento2', 'Av 15 12-72', '1989-06-13', 'Contacto2', 'Male', 1, 4, 'ruta_foto2.jpg', '2020-01-07');
+
 
 -- --------------------------------------------------------
 
@@ -805,18 +813,18 @@ INSERT INTO `paises` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `parentesco`
 --
 
+-- Eliminamos la tabla 'parentesco' si existe
 DROP TABLE IF EXISTS `parentesco`;
+
+-- Creamos la tabla 'parentesco' con claves foráneas
 CREATE TABLE IF NOT EXISTS `parentesco` (
-  `id` int NOT NULL,
-  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `parentesco_id` int NOT NULL AUTO_INCREMENT,
+  `parestenco_nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`parentesco_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `parentesco`
---
-
-INSERT INTO `parentesco` (`id`, `nombre`) VALUES
+-- Insertar datos en la tabla 'parentesco'
+INSERT INTO `parentesco` (`parentesco_id`, `parestenco_nombre`) VALUES
 (1, 'Padre'),
 (2, 'Madre'),
 (3, 'Hijo'),
@@ -832,9 +840,9 @@ INSERT INTO `parentesco` (`id`, `nombre`) VALUES
 
 DROP TABLE IF EXISTS `parentesco_parentesco_personas`;
 CREATE TABLE IF NOT EXISTS `parentesco_parentesco_personas` (
-  `parentesco_id` int NOT NULL,
+  `p_id` int NOT NULL,
   `parentesco_personas_id` int NOT NULL,
-  PRIMARY KEY (`parentesco_id`,`parentesco_personas_id`),
+  PRIMARY KEY (`p_id`,`parentesco_personas_id`),
   KEY `parentesco_personas_id` (`parentesco_personas_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -870,24 +878,30 @@ INSERT INTO `parentesco_personas` (`id`, `personas_id`, `parentesco_id`) VALUES
 -- Estructura de tabla para la tabla `personas`
 --
 
-DROP TABLE IF EXISTS `personas`;
-CREATE TABLE IF NOT EXISTS `personas` (
-  `id` int NOT NULL,
-  `numDocumento` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fExpedicion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `pNombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `sNombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `pApellido` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `sApellido` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fNacimiento` date DEFAULT NULL,
-  `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `estadoCivil` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `eMail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS `personal` (
+  `id_personal` INT PRIMARY KEY AUTO_INCREMENT,
+  `numero_documento` VARCHAR(20) NOT NULL,
+  `fecha_expedicion` DATE,
+  `primer_nombre` VARCHAR(50) NOT NULL,
+  `segundo_nombre` VARCHAR(50),
+  `primer_apellido` VARCHAR(50) NOT NULL,
+  `segundo_apellido` VARCHAR(50),
+  `fecha_nacimiento` DATE,
+  `edad` INT,
+  `estatura` FLOAT,
+  `tipo_sangre` VARCHAR(3),
+  `factor_rh` CHAR(1),
+  `pais` VARCHAR(50),
+  `departamento` VARCHAR(50),
+  `ciudad` VARCHAR(50),
+  `direccion_residencia` VARCHAR(100), -- Corregido el nombre de la columna
+  `estado_civil` VARCHAR(20),
+  `email` VARCHAR(100),
+  `foto` blob,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+
 
 --
 -- Estructura de tabla para la tabla `personas_parentesco_personas`
@@ -1077,7 +1091,7 @@ CREATE TABLE IF NOT EXISTS `telefono` (
   `id` int NOT NULL AUTO_INCREMENT,
   `numero` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descripcion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `personas_id` int DEFAULT NULL,
+  `id_personal` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -1085,7 +1099,7 @@ CREATE TABLE IF NOT EXISTS `telefono` (
 -- Volcado de datos para la tabla `telefono`
 --
 
-INSERT INTO `telefono` (`id`, `numero`, `descripcion`, `personas_id`) VALUES
+INSERT INTO `telefono` (`id`, `numero`, `descripcion`, `id_personal`) VALUES
 (1, '1234567890', 'Teléfono principal', 101),
 (2, '9876543210', 'Teléfono móvil', 101),
 (3, '5555555555', 'Teléfono de trabajo', 102);

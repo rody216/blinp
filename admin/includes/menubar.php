@@ -26,7 +26,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="employee.php"><i class="fa fa-circle-o"></i> Lista de Personal</a></li>
+          <li><a href="employee.php"><i class="fa fa-circle-o"></i>Agregar Personal</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Familiar</a></li>
             <li><a href="formacion.php"><i class="fa fa-circle-o"></i> Formacion</a></li>         
             <li><a href="icth.php"><i class="fa fa-circle-o"></i> ICTH</a></li>            
@@ -80,8 +80,8 @@
             <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Financieros</a></li>                 
           </ul>
         </li>
-        <!--<li><a href="deduction.php"><i class="fa fa-file-text"></i> Deducciones</a></li>-->
-        <li><a href="position.php"><i class="fa fa-suitcase"></i>Agregar Cargos</a></li>
+        <!-- <li><a href="deduction.php"><i class="fa fa-file-text"></i> Deducciones</a></li>
+        <li><a href="position.php"><i class="fa fa-suitcase"></i>Agregar Cargos</a></li> -->
         <li class="header">Imprimibles</li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Reportes</span></a></li>
         <li><a href="search.php"><i class="fa fa-files-o"></i> <span>Busqueda</span></a></li>
