@@ -143,13 +143,14 @@
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
-          <i class="fa fa-close"></i> Cerrar
-        </button>
-        <button type="submit" class="btn btn-danger btn-flat" name="delete">
-          <i class="fa fa-trash"></i> Eliminar
-        </button>
-        </form>
+      <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
+        <i class="fa fa-close"></i> Cerrar
+      </button>
+      <button type="submit" class="btn btn-danger btn-flat" name="delete">
+        <i class="fa fa-trash"></i> Eliminar
+      </button>
+    </div>
+    </form> 
       </div>
     </div>
   </div>

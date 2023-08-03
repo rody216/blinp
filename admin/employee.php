@@ -59,9 +59,9 @@
         <th>ID</th>
         <th>Tipo Documento</th>
         <th>Fechas Expedicción</th>
-        <th>Primer Nombre</th>        
-        <th>Segundo Nombre</th>
-        <th>Primer Nombre</th>
+        <th>P_Nombre</th>        
+        <th>S_Nombre</th>
+        <th>P_Apellido</th>
         <th>Foto</th>
         <th>Acciónes</th>
         
@@ -107,14 +107,13 @@
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
-$(function(){
 
+$(function(){
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id_personal');
     $('.empid').val(id);
-    $('.getRow').val(id);
     //getRow(id);
   });
 

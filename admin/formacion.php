@@ -64,7 +64,7 @@
               <tbody>
                 <?php
                   // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                  $sql = "SELECT * FROM academicos";
+                  $sql = "SELECT *, id AS empid FROM academicos";
                   $query = $conn->query($sql);
                   while($row = $query->fetch_assoc()){
                 ?>
@@ -75,8 +75,8 @@
                     <td><?php echo $row['titulo']; ?></td>
                     <td><?php echo $row['fecha']; ?></td>
                     <td>
-                      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                      <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                     </td>
                   </tr>
                 <?php
@@ -95,22 +95,23 @@
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
+
 $(function(){
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id); // Call the correct function to fetch and populate the data in the "Edit" modal
+    $('.empid').val(id);
+    
   });
+
 
   $('.delete').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('#delete').modal('show');
+    $('.empid').val(id);
   });
-
- 
 
 });
 
@@ -129,7 +130,7 @@ function getRow(id) {
       // Populate other form fields as needed
     },
     error: function (error) {
-      console.error('Error fetching academic record:', error);
+      console.error('Error al obtener el registro académico:', error);
     }
   });
 }

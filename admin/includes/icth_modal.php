@@ -61,6 +61,7 @@
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="icth_edit.php" enctype="multipart/form-data">
+        <input type="hidden" class="empid" name="id">
           <div class="form-group">
             <label for="edit_gender" class="col-sm-3 control-label">Tipo de Examen</label>
             <div class="col-sm-9">
@@ -87,17 +88,16 @@
               <input type="file" name="archivo" id="archivo_date" required>
             </div>
           </div>
-        </form>
-      </div>
-      
-      <div class="modal-footer">
+          <div class="modal-footer">
         <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
           <i class="fa fa-close"></i> Cerrar
         </button>
         <button type="submit" class="btn btn-primary btn-flat" name="edit">
           <i class="fa fa-save"></i> Guardar Cambios
         </button>
+        </form>
       </div>
+     </div>
     </div>
   </div>
 </div>
@@ -111,16 +111,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title"><b>¿Seguro que quieres eliminar?</b></h4>
+        
       </div>
       
      
         <div class="modal-body">
         <form class="form-horizontal" method="POST" action="icth_delete.php">
-          <input type="hidden" class="empid" name="id">
-          
-         
+          <input type="hidden" class="empid" name="id">          
              <div class="text-center">
+             <h4 class="modal-title"><b>¿Seguro que quieres eliminar?</b></h4>
             <h2 class="bold del_employee_name"></h2>
           </div>
           <div class="modal-footer">
