@@ -87,7 +87,7 @@
             	<h4 class="modal-title"><b><span class="employee_id"></span></b>Actualiza tus Datos</h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="vehiculos_add.php" enctype="multipart/form-data">
+            	<form class="form-horizontal" method="POST" action="vehiculo_adit.php" enctype="multipart/form-data">
             		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
                   	<label for="edit_tipo" class="col-sm-3 control-label">Tipo Vehículo</label>

@@ -64,7 +64,7 @@
                 <tbody>
                 <?php
                   // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                  $sql = "SELECT * FROM vehiculos";
+                  $sql = "SELECT *, id AS empid  FROM vehiculos";
                   $query = $conn->query($sql);
                   while ($row = $query->fetch_assoc()) {
                   ?>
@@ -78,8 +78,8 @@
                       <td><?php echo $row['secretaria_Transito']; ?></td>
                       <td>
                       
-                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                       </td>
                     </tr>
                   <?php
@@ -105,15 +105,17 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
+    //getRow(id);
   });
 
   $('.delete').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
     var id = $(this).data('id');
-    getRow(id);
-  });
+    $('#delete').modal('show');
+    $('.empid').val(id);
+});
+
 
   $('.photo').click(function(e){
     e.preventDefault();
