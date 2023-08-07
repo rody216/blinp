@@ -9,27 +9,97 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
-              <div class="form-group">
-                  	<label for="numero_documento" class="col-sm-3 control-label">Tipo Documento</label>
-                  	<div class="col-sm-9">
-                    <select class="form-control" name="numero_documento" id="numero_documento" required>
-                        <option value="" selected> Seleccionar </option>
-                        <option value="registro">Registro Civil</option>
-                        <option value="cedula">Cedula</option>
-                        <option value="pasaporte">Pasaporte</option>                        
-                        <option value="extrangeria">Cedula de Extrangería</option>
-                        <option value="especial">Permiso Especial de Permanencia</option> 
-                        <option value="personal">Permiso por Protección Personal</option>                       
-                      </select>
-                  	</div>
-                </div>
-
                 <div class="form-group">
-                  	<label for="fecha_expedicion" class="col-sm-3 control-label">Fechas Expedicción</label>
-                  	<div class="col-sm-9">
-                    	<input type="date" class="form-control" id="fecha_expedicion" name="fecha_expedicion" required>
-                  	</div>
-                </div>
+  <label for="tipo_documento" class="col-sm-3 control-label">Tipo Documento</label>
+  <div class="col-sm-9">
+    <select class="form-control" name="tipo_documento" id="tipo_documento" required>
+      <option value="" selected>Seleccionar</option>
+      <option value="registro">Registro Civil</option>
+      <option value="cedula">Cedula</option>
+      <option value="pasaporte">Pasaporte</option>
+      <option value="extrangeria">Cédula de Extranjería</option>
+      <option value="especial">Permiso Especial de Permanencia (PEP)</option> 
+      <option value="personal">Permiso por Protección Temporar (PPT)</option>                       
+    </select>
+  </div>
+</div>
+
+<div class="form-group" id="registro_field">
+  <label for="numero_documento" class="col-sm-3 control-label">Registro Civil</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_documento" name="numero_documento">
+  </div>
+</div>
+
+<div class="form-group" id="cedula_field">
+  <label for="numero_documento" class="col-sm-3 control-label">Cédula</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_documento" name="numero_documento">
+  </div>
+</div>
+
+<div class="form-group" id="pasaporte_field">
+  <label for="numero_pasaporte" class="col-sm-3 control-label">Número de Pasaporte</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_pasaporte" name="numero_pasaporte">
+  </div>
+</div>
+
+<div class="form-group" id="cedula_extranjeria_field">
+  <label for="numero_cedula_extranjeria" class="col-sm-3 control-label">Número de Cédula de Extranjería</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_cedula_extranjeria" name="numero_cedula_extranjeria">
+  </div>
+</div>
+
+<div class="form-group" id="pep_field">
+  <label for="numero_pep" class="col-sm-3 control-label">Número de PEP</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_pep" name="numero_pep">
+  </div>
+</div>
+
+<div class="form-group" id="ppt_field">
+  <label for="numero_ppt" class="col-sm-3 control-label">Número de PPT</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_ppt" name="numero_ppt">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="fecha_expedicion" class="col-sm-3 control-label">Fecha de Expedición</label>
+  <div class="col-sm-9">
+    <input type="date" class="form-control" id="fecha_expedicion" name="fecha_expedicion" required>
+  </div>
+</div>
+
+<script>
+  // Obtener el campo de selección y los campos de entrada adicionales por su ID
+  const tipoDocumentoSelect = document.getElementById('tipo_documento');
+  const registroField = document.getElementById('registro_field');
+  const cedulaField = document.getElementById('cedula_field');
+  const pasaporteField = document.getElementById('pasaporte_field');
+  const cedulaExtranjeriaField = document.getElementById('cedula_extranjeria_field');
+  const pepField = document.getElementById('pep_field');
+  const pptField = document.getElementById('ppt_field');
+
+  // Agregar un evento de cambio al campo de selección
+  tipoDocumentoSelect.addEventListener('change', function() {
+    // Obtener el valor seleccionado
+    const seleccion = tipoDocumentoSelect.value;
+
+    // Mostrar u ocultar los campos de entrada adicionales según la selección del campo de valor
+
+    registroField.style.display = seleccion === 'registro' ? 'block' : 'none';
+    cedulaField.style.display = seleccion === 'cedula' ? 'block' : 'none';
+    pasaporteField.style.display = seleccion === 'pasaporte' ? 'block' : 'none';
+    cedulaExtranjeriaField.style.display = seleccion === 'extrangeria' ? 'block' : 'none';
+    pepField.style.display = seleccion === 'especial' ? 'block' : 'none';
+    pptField.style.display = seleccion === 'personal' ? 'block' : 'none';
+  });
+</script>
+
+
 
           		  <div class="form-group">
                   	<label for="primer_nombre" class="col-sm-3 control-label">Primer Nombre</label>
@@ -100,16 +170,16 @@
 
                
                 <div class="form-group">
-                    <label for="edad" class="col-sm-3 control-label">Estatura</label>
-                    <div class="col-sm-9">
-                    <input type="number" class="form-control" id="edad" name="edad">
-                    </div>
+                <label for="estatura" class="col-sm-3 control-label">Estatura</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="estatura" name="estatura" step="0.01">
+                </div>
                 </div>
 
                 <div class="form-group">
                     <label for="tipo_sangre" class="col-sm-3 control-label">Tipo Sangre</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="tipo_sangre" id="tipo_sangre" required>
+                    <select class="form-control" name="tipo_sangre" id="tipo_sangre">
                         <option value="" selected> Seleccionar </option>
                         <option value="a">A</option>
                         <option value="b">B</option>
@@ -122,7 +192,7 @@
                 <div class="form-group">
                     <label for="factor_rh" class="col-sm-3 control-label">Factor RH</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="factor_rh" id="factor_rh" required>
+                    <select class="form-control" name="factor_rh" id="factor_rh">
                         <option value="" selected> Seleccionar </option>
                         <option value="positivo">Positivo</option>
                         <option value="negativo">Negativo</option>                     
@@ -161,12 +231,13 @@
                 <div class="form-group">
                     <label for="estado_civil" class="col-sm-3 control-label">Estado Civil</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="estado_civil" id="estado_civil" required>
+                    <select class="form-control" name="estado_civil" id="estado_civil">
                         <option value="" selected> Seleccionar </option>
                         <option value="casado">Casado</option>
                         <option value="separado">Separado</option>
                         <option value="viudo">Viudo</option>
-                        <option value="novia">Novia</option>                       
+                        <option value="novia">Nombre del Novia</option> 
+                        <option value="novia">Nombre de la Novia</option>                         
                       </select>
                     </div>
                 </div>
@@ -210,13 +281,13 @@
                   	<label for="edit_documento" class="col-sm-3 control-label">Tipo Documento</label>
                   	<div class="col-sm-9">
                     <select class="form-control" name="numero_documento" id="edit_documento" required>
-                        <option value="" selected> Seleccionar </option>
+                    <option value="" selected> Seleccionar </option>
+                        <option value="registro">Registro Civil</option>
                         <option value="cedula">Cedula</option>
-                        <option value="pasaporte">Pasaporte</option>
-                        <option value="pasaporte">Registro Civil</option>
-                        <option value="pasaporte">Pasaporte</option>
-                        <option value="pasaporte">Pasaporte</option> 
-                        <option value="pasaporte">Pasaporte</option>
+                        <option value="pasaporte">Pasaporte</option>                        
+                        <option value="extrangeria">Cédula de Extranjería</option>
+                        <option value="especial">Permiso Especial de Permanencia (PEP)</option> 
+                        <option value="personal">Permiso por Protección Temporar (PPT)</option>   
                       </select>
                   	</div>
                 </div>
@@ -282,15 +353,24 @@
                 <div class="form-group">
                     <label for="edit_sangre" class="col-sm-3 control-label">Tipo Sangre</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="edit_sangre" name="tipo_sangre">
+                    <select class="form-control" name="tipo_sangre" id="tipo_sangre">
+                        <option value="" selected> Seleccionar </option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="ab">AB</option>
+                        <option value="o">O</option>                        
+                      </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="edit_rh" class="col-sm-3 control-label">Factor RH</label>
-
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="edit_rh" name="factor_rh">
+                    <select class="form-control" name="factor_rh" id="factor_rh">
+                        <option value="" selected> Seleccionar </option>
+                        <option value="positivo">Positivo</option>
+                        <option value="negativo">Negativo</option>                     
+                      </select>
                     </div>
                 </div>
 
@@ -325,12 +405,13 @@
                 <div class="form-group">
                     <label for="edit_estado" class="col-sm-3 control-label">Estado Civil</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="estado_civil" id="edit_estado" required>
+                    <select class="form-control" name="estado_civil" id="edit_estado">
                         <option value="" selected> Seleccionar </option>
                         <option value="casado">Casado</option>
                         <option value="separado">Separado</option>
                         <option value="viudo">Viudo</option>
-                        <option value="novia">Novia</option>                       
+                        <option value="novia">Nombre del Novia</option> 
+                        <option value="novia">Nombre de la Novia</option>                       
                       </select>
                     </div>
                 </div>
@@ -341,10 +422,7 @@
                     <input type="email" class="form-control" id="edit_email" name="email">
                     </div>
                 </div>
-
-             
-          	</div>
-          	
+          	</div>          	
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>

@@ -12,11 +12,12 @@
           		  <div class="form-group">
                   	<label for="entidad" class="col-sm-3 control-label">Entidad Financiera</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="entidad" name="entidad" required>
+					  <input type="text" class="form-control" id="entidad" name="entidad" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="tipoProducto" class="col-sm-3 control-label">Tipo de Producto</label>
+
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="tipoProducto" name="tipoProducto" required>
                   	</div>
@@ -27,7 +28,7 @@
                       <input type="text" class="form-control" id="numeroProducto" name="numeroProducto" required>
                   	</div>
                 </div>
-                
+          	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
@@ -37,36 +38,37 @@
     </div>
 </div>
 
-<!-- Edit -->
+
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span ></span></b>Editar datos financieros</h4>
+            	<h4 class="modal-title"><b><span class="employee_id"></span></b>Actualiza tus Datos Financieros</h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="finanzas_edit.php">
+            	<form class="form-horizontal" method="POST" action="finanzas_adit.php" enctype="multipart/form-data">
             		<input type="hidden" class="empid" name="id">
-					<div class="form-group">
-                  	<label for="edit_entidad" class="col-sm-3 control-label">Entidad Financiera</label>
+                <div class="form-group">
+                  	<label for="entidad" class="col-sm-3 control-label">Entidad Financiera</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_entidad" name="entidad" required>
+					  <input type="text" class="form-control" id="entidad" name="entidad" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_tipo" class="col-sm-3 control-label">Tipo de Producto</label>
+                  	<label for="tipoProducto" class="col-sm-3 control-label">Tipo de Producto</label>
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="edit_tipo" name="tipoProducto" required>
+                    	<input type="text" class="form-control" id="tipoProducto" name="tipoProducto" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_numero" class="col-sm-3 control-label">Numero Producto</label>
+                  	<label for="numeroProduct" class="col-sm-3 control-label">Numero Producto</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_numero" name="numeroProducto" required>
+                      <input type="text" class="form-control" id="numeroProduct" name="numeroProduct" required>
                   	</div>
-                </div>
+                </div>                
+          	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
@@ -75,6 +77,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">
@@ -89,7 +92,7 @@
             	<form class="form-horizontal" method="POST" action="finanzas_delete.php">
             		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-                  <p>? Estas seguro de eliminar tus datos Bancarios ¿</p>
+	                	<p>? Estas seguro de elimnar tus datos Financieros</p>
 	                	<h2 class="bold del_employee_name"></h2>
 	            	</div>
           	</div>

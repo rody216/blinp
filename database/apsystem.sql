@@ -956,18 +956,20 @@ CREATE TABLE IF NOT EXISTS `position` (
 -- Estructura de tabla para la tabla `procuraduria`
 --
 
-DROP TABLE IF EXISTS `procuraduria`;
 CREATE TABLE IF NOT EXISTS `procuraduria` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `certificado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `resultado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `sancion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `providencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `documento` blob,
-  `actualizacion` timestamp NULL DEFAULT NULL,
-  `personas_id` int DEFAULT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `certificado` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `hora` TIME NOT NULL,
+  `resultado` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `siri` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sancion` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `providencia` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `documento` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `actualizacion` TIMESTAMP NULL DEFAULT NULL,
+   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 

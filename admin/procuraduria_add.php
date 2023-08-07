@@ -2,22 +2,22 @@
 include 'includes/session.php';
 
 if(isset($_POST['add'])){
-    $numeroCertificado = $_POST['Certificado'];
+    $certificado = $_POST['certificado'];
     $hora = $_POST['hora'];
     $resultado = $_POST['resultado'];
     $siri = $_POST['siri'];
     $sancion = $_POST['sancion'];
-    $fechaProvidencia = $_POST['Providencia'];
+    $providencia = $_POST['providencia'];
     $filename = $_FILES['documento']['name'];
 
     // Assuming you have a valid database connection in $conn
     include '../conn.php';
 
     // Prepare the SQL statement using prepared statements
-    $stmt = $conn->prepare("INSERT INTO procuraduria (Certificado, hora, resultado, siri, sancion, Providencia, documento) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO procuraduria (certificado, hora, resultado, siri, sancion, providencia, documento) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     // Bind the parameters to avoid SQL injection
-    $stmt->bind_param("sssssss", $Certificado, $hora, $resultado, $siri, $sancion, $Providencia, $filename);
+    $stmt->bind_param("sssssss", $certificado, $hora, $resultado, $siri, $sancion, $providencia, $filename);
 
     if (!empty($filename)) {
         // Move the uploaded file to the desired location

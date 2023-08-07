@@ -63,7 +63,7 @@
         <th>S_Nombre</th>
         <th>P_Apellido</th>
         <th>Foto</th>
-        <th>Acciónes</th>
+        <th>Acciones</th>
         
       </tr>
     </thead>
@@ -124,8 +124,6 @@ $('.delete').click(function(e){
     $('#delete').modal('show');
     $('.empid').val(id);
 });
-
-
 
 
   $('.photo').click(function(e){

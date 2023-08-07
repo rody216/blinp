@@ -17,26 +17,32 @@
         <li class="header text-success">ADMINISTRACIÓN</li>
         
         <!--<li><a href="attendance.php"><i class="fa fa-calendar"></i> <span>Asistencia del Personal</span></a></li>-->
+        <li><a href="search.php"><i class="fa fa-files-o"></i> <span>Busqueda y Visualización</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
-            <span>Datos Personales</span>
+            <span>Registro</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="employee.php"><i class="fa fa-circle-o"></i>Agregar Personal</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Familiar</a></li>
-            <li><a href="formacion.php"><i class="fa fa-circle-o"></i> Formacion</a></li>         
-            <li><a href="icth.php"><i class="fa fa-circle-o"></i> ICTH</a></li>            
-           <!-- <li><a href="overtime.php"><i class="fa fa-circle-o"></i> Tiempo Extra</a></li>
-            <li><a href="cashadvance.php"><i class="fa fa-circle-o"></i> Adelanto en Efectivo</a></li>
-            <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Horarios</a></li> -->
-          
-            
-          </ul>
+          <li><a href="employee.php"><i class="fa fa-circle-o"></i>Datos Personal</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Datos Familiar</a></li>
+            <li><a href="formacion.php"><i class="fa fa-circle-o"></i>Datos Academico y Profeccional</a></li>         
+            <li><a href="antecedentes.php"><i class="fa fa-circle-o"></i>Datos Diciplinarios</a></li>
+            <li><a href="rama_judicial_p.php"><i class="fa fa-circle-o"></i>Datos Judiciales</a></li>
+            <li><a href="ponal.php"><i class="fa fa-circle-o"></i>Antecedentes Ponal</a></li>
+            <li><a href="procuraduria.php"><i class="fa fa-circle-o"></i>Procuraduria</a></li>
+            <li><a href="inmuebles.php"><i class="fa fa-circle-o"></i>Datos Propiedades Inmuebles</a></li>
+            <li><a href="vehiculos.php"><i class="fa fa-circle-o"></i>Datos Vehiculos</a></li>
+            <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Financieros</a></li>   
+            <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Segurida Social</a></li>          
+            <li><a href="icth.php"><i class="fa fa-circle-o"></i>Datos ICTH</a></li> 
+         </ul>
         </li>
+        <li><a href="usuarios.php"><i class="fa fa-files-o"></i> <span>Admistración de Usuarios</span></a></li>
+         <!--
         <li class="treeview">
           <a href="#">
             <i class="fa fa-balance-scale"></i>
@@ -46,7 +52,7 @@
             </span>
           </a>
           <ul class="treeview-menu">          
-         <!-- desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria -->
+          desplegar con un select opti la opcion de los campos antecentes_ponal, procuraduria, rama_judial_p, rama_judiail.r, simit, controlaria 
              <div class="dropdown">           
              <select id="linkSelect" class="desplegable1" aria-label="Default select example">
             <option class="opcion">Anotaciones Confidenciales</option>
@@ -81,10 +87,10 @@
           </ul>
         </li>
         <!-- <li><a href="deduction.php"><i class="fa fa-file-text"></i> Deducciones</a></li>
-        <li><a href="position.php"><i class="fa fa-suitcase"></i>Agregar Cargos</a></li> -->
+        <li><a href="position.php"><i class="fa fa-suitcase"></i>Agregar Cargos</a></li> 
         <li class="header">Imprimibles</li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Reportes</span></a></li>
-        <li><a href="search.php"><i class="fa fa-files-o"></i> <span>Busqueda</span></a></li>
+        
        <!-- <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Nómina</span></a></li>
         <li><a href="payroll.php"><i class="fa fa-files-o"></i> <span>Reportes</span></a></li>
          <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Horarios</span></a></li> -->

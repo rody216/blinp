@@ -9,7 +9,7 @@
                 <h4 class="modal-title"><b>Antecedentes Espoa</b></h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="deduction_add.php">
+                <form class="form-horizontal" method="POST" action="spoa_add.php">
                     <div class="form-group">
                         <label for="description" class="col-sm-3 control-label">Noticia</label>
                         <div class="col-sm-9">
@@ -58,7 +58,7 @@
             	<h4 class="modal-title"><b>Actualizar  Antecedentes Espoa</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="deduction_edit.php">
+            	<form class="form-horizontal" method="POST" action="spoa_edit.php">
             		<input type="hidden" class="decid" name="id">
                 <div class="form-group">
                     <label for="edit_description" class="col-sm-3 control-label">Noticias</label>
@@ -107,10 +107,10 @@
               		<span aria-hidden="true">&times;</span></button>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="deduction_delete.php">
+            	<form class="form-horizontal" method="POST" action="spoa_delet.php">
             		<input type="hidden" class="decid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar</p>
+	                	<p>?Estas seguro de Eliminar Spoa¿</p>
 	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
           	</div>

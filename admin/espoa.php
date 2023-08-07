@@ -62,7 +62,7 @@
                         <tbody>
                         <?php
                         // Realizar una conexión a la base de datos (no se muestra en el código)
-                        $sql = "SELECT * FROM spoa";
+                        $sql = "SELECT *, id AS empid FROM spoa";
                         $query = $conn->query($sql);
                         while ($row = $query->fetch_assoc()) {
                         ?>
@@ -74,8 +74,8 @@
                             <td><?php echo $row['fechaActualizacion']; ?></td>
                             <td><?php echo $row['personas_id']; ?></td>
                             <td>
-                                <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                                <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                                <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                                <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                             </td>
                             </tr>
                         <?php
@@ -103,34 +103,28 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
+    //getRow(id);
   });
 
-  $('.delete').click(function(e){
+ $('.delete').click(function(e){
     e.preventDefault();
+    var id = $(this).data('id');
     $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
+    $('.empid').val(id);
+});
 
-  $('.photo').click(function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
+ 
 
 });
 
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'spoa_row.php',
     data: {id:id},
     dataType: 'json',
-    success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
+    success: function(response){     
       $('#employee_name').html(response.firstname+' '+response.lastname);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);

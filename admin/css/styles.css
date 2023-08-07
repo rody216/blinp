@@ -157,3 +157,6 @@ border: none;
     text-align: center;
 }
 
+.small-box>.inner{
+    padding: 40px !important;
+}
