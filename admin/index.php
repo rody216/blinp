@@ -8,7 +8,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   	<div class="login-logo">
-  		<b>CONTROL DE ACCESO</b>
+  		<b></b>
   	</div>
   
   	<div class="login-box-body">

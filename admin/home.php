@@ -19,11 +19,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Panel de Control
+        Dashboard
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Panel de Control</li>
+        <li class="active">Dashboard</li>
       </ol>
     </section>
 
@@ -65,7 +65,7 @@
               ?>
 
               <!-- <p>Total de Empleados</p> -->
-              <p>Usuarios del Sistema</p>
+              <p>Registros BLI-NP</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
@@ -92,7 +92,7 @@
                 echo "<h3>".number_format($percentage, 2)."<sup style='font-size: 20px'>%</sup></h3>";
               ?>
           
-              <p>Familiares</p>
+            <p>Familiares</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>

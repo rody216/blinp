@@ -13,20 +13,20 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Panel de Control</span></a></li>
-        <li class="header text-success">ADMINISTRACIÓN</li>
+        <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="header text-success"></li>
         
         <!--<li><a href="attendance.php"><i class="fa fa-calendar"></i> <span>Asistencia del Personal</span></a></li>-->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
-            <span>Datos Personales</span>
+            <span>Registro</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="employee.php"><i class="fa fa-circle-o"></i>Agregar Personal</a></li>
+          <li><a href="employee.php"><i class="fa fa-circle-o"></i>Agregar Persona</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Familiar</a></li>
             <li><a href="formacion.php"><i class="fa fa-circle-o"></i> Formacion</a></li>         
             <li><a href="icth.php"><i class="fa fa-circle-o"></i> ICTH</a></li>            
