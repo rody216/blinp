@@ -276,7 +276,7 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_edit.php">
-            		<input type="hidden" class="empid" name="id_personal">
+            		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
                   	<label for="edit_documento" class="col-sm-3 control-label">Tipo Documento</label>
                   	<div class="col-sm-9">
@@ -443,7 +443,7 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_delete.php">
-            		<input type="hidden" class="empid" name="id_personal">
+            		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
 	                	<p>Estas seguro de Eliminar tus datos</p>
 	                	<h2 class="bold del_employee_name"></h2>

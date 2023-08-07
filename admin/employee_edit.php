@@ -2,7 +2,7 @@
 include 'includes/session.php';
 
 if (isset($_POST['edit'])) {
-    $empid = $_POST['id_personal'];
+    $empid = $_POST['id'];
     $numero_documento = $_POST['numero_documento'];
     $fecha_expedicion = $_POST['fecha_expedicion'];
     $primer_nombre = $_POST['primer_nombre'];
@@ -37,7 +37,7 @@ if (isset($_POST['edit'])) {
             direccion_residencia = ?,
             estado_civil = ?,
             email = ?
-            WHERE id_personal = ?";
+            WHERE id = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(

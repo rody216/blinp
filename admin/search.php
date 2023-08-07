@@ -44,13 +44,13 @@
             <div class="box-header with-border">
            <table class="table table-bordered">
             <thead>
-                <th class="sort asc">Num. empleado</th>
+                <th class="sort asc">ID</th>
+                <th class="sort asc">Num. Cedula</th>
                 <th class="sort asc">Nombre</th>
                 <th class="sort asc">Apellido</th>
                 <th class="sort asc">Fecha nacimiento</th>
-                <th class="sort asc">Fecha ingreso</th>
-                <th class="sort asc">Parestenco</th>
-                <th class="sort asc">Delito</th>
+                <th class="sort asc">Edad</th>
+                <th class="sort asc">Estado Civil</th>
                 <th class="sort asc">Acciones</th>
             </thead>
 

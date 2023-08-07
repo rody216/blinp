@@ -69,12 +69,12 @@
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT *, id_personal AS empid FROM personal";
+      $sql = "SELECT *, id AS empid FROM personal";
       $query = $conn->query($sql);
       while ($row = $query->fetch_assoc()) {
       ?>
         <tr>
-          <td><?php echo $row['id_personal']; ?></td>
+          <td><?php echo $row['id']; ?></td>
           <td><?php echo $row['numero_documento']; ?></td>
           <td><?php echo $row['fecha_expedicion']; ?></td>
           <td><?php echo $row['primer_nombre']; ?></td>
@@ -82,8 +82,8 @@
           <td><?php echo $row['primer_apellido']; ?></td>
           <td><img src="<?php echo (!empty($row['foto'])) ? '../images/' . $row['foto'] : '../images/profile.jpg'; ?>" width="100px" height="100px"> <a href="#edit_photo" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>"><span class="fa fa-edit"></span></a></td>
           <td>
-            <button class="btn btn-success btn-sm edit btn-flat" data-id_personal="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
-            <button class="btn btn-danger btn-sm delete btn-flat" data-id_personal="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
 
           </td>
         </tr>
@@ -112,7 +112,7 @@ $(function(){
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
-    var id = $(this).data('id_personal');
+    var id = $(this).data('id');
     $('.empid').val(id);
     //getRow(id);
   });
@@ -120,7 +120,7 @@ $(function(){
   
 $('.delete').click(function(e){
     e.preventDefault();
-    var id = $(this).data('id_personal');
+    var id = $(this).data('id');
     $('#delete').modal('show');
     $('.empid').val(id);
 });

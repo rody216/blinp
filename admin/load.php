@@ -9,10 +9,10 @@
 require '../conn.php';
 
 /* Un arreglo de las columnas a mostrar en la tabla */
-$columns = ['id', 'firstname', 'lastname', 'birthdate', 'created_on'];
+$columns = ['id', 'numero_documento', 'primer_nombre', 'primer_apellido', 'fecha_nacimiento', 'edad', 'estado_civil'];
 
 /* Nombre de la tabla */
-$table = "employees";
+$table = "personal";
 
 $id = 'id';
 
@@ -91,12 +91,13 @@ if ($num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         $output['data'] .= '<tr>';
         $output['data'] .= '<td>' . $row['id'] . '</td>';
-        $output['data'] .= '<td>' . $row['firstname'] . '</td>';
-        $output['data'] .= '<td>' . $row['lastname'] . '</td>';
-        $output['data'] .= '<td>' . $row['birthdate'] . '</td>';
-        $output['data'] .= '<td>' . $row['created_on'] . '</td>';
-        $output['data'] .= '<td>' . $row['created_on'] . '</td>';
-        $output['data'] .= '<td>' . $row['created_on'] . '</td>';
+        $output['data'] .= '<td>' . $row['numero_documento'] . '</td>';
+        $output['data'] .= '<td>' . $row['primer_nombre'] . '</td>';
+        $output['data'] .= '<td>' . $row['primer_apellido'] . '</td>';
+        $output['data'] .= '<td>' . $row['fecha_nacimiento'] . '</td>';
+        $output['data'] .= '<td>' . $row['edad'] . '</td>';
+        $output['data'] .= '<td>' . $row['estado_civil'] . '</td>';
+
         $output['data'] .= '<td><a class="btn btn-success btn-sm" href="editar.php?id=' . $row['id'] . '">Imprimir</a></td>';
         $output['data'] .= '</tr>';
     }

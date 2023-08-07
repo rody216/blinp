@@ -56,7 +56,7 @@
       <div class="row"> <!-- centrar el contenedor row -->
       
         
-        <div class="col-xs-4" style=":center;">
+        <div class="col-xs-6" style=":center;">
         <div class="small-box bg-aqua">
             <div class="inner">
               <?php
