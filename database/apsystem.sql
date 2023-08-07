@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-08-2023 a las 19:45:14
+-- Tiempo de generación: 07-08-2023 a las 03:29:28
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 7.4.33
 
@@ -26,24 +26,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `academicos`
 --
-DROP TABLE IF EXISTS `propiedades`;
-CREATE TABLE `propiedades` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `ciudad` varchar(255),
-  `oficina` varchar(255),
-  `matricula` varchar(255),
-  `direccion` varchar(255),
-  `documento` varchar(255),
-  `fechaActualizacion` timestamp,
-  PRIMARY KEY (`id`)
-);
-
-INSERT INTO propiedades (ciudad, oficina, matricula, direccion, documento, fechaActualizacion) VALUES
-('Ciudad A', 'Oficina 1', 'Matricula 123', 'Dirección 1', 'Documento 1', '2023-08-02 12:34:56'),
-('Ciudad B', 'Oficina 2', 'Matricula 456', 'Dirección 2', 'Documento 2', '2023-08-02 14:30:00'),
-('Ciudad C', 'Oficina 3', 'Matricula 789', 'Dirección 3', 'Documento 3', '2023-08-02 15:45:00');
-
-
 
 DROP TABLE IF EXISTS `academicos`;
 CREATE TABLE IF NOT EXISTS `academicos` (
@@ -78,14 +60,15 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`, `created_on`) VALUES
-(1, 'admin', '$2y$10$UrGSvHTWm8.ZK4BzPmo8iuqsK6XF5RfHay6ooC5D50y/nShon5wqe', 'Admin', 'Admin', 'Matrix rojo.gif', '2019-12-18');
+(1, 'Jorge', '$2y$10$UrGSvHTWm8.ZK4BzPmo8iuqsK6XF5RfHay6ooC5D50y/nShon5wqe', 'Admin', 'Admin', 'Matrix rojo.gif', '2019-12-18'),
+(2, 'Fabian', 'Fabian0981@', 'Fabian ', 'Robledo ', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -896,23 +879,23 @@ INSERT INTO `parentesco_personas` (`id`, `personas_id`, `parentesco_id`) VALUES
 DROP TABLE IF EXISTS `personal`;
 CREATE TABLE IF NOT EXISTS `personal` (
   `id_personal` int NOT NULL AUTO_INCREMENT,
-  `numero_documento` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `numero_documento` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `fecha_expedicion` date DEFAULT NULL,
-  `primer_nombre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `segundo_nombre` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `primer_apellido` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `segundo_apellido` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `primer_nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `segundo_nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `primer_apellido` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `segundo_apellido` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `edad` int DEFAULT NULL,
   `estatura` float DEFAULT NULL,
-  `tipo_sangre` varchar(3) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `factor_rh` char(1) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `pais` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `departamento` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ciudad` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `direccion_residencia` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `estado_civil` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tipo_sangre` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `factor_rh` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `pais` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `departamento` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ciudad` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `direccion_residencia` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `estado_civil` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `foto` blob,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `delito_id` int DEFAULT NULL,
@@ -956,20 +939,47 @@ CREATE TABLE IF NOT EXISTS `position` (
 -- Estructura de tabla para la tabla `procuraduria`
 --
 
+DROP TABLE IF EXISTS `procuraduria`;
 CREATE TABLE IF NOT EXISTS `procuraduria` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `certificado` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `hora` TIME NOT NULL,
-  `resultado` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `siri` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `sancion` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `providencia` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `documento` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `actualizacion` TIMESTAMP NULL DEFAULT NULL,
-   `personas_id` int DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `certificado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `hora` time NOT NULL,
+  `resultado` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `siri` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sancion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `providencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `documento` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `actualizacion` timestamp NULL DEFAULT NULL,
+  `personas_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `propiedades`
+--
+
+DROP TABLE IF EXISTS `propiedades`;
+CREATE TABLE IF NOT EXISTS `propiedades` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ciudad` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `oficina` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `matricula` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `direccion` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `documento` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fechaActualizacion` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `propiedades`
+--
+
+INSERT INTO `propiedades` (`id`, `ciudad`, `oficina`, `matricula`, `direccion`, `documento`, `fechaActualizacion`) VALUES
+(1, 'Ciudad A', 'Oficina 1', 'Matricula 123', 'Dirección 1', 'Documento 1', '2023-08-02 12:34:56'),
+(2, 'Ciudad B', 'Oficina 2', 'Matricula 456', 'Dirección 2', 'Documento 2', '2023-08-02 14:30:00'),
+(3, 'Ciudad C', 'Oficina 3', 'Matricula 789', 'Dirección 3', 'Documento 3', '2023-08-02 15:45:00');
 
 -- --------------------------------------------------------
 

@@ -51,10 +51,12 @@
           unset($_SESSION['success']);
         }
       ?>
-       <h1 class="card-title text-center">BLIN-NP</h1>  
+       <h1 class="card-title text-center">BLI-NP</h1>  
       <!-- /.row -->
-      <div class="row">
-        <div class="col-xs-12">
+      <div class="row"> <!-- centrar el contenedor row -->
+      
+        
+        <div class="col-xs-4" style=":center;">
         <div class="small-box bg-aqua">
             <div class="inner">
               <?php
