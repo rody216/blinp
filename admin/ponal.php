@@ -66,7 +66,7 @@
                 <tbody>
                     <?php
                     // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                    $sql = "SELECT * FROM antecedentesPonal";
+                    $sql = "SELECT *, id AS empid FROM antecedentesPonal";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     ?>
@@ -78,8 +78,8 @@
                         <td><?php echo $row['fechaActualizacion']; ?></td>
                         <td><?php echo $row['personas_id']; ?></td>
                         <td>
-                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                         </td>
                     </tr>
                     <?php
@@ -88,10 +88,7 @@
                 </tbody>
             </table>
 
-                </tbody>
-                </table>
-                </tbody>
-              </table>
+               
             </div>
           </div>
         </div>
@@ -109,20 +106,16 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
+    
   });
+
 
   $('.delete').click(function(e){
     e.preventDefault();
+    var id = $(this).data('id');
     $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $('.photo').click(function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
   });
 
 });

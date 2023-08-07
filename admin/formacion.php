@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Formacion Academica
+        Formacion Academica y Profeccional
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>

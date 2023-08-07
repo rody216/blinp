@@ -58,39 +58,37 @@
                     <th>Certificado</th>
                     <th>Resultado</th>
                     <th>Sanción</th>
+                    <th>Siri</th>
                     <th>Providencia</th>
                     <th>PDF</th>
-                    <th>Actualización</th>
-                    <th>PID</th>
-                    <th>Acción</th>
+                    <th>Hora</th>
+                    <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                    $sql = "SELECT * FROM procuraduria";
+                    $sql = "SELECT *, id AS empid FROM procuraduria";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['Certificado']; ?></td>                        
+                        <td><?php echo $row['certificado']; ?></td>                        
                         <td><?php echo $row['resultado']; ?></td>                       
                         <td><?php echo $row['sancion']; ?></td>
-                        <td><?php echo $row['Providencia']; ?></td>
+                        <td><?php echo $row['siri']; ?></td>
+                        <td><?php echo $row['providencia']; ?></td>                      
                         <td><?php echo $row['documento']; ?></td>
-                        <td><?php echo $row['Actualizacion']; ?></td>
-                        <td><?php echo $row['personas_id']; ?></td>
+                        <td><?php echo $row['hora']; ?></td>
                         <td>
-                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                         </td>
                     </tr>
                     <?php
                     }
-                    ?>   
-                            
-                
+                    ?>  
                 </tbody>
               </table>
             </div>
@@ -110,14 +108,16 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
+    
   });
+
 
   $('.delete').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('#delete').modal('show');
+    $('.empid').val(id);
   });
 
   $('.photo').click(function(e){
@@ -134,19 +134,14 @@ function getRow(id){
     url: 'procuraduria_row.php',
     data: {id:id},
     dataType: 'json',
-    success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    success: function(response){     
+      $('#edit_certificado').html(response.certificado);
+      $('#edit_resultado').val(response.resultado);
+      $('#edit_sancion').val(response.sancion);
+      $('#edit_siri').val(response.siri);
+      $('#edit_providencia').val(response.providencia);
+      $('#edit_documento').val(response.documento);
+      $('#edit_hora').val(response.hora);      
     }
   });
 }
