@@ -17,7 +17,7 @@
         <li class="header text-success"></li>
         
         <!--<li><a href="attendance.php"><i class="fa fa-calendar"></i> <span>Asistencia del Personal</span></a></li>-->
-        <li><a href="search.php"><i class="fa fa-files-o"></i> <span>Busqueda y Visualización</span></a></li>
+        <li><a href="search.php"><i class="fa fa-search" aria-hidden="true"></i><span>Busqueda y Visualización</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
@@ -33,15 +33,19 @@
             <li><a href="antecedentes.php"><i class="fa fa-circle-o"></i>Datos Disciplinarios</a></li>
             <li><a href="rama_judicial_p.php"><i class="fa fa-circle-o"></i>Datos Judiciales</a></li>
             <li><a href="ponal.php"><i class="fa fa-circle-o"></i>Antecedentes Ponal</a></li>
+            <li><a href="spoa.php"><i class="fa fa-circle-o"></i>Datos Spoa</a></li>
             <li><a href="procuraduria.php"><i class="fa fa-circle-o"></i>Procuraduría</a></li>
+            <li><a href="simit.php"><i class="fa fa-circle-o"></i>Datos Simit</a></li>
             <li><a href="inmuebles.php"><i class="fa fa-circle-o"></i>Datos Propiedades Inmuebles</a></li>
             <li><a href="vehiculos.php"><i class="fa fa-circle-o"></i>Datos Vehiculos</a></li>
             <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Financieros</a></li>   
             <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Segurida Social</a></li>          
             <li><a href="icth.php"><i class="fa fa-circle-o"></i>Datos ICTH</a></li> 
+            <li><a href="index.buscar.php"><i class="fa fa-search" aria-hidden="true"></i>Busqueda Personalizada</a></li>
          </ul>
         </li>
-        <li><a href="usuarios.php"><i class="fa fa-files-o"></i> <span>Admistración de Usuarios</span></a></li>
+        <li><a href="usuarios.php"><i class="fa fa-search" aria-hidden="true"></i><span>Admistración de Usuarios</span></a></li>
+        
          <!--
         <li class="treeview">
           <a href="#">

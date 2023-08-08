@@ -17,7 +17,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header text-primary">
       <h1>
         Dashboard
       </h1>
@@ -51,7 +51,7 @@
           unset($_SESSION['success']);
         }
       ?>
-       <h1 class="card-title text-center">BLI-NP</h1>  
+       <h1 class="card-title text-center text-primary">BLI-NP</h1>  
       <!-- /.row -->
       <div class="row"> <!-- centrar el contenedor row -->
       
@@ -78,19 +78,19 @@
            
 
         <div class="card text-center">
-  <div class="card-header">
-    
-  </div>
-  <div class="card-body">
-    
-  </div>
-  <div class="card-footer text-body-secondary">
+                <div class="card-header">
+                  
+                </div>
+                <div class="card-body">
+                  
+                </div>
+                <div class="card-footer text-body-secondary">
 
-  </div>
-</div>
+                </div>
+              </div>
 
 
-<div class="box-body">
+              <div class="box-body">
               <div class="chart">
                 <br>
                 <div id="legend" class="text-center"></div>

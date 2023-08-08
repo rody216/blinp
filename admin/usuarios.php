@@ -97,7 +97,15 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 $(function(){
- 
+  $('.edit').click(function(e){
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    $('.empid').val(id);
+    //getRow(id);
+  });
+
+
   $('.delete').click(function(e){
     e.preventDefault();
     var id = $(this).data('id');
