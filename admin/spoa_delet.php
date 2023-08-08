@@ -15,6 +15,6 @@
 		$_SESSION['error'] = 'Seleccione el elemento para eliminar primero';
 	}
 
-	header('location: espoa.php');
+	header('location: spoa.php');
 	
 ?>

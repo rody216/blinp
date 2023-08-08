@@ -114,8 +114,6 @@ $(function(){
     $('.empid').val(id);
 });
 
- 
-
 });
 
 function getRow(id){
@@ -125,15 +123,10 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){     
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_noticia').val(response.noticia);
+      $('#edit_calidad').val(response.calidad);
+      $('#edit_delito').val(response.delito);
+
     }
   });
 }

@@ -56,7 +56,7 @@
       <div class="row"> <!-- centrar el contenedor row -->
       
         
-      <div class="col-xs-6" style="display: flex; justify-content: center; align-items: center; height: 40vh;">
+      <div class="col-xs-6">
         <div class="small-box bg-aqua">
             <div class="inner">
               <?php

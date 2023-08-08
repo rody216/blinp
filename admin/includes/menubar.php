@@ -28,14 +28,16 @@
           </a>
           <ul class="treeview-menu">
           <li><a href="employee.php"><i class="fa fa-circle-o"></i>Datos Personal</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Datos Familiares</a></li>
-            <li><a href="formacion.php"><i class="fa fa-circle-o"></i>Académicos y Profesionales</a></li>         
+            <li><a href="familia.php"><i class="fa fa-circle-o"></i>Datos Familiares</a></li>
+            <li><a href="formacion.php"><i class="fa fa-circle-o"></i>Académicos y Profesionales</a></li>
+            <li class="text-success text-center"><i class=""></i> Antecedentes Penales</li>
             <li><a href="antecedentes.php"><i class="fa fa-circle-o"></i>Datos Disciplinarios</a></li>
             <li><a href="rama_judicial_p.php"><i class="fa fa-circle-o"></i>Datos Judiciales</a></li>
             <li><a href="ponal.php"><i class="fa fa-circle-o"></i>Antecedentes Ponal</a></li>
             <li><a href="spoa.php"><i class="fa fa-circle-o"></i>Datos Spoa</a></li>
             <li><a href="procuraduria.php"><i class="fa fa-circle-o"></i>Procuraduría</a></li>
             <li><a href="simit.php"><i class="fa fa-circle-o"></i>Datos Simit</a></li>
+            <li class="text-success text-center"><i class=""></i> Otros</li>
             <li><a href="inmuebles.php"><i class="fa fa-circle-o"></i>Datos Propiedades Inmuebles</a></li>
             <li><a href="vehiculos.php"><i class="fa fa-circle-o"></i>Datos Vehiculos</a></li>
             <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Financieros</a></li>   

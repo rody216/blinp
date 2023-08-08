@@ -62,17 +62,17 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT *, employees.id AS empid FROM employees LEFT JOIN position ON position.id=employees.position_id LEFT JOIN schedules ON schedules.id=employees.schedule_id";
+                    $sql = "SELECT *, id AS empid FROM parentesco";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       ?>
                         <tr>
-                          <td><?php echo $row['employee_id']; ?></td>
-                          <td><img src="<?php echo (!empty($row['photo']))? '../images/'.$row['photo']:'../images/profile.jpg'; ?>" width="30px" height="30px"> <a href="#edit_photo" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>"><span class="fa fa-edit"></span></a></td>
-                          <td><?php echo $row['firstname'].' '.$row['lastname']; ?></td>
-                          <td><?php echo $row['description']; ?></td>
-                          <td><?php echo date('h:i A', strtotime($row['time_in'])).' - '.date('h:i A', strtotime($row['time_out'])); ?></td>
-                          <td><?php echo date('M d, Y', strtotime($row['created_on'])) ?></td>
+                          <td><?php echo $row['id']; ?></td>                         
+                          <td><?php echo $row['conyugue']; ?></td> 
+                          <td><?php echo $row['hijo']; ?></td>  
+                          <td><?php echo $row['padre']; ?></td>  
+                          <td><?php echo $row['madre']; ?></td>  
+                          <td><?php echo $row['hermano']; ?></td>                         
                           <td>
                             <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
@@ -100,15 +100,16 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
-    getRow(id);
+    $('.empid').val(id);
+    //getRow(id);
   });
 
   $('.delete').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
     var id = $(this).data('id');
-    getRow(id);
-  });
+    $('#delete').modal('show');
+    $('.empid').val(id);
+});
 
   $('.photo').click(function(e){
     e.preventDefault();

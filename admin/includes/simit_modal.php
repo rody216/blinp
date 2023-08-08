@@ -114,13 +114,12 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Eliminando...</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="antecedentes_delete.php">
+            	<form class="form-horizontal" method="POST" action="simit_delete.php">
             		<input type="hidden" class="decid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar el antecedente ¿</p>
+	                	<p>? Estas seguro de Eliminar los datos ¿</p>
 	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
           	</div>
