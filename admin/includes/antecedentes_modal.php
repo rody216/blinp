@@ -34,6 +34,13 @@
                             <input type="text" class="form-control" id="obs" name="obs" required>
                         </div>
                     </div>
+                    <div class="form-group">
+                    <label for="archivo" class="col-sm-3 control-label">Archivo</label>
+                    <div class="col-sm-9">
+                    <input type="file" class="form-control" id="archivo" name="archivo">
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
