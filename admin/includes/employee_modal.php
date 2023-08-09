@@ -15,54 +15,19 @@
     <select class="form-control" name="tipo_documento" id="tipo_documento" required>
       <option value="" selected>Seleccionar</option>
       <option value="registro">Registro Civil</option>
-      <option value="cedula">Cedula</option>
+      <option value="cedula">Cédula</option>
       <option value="pasaporte">Pasaporte</option>
       <option value="extrangeria">Cédula de Extranjería</option>
       <option value="especial">Permiso Especial de Permanencia (PEP)</option> 
-      <option value="personal">Permiso por Protección Temporar (PPT)</option>                       
+      <option value="personal">Permiso por Protección Temporal (PPT)</option>                       
     </select>
   </div>
 </div>
 
 <div class="form-group" id="registro_field">
-  <label for="numero_documento" class="col-sm-3 control-label">Registro Civil</label>
+  <label for="numero_documento" class="col-sm-3 control-label">Número ID</label>
   <div class="col-sm-9">
     <input type="text" class="form-control" id="numero_documento" name="numero_documento">
-  </div>
-</div>
-
-<div class="form-group" id="cedula_field">
-  <label for="numero_documento" class="col-sm-3 control-label">Cédula</label>
-  <div class="col-sm-9">
-    <input type="text" class="form-control" id="numero_documento" name="numero_documento">
-  </div>
-</div>
-
-<div class="form-group" id="pasaporte_field">
-  <label for="numero_pasaporte" class="col-sm-3 control-label">Número de Pasaporte</label>
-  <div class="col-sm-9">
-    <input type="text" class="form-control" id="numero_pasaporte" name="numero_pasaporte">
-  </div>
-</div>
-
-<div class="form-group" id="cedula_extranjeria_field">
-  <label for="numero_cedula_extranjeria" class="col-sm-3 control-label">Número de Cédula de Extranjería</label>
-  <div class="col-sm-9">
-    <input type="text" class="form-control" id="numero_cedula_extranjeria" name="numero_cedula_extranjeria">
-  </div>
-</div>
-
-<div class="form-group" id="pep_field">
-  <label for="numero_pep" class="col-sm-3 control-label">Número de PEP</label>
-  <div class="col-sm-9">
-    <input type="text" class="form-control" id="numero_pep" name="numero_pep">
-  </div>
-</div>
-
-<div class="form-group" id="ppt_field">
-  <label for="numero_ppt" class="col-sm-3 control-label">Número de PPT</label>
-  <div class="col-sm-9">
-    <input type="text" class="form-control" id="numero_ppt" name="numero_ppt">
   </div>
 </div>
 

@@ -62,7 +62,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title"><b>Actualizar Datos Académicos</b></h4>
+        <h4 class="modal-title"><b>Actualizar Datos</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="spoa_edit.php">
@@ -134,7 +134,7 @@
           <input type="hidden" class="empid" name="id">
           <div class="text-center">
             <!-- Confirmation message -->
-            <h3> ? Estas seguro de Eliminar ¿ </h3>
+            <h3>¿Estas seguro de Eliminar? </h3>
           </div>
       </div>
       <div class="modal-footer">
