@@ -102,7 +102,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    
+    getRow(id)
   });
 
 
@@ -126,7 +126,7 @@ function getRow(id) {
       $('#edit_gender').val(response.nivel);
       $('#edit_institution').val(response.institucion);
       $('#graduation_date').val(response.fecha);
-      $('#degree_obtained').val(response.titulo);
+      $('#edit_titulo').val(response.titulo);
       // Populate other form fields as needed
     },
     error: function (error) {

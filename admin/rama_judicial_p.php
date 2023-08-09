@@ -66,7 +66,7 @@
                 <tbody>
                     <?php
                     // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                    $sql = "SELECT * FROM ramajudicialprocesos";
+                    $sql = "SELECT *, id AS empid FROM ramajudicialprocesos";
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                     ?>
@@ -78,16 +78,13 @@
                         <td><?php echo $row['clase']; ?></td>
                         <td><?php echo $row['estatus']; ?></td>
                         <td>
-                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                         </td>
                     </tr>
                     <?php
                     }
-                    ?>
-                
-                
-                
+                    ?>                                                
                 </tbody>
               </table>
             </div>
@@ -107,15 +104,16 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
+    $('.empid').val(id);
     getRow(id);
   });
 
   $('.delete').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
     var id = $(this).data('id');
-    getRow(id);
-  });
+    $('#delete').modal('show');
+    $('.empid').val(id);
+});
 
   $('.photo').click(function(e){
     e.preventDefault();
@@ -128,22 +126,16 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'rama_judiacial_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_numeroProceso').val(response.numeroProceso);
+      $('#edit_fechaRadicacion').val(response.fechaRadicacion);
+      $('#edit_tipoProceso').val(response.tipoProceso);
+      $('#edit_clase').val(response.clase);
+      $('#edit_estatus').val(response.estatus);
+      $('#edit_pdf').val(response.pdf);
     }
   });
 }

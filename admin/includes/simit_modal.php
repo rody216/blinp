@@ -11,27 +11,33 @@
             <div class="modal-body">
                 <form class="form-horizontal" method="POST" action="antecedentes_add.php">
                     <div class="form-group">
-                        <label for="infraccion" class="col-sm-3 control-label">Número</label>
+                        <label for="numeroComparendo" class="col-sm-3 control-label">Número</label>
                         <div class="col-sm-9">
-                            <input type="number" placeholder="Comparendo" class="form-control" id="infraccion" name="infraccion" required>
+                            <input type="number" class="form-control" id="numeroComparendo" name="numeroComparendo" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="correctivo" class="col-sm-3 control-label">Fecha</label>
+                        <label for="fecha" class="col-sm-3 control-label">Fecha</label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" id="correctivo" name="correctivo" required>
+                            <input type="date" class="form-control" id="fecha" name="fecha" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Infracción</label>
+                        <label for="secretaria" class="col-sm-3 control-label">Secretaria</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="date" name="date" required>
+                            <input type="text" class="form-control" id="secretaria" name="secretaria" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="obs" class="col-sm-3 control-label">Valor</label>
+                        <label for="infraccion" class="col-sm-3 control-label">Infracción</label>
                         <div class="col-sm-9">
-                            <input type="number" placeholder="%" class="form-control" id="obs" name="obs" required>
+                            <input type="text" class="form-control" id="infraccion" name="infraccion" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor" class="col-sm-3 control-label">Valor</label>
+                        <div class="col-sm-9">
+                            <input type="number" placeholder="%" class="form-control" id="valor" name="valor" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -67,28 +73,34 @@
             	<form class="form-horizontal" method="POST" action="antecedentes_edit.php">
             		<input type="hidden" class="decid" name="id">
                 <div class="form-group">
-                    <label for="edit_infraccion" class="col-sm-3 control-label">Número</label>
+                    <label for="numeroComparendo" class="col-sm-3 control-label">Número</label>
                     <div class="col-sm-9">
-                      <input type="number" placeholder="Comparendo" class="form-control" id="edit_infraccion" name="infraccion">
+                      <input type="number" class="form-control" id="edit_numeroComparendo" name="numeroComparendo">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_correctivo" class="col-sm-3 control-label">Fecha</label>
+                    <label for="fecha" class="col-sm-3 control-label">Fecha</label>
                     <div class="col-sm-9">
-                    <input type="date" class="form-control" id="edit_correctivo" name="correctivo">
+                    <input type="date" class="form-control" id="edit_fecha" name="fecha">
 
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_fecha" class="col-sm-3 control-label">Infracción</label>
+                        <label for="secretaria" class="col-sm-3 control-label">Secretaria</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="edit_secretaria" name="secretaria" required>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="infraccion" class="col-sm-3 control-label">Infracción</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_fecha" name="fecha">
+                      <input type="text" class="form-control" id="edit_infraccion" name="infraccion">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_obs" class="col-sm-3 control-label">Valor</label>
+                    <label for="valor" class="col-sm-3 control-label">Valor</label>
                     <div class="col-sm-9">
-                      <input type="number" class="form-control" id="edit_obs" name="obs">
+                      <input type="number" class="form-control" id="edit_valor" name="valor">
                     </div>
                 </div>
                 <div class="form-group">
@@ -117,9 +129,9 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="simit_delete.php">
-            		<input type="hidden" class="decid" name="id">
+            		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar los datos ¿</p>
+	                	<p>¿Estas seguro de Eliminar los datos?</p>
 	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
           	</div>

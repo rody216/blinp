@@ -9,10 +9,11 @@ if (isset($_POST['edit'])) {
     $siri = $_POST['siri'];
     $providencia = $_POST['providencia'];
     $hora = $_POST['hora'];
+    $fecha = $_POST['fecha'];
     $documento = $_POST['documento'];
     // Use prepared statement to update the record
-    $stmt = $conn->prepare("UPDATE procuraduria SET certificado = ?, resultado = ?, sancion = ?, siri = ?, providencia = ?, hora = ?, documento = ? WHERE id = ?");
-    $stmt->bind_param("sssssssi", $certificado, $resultado, $sancion, $siri, $providencia, $hora, $documento, $id);
+    $stmt = $conn->prepare("UPDATE procuraduria SET certificado = ?, resultado = ?, sancion = ?, siri = ?, providencia = ?, hora = ?, fecha = ?, documento = ? WHERE id = ?");
+    $stmt->bind_param("ssssssssi", $certificado, $resultado, $sancion, $siri, $providencia, $hora, $fecha, $documento, $id);
     
 
     if ($stmt->execute()) {

@@ -101,7 +101,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    //getRow(id);
+    getRow(id);
   });
 
   $('.delete').click(function(e){
@@ -109,35 +109,23 @@ $(function(){
     var id = $(this).data('id');
     $('#delete').modal('show');
     $('.empid').val(id);
-});
-
-  $('.photo').click(function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
+ });
 
 });
 
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'familia_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_conyugue').val(response.conyugue);
+      $('#edit_hijo').val(response.hijo);
+      $('#edit_padre').val(response.padre);
+      $('#edit_madre').val(response.madre);
+      $('#edit_hermano').val(response.hermano);
+     
     }
   });
 }

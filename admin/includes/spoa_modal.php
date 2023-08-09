@@ -5,38 +5,38 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Datos Académicos</b></h4>
+            	<h4 class="modal-title"><b>Datos Spoa</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="spoa_add.php" enctype="multipart/form-data">
                 <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Nr. Noticia:</label>
+                        <label for="noticia" class="col-sm-3 control-label">Nr. Noticia:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description" required>
+                            <input type="text" class="form-control" id="noticia" name="noticia" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Calidad:</label>
+                        <label for="calidad" class="col-sm-3 control-label">Calidad:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="corrective" name="corrective" required>
+                            <input type="text" class="form-control" id="calidad" name="calidad" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Delito:</label>
+                        <label for="delito" class="col-sm-3 control-label">Delito:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="date" name="date" required>
+                            <input type="text" class="form-control" id="delito" name="delito" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="observations" class="col-sm-3 control-label">Fechas Hechos:</label>
+                        <label for="fecha" class="col-sm-3 control-label">Fechas Hechos:</label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" id="observations" name="observations" required>
+                            <input type="date" class="form-control" id="fecha" name="fecha" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Amplición Hechos:</label>
+                        <label for="ampliacionHechos" class="col-sm-3 control-label">Amplición Hechos:</label>
                         <div class="col-sm-9">
-                        <input type="textarea" class="form-control" id="corrective" name="corrective" required>
+                        <input type="textarea" class="form-control" id="ampliacionHechos" name="ampliacionHechos" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -55,47 +55,47 @@
     </div>
 </div>
 
-<div class="modal fade" id="edit">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title"><b>Actualizar Datos Académicos</b></h4>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="spoa_edit.php">
-        <input type="hidden" class="empid" name="id"> 
+                  <div class="modal fade" id="edit">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <h4 class="modal-title"><b>Actualizar Datos spoa</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal" method="POST" action="spoa_edit.php">
+                          <input type="hidden" class="empid" name="id"> 
 
-        <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Nr. Noticia:</label>
+                          <div class="form-group">
+                        <label for="noticia" class="col-sm-3 control-label">Nr. Noticia:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description" required>
+                            <input type="text" class="form-control" id="edit_noticia" name="noticia" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Calidad:</label>
+                        <label for="calidad" class="col-sm-3 control-label">Calidad:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="corrective" name="corrective" required>
+                            <input type="text" class="form-control" id="edit_calidad" name="calidad" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Delito:</label>
+                        <label for="delito" class="col-sm-3 control-label">Delito:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="date" name="date" required>
+                            <input type="text" class="form-control" id="edit_delito" name="delito" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="observations" class="col-sm-3 control-label">Fechas Hechos:</label>
+                        <label for="fecha" class="col-sm-3 control-label">Fechas Hechos:</label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" id="observations" name="observations" required>
+                            <input type="date" class="form-control" id="edit_fecha" name="fecha" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Amplición Hechos:</label>
+                        <label for="ampliacionHechos" class="col-sm-3 control-label">Amplición Hechos:</label>
                         <div class="col-sm-9">
-                        <input type="textarea" class="form-control" id="corrective" name="corrective" required>
+                        <input type="textarea" class="form-control" id="edit_echos" name="ampliacionHechos" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -134,7 +134,7 @@
           <input type="hidden" class="empid" name="id">
           <div class="text-center">
             <!-- Confirmation message -->
-            <h3> ? Estas seguro de Eliminar ¿ </h3>
+            <h3> ¿ Estas seguro de Eliminar ? </h3>
           </div>
       </div>
       <div class="modal-footer">

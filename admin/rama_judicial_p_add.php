@@ -4,24 +4,26 @@ include 'includes/session.php';
 if(isset($_POST['add'])){
     $numeroProceso = $_POST['numeroProceso'];
     $fechaRadicacion = $_POST['fechaRadicacion'];
-    $resultado = $_POST['resultado'];
     $tipoProceso = $_POST['tipoProceso'];
-    $clase= $_POST['clase'];
-    $fechaProvidencia = $_POST['Providencia'];
-    $filename = $_FILES['documento']['name'];
+    $clase = $_POST['clase'];
+    $estatus = $_POST['estatus'];
+    $filename = $_FILES['pdf']['name'];
 
     // Assuming you have a valid database connection in $conn
     include '../conn.php';
 
     // Prepare the SQL statement using prepared statements
-    $stmt = $conn->prepare("INSERT INTO procuraduria (Certificado, hora, resultado, siri, sancion, Providencia, documento) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO ramajudicialprocesos (numeroProceso, fechaRadicacion, tipoProceso, clase, estatus, pdf) VALUES (?, ?, ?, ?, ?, ?)");
 
-    // Bind the parameters to avoid SQL injection
-    $stmt->bind_param("sssssss", $Certificado, $hora, $resultado, $siri, $sancion, $Providencia, $filename);
+    if (!$stmt) {
+        die('Error in SQL query: ' . $conn->error);
+    }
+    
+    $stmt->bind_param("ssssss", $numeroProceso, $fechaRadicacion, $tipoProceso, $clase, $estatus, $filename);
 
     if (!empty($filename)) {
         // Move the uploaded file to the desired location
-        move_uploaded_file($_FILES['documento']['tmp_name'], '../archive/' . $filename);
+        move_uploaded_file($_FILES['pdf']['tmp_name'], '../archive/' . $filename);
     }
 
     if($stmt->execute()){
@@ -36,5 +38,5 @@ if(isset($_POST['add'])){
     $_SESSION['error'] = 'Completa el formulario';
 }
 
-header('location: procuraduria.php');
+header('location: rama_judicial_p.php');
 ?>

@@ -114,7 +114,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    //getRow(id);
+    getRow(id);
   });
 
   
@@ -141,8 +141,6 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.emp').html(response.employee_id); 
       $('#edit_documento').val(response.numero_documento); 
       $('#edit_expedicion').val(response.fecha_expedicion);
       $('#edit_primer').val(response.primer_nombre);
