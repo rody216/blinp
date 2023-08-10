@@ -178,7 +178,7 @@
                 <div class="form-group">
                     <label for="departamento" class="col-sm-3 control-label">Departamento</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="pais" id="pais" required>
+                    <select class="form-control" name="departamento" id="departamento" required>
                         <option value="" selected>- Seleccionar -</option>
                         <?php
                           $sql = "SELECT * FROM departamentos";
@@ -196,7 +196,7 @@
                 <div class="form-group">
                     <label for="ciudad" class="col-sm-3 control-label">Ciudad</label>
                     <div class="col-sm-9">
-                    <select class="form-control" name="pais" id="pais" required>
+                    <select class="form-control" name="ciudad" id="ciudad" required>
                         <option value="" selected>- Seleccionar -</option>
                         <?php
                           $sql = "SELECT * FROM municipios";
