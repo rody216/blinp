@@ -11,6 +11,61 @@
             	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
 
                 <div class="form-group">
+<<<<<<< HEAD
+  <label for="tipo_documento" class="col-sm-3 control-label">Tipo Documento</label>
+  <div class="col-sm-9">
+    <select class="form-control" name="tipo_documento" id="tipo_documento" required>
+      <option value="" selected>Seleccionar</option>
+      <option value="registro">Registro Civil</option>
+      <option value="cedula">Cédula</option>
+      <option value="pasaporte">Pasaporte</option>
+      <option value="extrangeria">Cédula de Extranjería</option>
+      <option value="especial">Permiso Especial de Permanencia (PEP)</option> 
+      <option value="personal">Permiso por Protección Temporal (PPT)</option>                       
+    </select>
+  </div>
+</div>
+
+<div class="form-group" id="registro_field">
+  <label for="numero_documento" class="col-sm-3 control-label">Número ID</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control" id="numero_documento" name="numero_documento">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="fecha_expedicion" class="col-sm-3 control-label">Fecha de Expedición</label>
+  <div class="col-sm-9">
+    <input type="date" class="form-control" id="fecha_expedicion" name="fecha_expedicion" required>
+  </div>
+</div>
+
+<script>
+  // Obtener el campo de selección y los campos de entrada adicionales por su ID
+  const tipoDocumentoSelect = document.getElementById('tipo_documento');
+  const registroField = document.getElementById('registro_field');
+  const cedulaField = document.getElementById('cedula_field');
+  const pasaporteField = document.getElementById('pasaporte_field');
+  const cedulaExtranjeriaField = document.getElementById('cedula_extranjeria_field');
+  const pepField = document.getElementById('pep_field');
+  const pptField = document.getElementById('ppt_field');
+
+  // Agregar un evento de cambio al campo de selección
+  tipoDocumentoSelect.addEventListener('change', function() {
+    // Obtener el valor seleccionado
+    const seleccion = tipoDocumentoSelect.value;
+
+    // Mostrar u ocultar los campos de entrada adicionales según la selección del campo de valor
+
+    registroField.style.display = seleccion === 'registro' ? 'block' : 'none';
+    cedulaField.style.display = seleccion === 'cedula' ? 'block' : 'none';
+    pasaporteField.style.display = seleccion === 'pasaporte' ? 'block' : 'none';
+    cedulaExtranjeriaField.style.display = seleccion === 'extrangeria' ? 'block' : 'none';
+    pepField.style.display = seleccion === 'especial' ? 'block' : 'none';
+    pptField.style.display = seleccion === 'personal' ? 'block' : 'none';
+  });
+</script>
+=======
                 <label for="tipo_documento" class="col-sm-3 control-label">Tipo Documento</label>
                 <div class="col-sm-9">
                   <select class="form-control" name="tipo_documento" id="tipo_documento" required>
@@ -49,6 +104,7 @@
                 }
               });
              </script>
+>>>>>>> 1a59e523ed4d97c3937b7f83d7a5592b02f3f725
 
                 <div class="form-group">
                 <label for="fecha_expedicion" class="col-sm-3 control-label">Fecha de Expedición</label>

@@ -55,6 +55,20 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+<div class="modal fade" id="edit">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title"><b>Actualizar Datos</b></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="POST" action="spoa_edit.php">
+        <input type="hidden" class="empid" name="id"> 
+=======
                   <div class="modal fade" id="edit">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -67,6 +81,7 @@
                         <div class="modal-body">
                           <form class="form-horizontal" method="POST" action="spoa_edit.php">
                           <input type="hidden" class="empid" name="id"> 
+>>>>>>> 1a59e523ed4d97c3937b7f83d7a5592b02f3f725
 
                           <div class="form-group">
                         <label for="noticia" class="col-sm-3 control-label">Nr. Noticia:</label>
@@ -134,7 +149,11 @@
           <input type="hidden" class="empid" name="id">
           <div class="text-center">
             <!-- Confirmation message -->
+<<<<<<< HEAD
+            <h3>¿Estas seguro de Eliminar? </h3>
+=======
             <h3> ¿ Estas seguro de Eliminar ? </h3>
+>>>>>>> 1a59e523ed4d97c3937b7f83d7a5592b02f3f725
           </div>
       </div>
       <div class="modal-footer">
