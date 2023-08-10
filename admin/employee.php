@@ -49,6 +49,7 @@
           <div class="box">
             <div class="box-header with-border">
                <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar Datos</a>
+               <a href="./views/reporte_personal.php" data-toggle="modal" class="btn btn-success btn-sm btn-flat"><i class="fa fa-plus"></i> Imprimir Datos</a>
             </div>           
             <div class="box-body">
               
