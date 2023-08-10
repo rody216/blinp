@@ -14,7 +14,7 @@
   	<div class="login-box-body">
 		 <!-- colocar una imagen -->
 	<?php
-    echo '<img src="../images/icon.png" class="imagen">';
+    echo '<img src="../images/fondo_blin.png" class="imagen">';
     ?>
 	  
     	<p class="login-box-msg">Ingresa para iniciar tu sesión</p>

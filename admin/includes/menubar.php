@@ -45,6 +45,10 @@
          </ul>
         </li>
         <li><a href="index.buscar.php"><i class="fa fa-search" aria-hidden="true"></i>Busqueda Personalizada</a></li>
+
+        <?php
+       echo '<img src="../images/fondo_blin.png" class="imagen-logo">';
+       ?>
         <!--
         <li><a href="usuarios.php"><i class="fa fa-search" aria-hidden="true"></i><span>Admistración de Usuarios</span></a></li>
         

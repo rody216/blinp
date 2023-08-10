@@ -18,8 +18,8 @@
             <span class="close">&times;</span>
             <form id="searchForm" method="GET">
               <h1>Bienvenido Consulta los datos completos</h1>
-              <input type="text" name="buscar_texto" placeholder="Busqueda por nombre">
-              <input type="submit" value="Buscar por nombre">
+              <input class="text-success" type="text" name="buscar_texto" placeholder="Busqueda por nombre">
+              <input class="text-success" type="submit" value="Buscar Personal">
             </form>
             <div id="results"></div>
           </div>

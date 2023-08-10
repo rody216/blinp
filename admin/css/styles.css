@@ -191,7 +191,6 @@ border: none;
 }
 
 
-
 .close {
     color: #aaa;
     float: right;
@@ -225,5 +224,14 @@ border: none;
 
 .breadcrumb>.active {
     color: #00a65a;
+}
+
+.imagen-logo{
+
+    width: 280px;
+    height: 150px;
+    margin-top: 10%;
+    margin-left: -23%;
+
 }
 
