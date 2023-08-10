@@ -267,6 +267,24 @@ INSERT INTO `delitos` (`delito_id`, `delito_nombre`) VALUES
 
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `paises`;
+CREATE TABLE IF NOT EXISTS `paises` (
+  `id` int NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `paises`
+--
+
+INSERT INTO `paises` (`id`, `nombre`) VALUES
+(1, 'Colombia'),
+(2, 'Ecuador'),
+(3, 'Venezuela');
+
+-- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `departamentos`
 --
