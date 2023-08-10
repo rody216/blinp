@@ -9,7 +9,9 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
+
                 <div class="form-group">
+<<<<<<< HEAD
   <label for="tipo_documento" class="col-sm-3 control-label">Tipo Documento</label>
   <div class="col-sm-9">
     <select class="form-control" name="tipo_documento" id="tipo_documento" required>
@@ -63,7 +65,53 @@
     pptField.style.display = seleccion === 'personal' ? 'block' : 'none';
   });
 </script>
+=======
+                <label for="tipo_documento" class="col-sm-3 control-label">Tipo Documento</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="tipo_documento" id="tipo_documento" required>
+                    <option value="" selected>Seleccionar</option>
+                    <option value="registro">Registro Civil</option>
+                    <option value="cedula">Cedula</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="extrangeria">Cédula de Extranjería</option>
+                    <option value="especial">Permiso Especial de Permanencia (PEP)</option> 
+                    <option value="personal">Permiso por Protección Temporar (PPT)</option>                       
+                  </select>
+                </div>
+              </div>
 
+           
+
+              <div class="form-group" id="cedula_field" style="display: none;">
+              <label for="numero_documento" class="col-sm-3 control-label">Cédula</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="numero_documento" name="numero_documento" oninput="this.value = this.value.toUpperCase()" pattern="[A-Za-z0-9]+">
+              </div>
+            </div>
+
+             
+              <script>
+              const tipoDocumentoSelect = document.getElementById('tipo_documento');
+              const cedulaField = document.getElementById('cedula_field');
+
+              tipoDocumentoSelect.addEventListener('change', function() {
+                const seleccion = tipoDocumentoSelect.value;
+
+                if (seleccion === 'cedula') {
+                  cedulaField.style.display = 'block';
+                } else {
+                  cedulaField.style.display = 'none';
+                }
+              });
+             </script>
+>>>>>>> 1a59e523ed4d97c3937b7f83d7a5592b02f3f725
+
+                <div class="form-group">
+                <label for="fecha_expedicion" class="col-sm-3 control-label">Fecha de Expedición</label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" id="fecha_expedicion" name="fecha_expedicion" required>
+                </div>
+              </div>
 
 
           		  <div class="form-group">
@@ -242,6 +290,7 @@
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="employee_edit.php">
             		<input type="hidden" class="empid" name="id">
+                
                 <div class="form-group">
                   	<label for="edit_documento" class="col-sm-3 control-label">Tipo Documento</label>
                   	<div class="col-sm-9">
@@ -256,6 +305,29 @@
                       </select>
                   	</div>
                 </div>
+
+                <div class="form-group" id="cedula_field" style="display: none;">
+              <label for="numero_documento" class="col-sm-3 control-label">Cédula</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="tipo_documento" name="numero_documento" oninput="this.value = this.value.toUpperCase()" pattern="[A-Za-z0-9]+">
+              </div>
+            </div>
+
+             
+              <script>
+              const tipoDocumentoSelect = document.getElementById('tipo_documento');
+              const cedulaField = document.getElementById('cedula_field');
+
+              tipoDocumentoSelect.addEventListener('change', function() {
+                const seleccion = tipoDocumentoSelect.value;
+
+                if (seleccion === 'cedula') {
+                  cedulaField.style.display = 'block';
+                } else {
+                  cedulaField.style.display = 'none';
+                }
+              });
+             </script>
 
                 <div class="form-group">
                   	<label for="edit_expedicion" class="col-sm-3 control-label">Fechas Expedicción</label>

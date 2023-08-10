@@ -12,19 +12,19 @@
               <div class="form-group">
                   	<label for="edit_id" class="col-sm-3 control-label">Id Personal</label>
                   	<div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_id" name="personas_id" required>
+                      <input type="text" class="form-control" id="personas_id" name="personas_id" required>
                   	</div>
                 </div>
 				<div class="form-group">
-                  	<label for="edit_fecha" class="col-sm-3 control-label">Fecha del delito</label>
+                  	<label for="fecha" class="col-sm-3 control-label">Fecha del delito</label>
                   	<div class="col-sm-9">
-                      <input type="date" class="form-control" id="edit_fecha" name="fecha" required>
+                      <input type="date" class="form-control" id="fecha" name="fecha" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  <label for="edit_hora" class="col-sm-3 control-label">Hora</label>
+                  <label for="hora" class="col-sm-3 control-label">Hora</label>
                   <div class="col-sm-9">
-                    <input type="time" class="form-control" id="edit_hora" name="hora" required>
+                    <input type="time" class="form-control" id="hora" name="hora" required>
                   </div>
                 </div>
 
@@ -39,7 +39,7 @@
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_fechaActualizacion" class="col-sm-3 control-label">Fechas de Actualización</label>
+                  	<label for="fechaActualizacion" class="col-sm-3 control-label">Fechas de Actualización</label>
                   	<div class="col-sm-9">
                       <input type="date" class="form-control" id="edit_fechaActualizacion" name="fechaActualizacion" required>
                   	</div>
@@ -80,20 +80,20 @@
                       <input type="text" class="form-control" id="edit_id" name="personas_id" required>
                   	</div>
                 </div>
-        <div class="form-group">
-                  	<label for="edit_fecha" class="col-sm-3 control-label">Fechas</label>
+                   <div class="form-group">
+                  	<label for="fecha" class="col-sm-3 control-label">Fechas</label>
                   	<div class="col-sm-9">
                       <input type="date" class="form-control" id="edit_fecha" name="fecha" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_hora" class="col-sm-3 control-label">Hora</label>
+                  	<label for="hora" class="col-sm-3 control-label">Hora</label>
                   	<div class="col-sm-9">
                     	<input type="time" class="form-control" id="edit_hora" name="hora" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_resultado" class="col-sm-3 control-label">Resultado</label>
+                  	<label for="resultado" class="col-sm-3 control-label">Resultado</label>
                   	<div class="col-sm-9">
                     <select class="form-control" name="resultado" id="edit_resultado">
                         <option value="" selected> Seleccionar </option>
@@ -103,7 +103,7 @@
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="edit_fechaActualizacion" class="col-sm-3 control-label">Fechas de Actualización</label>
+                  	<label for="fechaActualizacion" class="col-sm-3 control-label">Fechas de Actualización</label>
                   	<div class="col-sm-9">
                       <input type="date" class="form-control" id="edit_fechaActualizacion" name="fechaActualizacion" required>
                   	</div>

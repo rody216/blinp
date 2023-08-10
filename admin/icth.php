@@ -103,7 +103,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    //getRow(id);
+    getRow(id);
   });
 
   $('.delete').click(function(e){

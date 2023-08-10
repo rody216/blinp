@@ -1,39 +1,29 @@
 <?php
 include 'includes/session.php';
 
-if(isset($_POST['edit'])){
-    $certificado = $_POST['certificado'];
-    $hora = $_POST['hora'];
-    $resultado = $_POST['resultado'];
-    $siri = $_POST['siri'];
-    $sancion = $_POST['sancion'];
-    $providencia = $_POST['providencia'];
-    $filename = $_FILES['documento']['name'];
+if (isset($_POST['edit'])) {
+    $id = $_POST['id'];
+    $noticia = $_POST['noticia'];   
+    $calidad = $_POST['calidad']; // Corregir aquí
+    $delito = $_POST['delito'];    
+    $fechaHechos = $_POST['fechaHechos'];
+    $ampliacionHechos = $_POST['ampliacionHechos'];
+    $documento = $_POST['documento'];
+    // Use prepared statement to update the record
+    $stmt = $conn->prepare("UPDATE spoa SET noticia = ?, calidad = ?, delito = ?, fechaHechos = ?, ampliacionHechos = ?, documento = ? WHERE id = ?");
+    $stmt->bind_param("ssssssi", $noticia, $calidad, $delito, $fechaHechos, $ampliacionHechos, $documento, $id);
+    
 
-    // Assuming you have a valid database connection in $conn
-    include '../conn.php';
-
-    // Prepare the SQL statement using prepared statements
-    $stmt = $conn->prepare("INSERT INTO spoa (certificado, hora, resultado, siri, sancion, providencia, documento) VALUES (?, ?, ?, ?, ?, ?, ?)");
-
-    // Bind the parameters to avoid SQL injection
-    $stmt->bind_param("sssssss", $certificado, $hora, $resultado, $siri, $sancion, $providencia, $filename);
-
-    if (!empty($filename)) {
-        // Move the uploaded file to the desired location
-        move_uploaded_file($_FILES['documento']['tmp_name'], '../archive/' . $filename);
+    if ($stmt->execute()) {
+        $_SESSION['success'] = 'Información spoa actualizada con éxito';
+    } else {
+        $_SESSION['error'] = 'Error al actualizar la información spoa: ' . $stmt->error;
     }
 
-    if($stmt->execute()){
-        $_SESSION['success'] = 'Datos añadidos satisfactoriamente';
-    } else{
-        $_SESSION['error'] = 'Error al insertar los datos: ' . $stmt->error;
-    }
-
+    // Close the prepared statement
     $stmt->close();
-    $conn->close();
-} else{
-    $_SESSION['error'] = 'Completa el formulario';
+} else {
+    $_SESSION['error'] = 'Seleccione la formación para editar primero';
 }
 
 header('location: spoa.php');

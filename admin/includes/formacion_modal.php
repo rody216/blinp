@@ -103,7 +103,7 @@
           <div class="form-group">
          <label for="degree_obtained" class="col-sm-3 control-label">Título Obtenido</label>
          <div class="col-sm-9">    
-           <input type="text" class="form-control" id="degree_obtained" name="titulo" required>
+           <input type="text" class="form-control" id="edit_titulo" name="titulo" required>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
           <input type="hidden" class="empid" name="id">
           <div class="text-center">
             <!-- Confirmation message -->
-            <h3> ? Estas seguro de Eliminar ¿ </h3>
+            <h3> ¿Estas seguro de Eliminar? </h3>
           </div>
       </div>
       <div class="modal-footer">

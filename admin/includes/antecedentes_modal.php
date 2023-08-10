@@ -116,9 +116,9 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="antecedentes_delete.php">
-            		<input type="hidden" class="decid" name="id">
+            		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar el antecedente ¿</p>
+	                	<p>¿Estas seguro de Eliminar el antecedente?</p>
 	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
           	</div>

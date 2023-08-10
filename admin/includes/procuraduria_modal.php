@@ -60,12 +60,7 @@
                     <input type="file" class="form-control" id="documento" name="documento">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="fechaActualizacion" class="col-sm-3 control-label">Actualización</label>
-                    <div class="col-sm-9">
-                      <input type="datetime-local" name="fechaActualizacion" id="fechaActualizacion">
-                    </div>
-                </div>
+                
             </div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
@@ -92,59 +87,54 @@
                     <div class="form-group">
                   	<label for="certificado" class="col-sm-3 control-label">Numero del Certifiado</label>
                   	<div class="col-sm-9">
-                    	<input type="number" class="form-control" id="certificado" name="certificado" required>
+                    	<input type="number" class="form-control" id="edit_certificado" name="certificado" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="fecha" class="col-sm-3 control-label">Fecha</label>
                   	<div class="col-sm-9">
-                    	<input type="date" class="form-control" id="fecha" name="fecha" required>
+                    	<input type="date" class="form-control" id="edit_fecha" name="fecha" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="hora" class="col-sm-3 control-label">Hora</label>
                   	<div class="col-sm-9">
-                      <input type="time" class="form-control" id="hora" name="hora" required>
+                      <input type="time" class="form-control" id="edit_hora" name="hora" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="resultado" class="col-sm-3 control-label">Resultado</label>
                   	<div class="col-sm-9"> 
-                        <input type="text" class="form-control" id="resultado" name="resultado">
+                        <input type="text" class="form-control" id="edit_resultado" name="resultado">
                       </div>
                   	</div>
                 
                 <div class="form-group">
                     <label for="siri" class="col-sm-3 control-label">Siri</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="siri" name="siri">
+                      <input type="text" class="form-control" id="edit_siri" name="siri">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="sancion" class="col-sm-3 control-label">Sanción</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="sancion" name="sancion">
+                    <input type="text" class="form-control" id="edit_sancion" name="sancion">
                  </div>
                 </div>
                 <div class="form-group">
                     <label for="providencia" class="col-sm-3 control-label">Providencia</label>
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="providencia" name="providencia">
+                    <input type="text" class="form-control" id="edit_providencia" name="providencia">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="documento" class="col-sm-3 control-label">Pdf</label>
                     <div class="col-sm-9">
-                    <input type="file" class="form-control" id="documento" name="documento">
+                    <input type="file" class="form-control" id="edit_documento" name="documento">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="fechaActualizacion" class="col-sm-3 control-label">Actualización</label>
-                    <div class="col-sm-9">
-                      <input type="datetime-local" name="fechaActualizacion" id="fechaActualizacion">
-                    </div>
-                </div>
+               
             </div>          	
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>

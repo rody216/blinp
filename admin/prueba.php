@@ -1,66 +1,65 @@
 <!-- Add -->
-<div class="modal fade" id="spoa">
+<div class="modal fade" id="judicial">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title"><b>Antecedentes Spoa</b></h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="spoa_add.php">
-                    <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Id Persona:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description" required>
-                        </div>
+          	<div class="modal-header">
+            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              		<span aria-hidden="true">&times;</span></button>
+            	<h4 class="modal-title"><b>Rama Judicial Procesos</b></h4>
+          	</div>
+          	<div class="modal-body">
+            	<form class="form-horizontal" method="POST" action="rama_judicial_p_add.php" enctype="multipart/form-data">
+          		  <div class="form-group">
+                  	<label for="numeroProceso" class="col-sm-3 control-label">Número de Procesos</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="numeroProceso" name="numeroProceso" required>
+                  	</div>
+                </div>
+
+                <div class="form-group">
+                  	<label for="fechaRadicacion" class="col-sm-3 control-label">Fecha</label>
+                  	<div class="col-sm-9">
+                    	<input type="date" class="form-control" id="fechaRadicacion" name="fechaRadicacion" required>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="tipoProceso" class="col-sm-3 control-label">Tipo de proceso</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="tipoProceso" name="tipoProceso" required>
+                  	</div>
+                </div>		
+                
+				<div class="form-group">
+                  	<label for="clase" class="col-sm-3 control-label">Clase</label>
+                  	<div class="col-sm-9">
+                    <select class="form-control" name="clase" id="clase" required>
+                       <option value="" selected> Seleccionar </option>
+					   <option value="Demandado">Demandado</option>
+                        <option value="Demandante">Demandante</option>   
+                    </select>
+                  	</div>
+                </div>
+
+                <div class="form-group">
+                  	<label for="estatus" class="col-sm-3 control-label">Estatus</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="estatus" name="estatus" required>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                    <label for="pdf" class="col-sm-3 control-label">Archivo</label>
+                    <div class="col-sm-9">
+                    <input type="file" class="form-control" id="pdf" name="pdf">
                     </div>
-                    <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Nr. Noticia:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Calidad:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="corrective" name="corrective" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Delito:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="date" name="date" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="observations" class="col-sm-3 control-label">Fechas Hechos:</label>
-                        <div class="col-sm-9">
-                            <input type="date" class="form-control" id="observations" name="observations" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="corrective" class="col-sm-3 control-label">Amplición Hechos:</label>
-                        <div class="col-sm-9">
-                        <input type="textarea" class="form-control" id="corrective" name="corrective" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="documento" class="col-sm-3 control-label">Subir Documento</label>
-                        <div class="col-sm-9">
-                            <input type="file" name="documento" id="documento">
-                        </div>
-                    </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
-                    <i class="fa fa-close"></i> Cerrar
-                </button>
-                <button type="submit" class="btn btn-primary btn-flat" name="add">
-                    <i class="fa fa-save"></i> Guardar
-                </button>
-                </form>
-            </div>
+                </div>
+          	
+          	<div class="modal-footer">
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
+            	</form>
+          	</div>
         </div>
     </div>
 </div>
@@ -72,41 +71,58 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Actualizar  Antecedentes Espoa</b></h4>
+            	<h4 class="modal-title"><b><span class="employee_id"></span></b> Editar Procesos</h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="spoa_edit.php">
-            		<input type="hidden" class="decid" name="id">
-                <div class="form-group">
-                    <label for="edit_description" class="col-sm-3 control-label">Noticias</label>
+            	<form class="form-horizontal" method="POST" action="rama_judicial_edit.php">
+            		<input type="hidden" class="empid" name="id">
+                    <div class="form-group">
+                  	<label for="numeroProceso" class="col-sm-3 control-label">Número de Procesos</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="numeroProceso" name="numeroProceso" required>
+                  	</div>
+                </div>
 
+                <div class="form-group">
+                  	<label for="fechaRadicacion" class="col-sm-3 control-label">Fecha</label>
+                  	<div class="col-sm-9">
+                    	<input type="date" class="form-control" id="fechaRadicacion" name="fechaRadicacion" required>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                  	<label for="tipoProceso" class="col-sm-3 control-label">Tipo de proceso</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="tipoProceso" name="tipoProceso" required>
+                  	</div>
+                </div>		
+                
+				<div class="form-group">
+                  	<label for="clase" class="col-sm-3 control-label">Clase</label>
+                  	<div class="col-sm-9">
+                    <select class="form-control" name="clase" id="clase" required>
+                       <option value="" selected> Seleccionar </option>
+					   <option value="Demandado">Demandado</option>
+                        <option value="Demandante">Demandante</option>   
+                    </select>
+                  	</div>
+                </div>
+
+                <div class="form-group">
+                  	<label for="estatus" class="col-sm-3 control-label">Estatus</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="estatus" name="estatus" required>
+                  	</div>
+                </div>
+
+				<div class="form-group">
+                    <label for="pdf" class="col-sm-3 control-label">Archivo</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_description" name="description">
+                    <input type="file" class="form-control" id="pdf" name="pdf">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Calidad</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_amount" name="amount">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Delito</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_amount" name="amount">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_amount" class="col-sm-3 control-label">Fechas Hechos</label>
-
-                    <div class="col-sm-9">
-                      <input type="date" class="form-control" id="edit_amount" name="amount">
-                    </div>
-                </div>
-          	</div>
-          	<div class="modal-footer">
+          	      
+                <div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
             	</form>
@@ -122,15 +138,17 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
+            	<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="spoa_delet.php">
-            		<input type="hidden" class="decid" name="id">
+            	<form class="form-horizontal" method="POST" action="employee_delete.php">
+            		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>?Estas seguro de Eliminar Spoa¿</p>
-	                	<h2 id="del_deduction" class="bold"></h2>
+	                	<p>? Estas seguro de Eliminar ¿</p>
+	                	<h2 class="bold del_employee_name"></h2>
 	            	</div>
-          	</div>
+          	    </div>
+              </div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Eliminar</button>
@@ -140,5 +158,31 @@
     </div>
 </div>
 
+<!-- Update Photo -->
+<div class="modal fade" id="edit_photo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"><b><span class="del_employee_name"></span></b></h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal" method="POST" action="employee_edit_photo.php" enctype="multipart/form-data">
+                <input type="hidden" class="empid" name="id">
+                <div class="form-group">
+                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
-     
+                    <div class="col-sm-9">
+                      <input type="file" id="photo" name="photo" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>    

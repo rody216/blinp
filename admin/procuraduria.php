@@ -109,7 +109,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    
+    getRow(id)
   });
 
 
@@ -135,13 +135,15 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){     
-      $('#edit_certificado').html(response.certificado);
+      $('#edit_certificado').val(response.certificado);
       $('#edit_resultado').val(response.resultado);
+      $('#edit_fecha').val(response.fecha);
+      $('#edit_hora').val(response.hora); 
       $('#edit_sancion').val(response.sancion);
       $('#edit_siri').val(response.siri);
       $('#edit_providencia').val(response.providencia);
       $('#edit_documento').val(response.documento);
-      $('#edit_hora').val(response.hora);      
+           
     }
   });
 }

@@ -71,8 +71,7 @@
                             <td><?php echo $row['noticia']; ?></td>
                             <td><?php echo $row['calidad']; ?></td>
                             <td><?php echo $row['delito']; ?></td>                            
-                            <td><?php echo $row['fechaActualizacion']; ?></td>
-                            <td><?php echo $row['personas_id']; ?></td>
+                            <td><?php echo $row['fechaHechos']; ?></td>
                             <td>
                                 <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
                                 <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
@@ -104,7 +103,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    //getRow(id);
+    getRow(id);
   });
 
  $('.delete').click(function(e){
@@ -126,6 +125,8 @@ function getRow(id){
       $('#edit_noticia').val(response.noticia);
       $('#edit_calidad').val(response.calidad);
       $('#edit_delito').val(response.delito);
+      $('#edit_fecha').val(response.fecha);
+      $('#edit_echos').val(response.ampliacionHechos);
 
     }
   });

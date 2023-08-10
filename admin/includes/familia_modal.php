@@ -57,39 +57,39 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>
+            	<h4 class="modal-title"><b><span class="employee_id"></span>Actualizar datos Famillares</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="employee_edit.php">
+            	<form class="form-horizontal" method="POST" action="familia_edit.php">
             		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
                   	<label for="conyugue" class="col-sm-3 control-label">Conyugue</label>
                   	<div class="col-sm-9">
-                    	<input type="text" placeholder="Nombre del conyugue" class="form-control" id="conyugue" name="conyugue" required>
+                    	<input type="text" class="form-control" id="edit_conyugue" name="conyugue" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="hijo" class="col-sm-3 control-label">Hijo</label>
                   	<div class="col-sm-9">
-                    	<input type="text" placeholder="Nombre del hijo" class="form-control" id="hijo" name="hijo" required>
+                    	<input type="text" class="form-control" id="edit_hijo" name="hijo" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="padre" class="col-sm-3 control-label">Padre</label>
                   	<div class="col-sm-9">
-                    <input type="text" placeholder="Nombre del padre" class="form-control" id="padre" name="padre" required>
+                    <input type="text" class="form-control" id="edit_padre" name="padre" required>
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="madre" class="col-sm-3 control-label">Madre</label>
                   	<div class="col-sm-9"> 
-                        <input type="text" placeholder="Nombre de la madre" class="form-control" id="madre" name="madre">
+                        <input type="text" class="form-control" id="edit_madre" name="madre">
                       </div>
                 </div>
                 <div class="form-group">
                     <label for="hermano" class="col-sm-3 control-label">Hermano</label>
                     <div class="col-sm-9">
-                      <input type="text" placeholder="Nombre del hermano" class="form-control" id="hermano" name="hermano">
+                      <input type="text" class="form-control" id="edit_hermano" name="hermano">
                     </div>
                 </div>
                 
