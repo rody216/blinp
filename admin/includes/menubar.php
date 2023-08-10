@@ -41,12 +41,14 @@
             <li><a href="finanzas.php"><i class="fa fa-circle-o"></i>Datos Financieros</a></li>   
             <li><a href="segurida_social.php"><i class="fa fa-circle-o"></i>Datos Segurida Social</a></li>          
             <li><a href="icth.php"><i class="fa fa-circle-o"></i>Datos ICTH</a></li> 
-            <li><a href="index.buscar.php"><i class="fa fa-search" aria-hidden="true"></i>Busqueda Personalizada</a></li>
+           
          </ul>
         </li>
+        <li><a href="index.buscar.php"><i class="fa fa-search" aria-hidden="true"></i>Busqueda Personalizada</a></li>
+        <!--
         <li><a href="usuarios.php"><i class="fa fa-search" aria-hidden="true"></i><span>Admistración de Usuarios</span></a></li>
         
-         <!--
+         
         <li class="treeview">
           <a href="#">
             <i class="fa fa-balance-scale"></i>

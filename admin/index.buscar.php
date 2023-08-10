@@ -12,8 +12,6 @@
 
     <button class="abrir" id="openModalBtn">Consultar los datos personales</button>
     <button class="home" id="goHomeBtn">Volver al Inicio</button>
-    <a href="./reportes.php">Imprimir Pdf</a>
-
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
