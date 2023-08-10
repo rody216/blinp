@@ -48,6 +48,7 @@
           <div class="box">
             <div class="box-header with-border">
                <a href="#judicial" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="./views/reportes.php" data-toggle="modal" class="btn btn-success btn-sm btn-flat"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Imprimir pdf</a>
             </div>
             <div class="box-body">
              <!-- Tabla para mostrar los datos de la tabla disciplinarios -->

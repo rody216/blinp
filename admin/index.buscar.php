@@ -12,6 +12,7 @@
 
     <button class="abrir" id="openModalBtn">Consultar los datos personales</button>
     <button class="home" id="goHomeBtn">Volver al Inicio</button>
+    <a href="./reportes.php">Imprimir Pdf</a>
 
     <div id="myModal" class="modal">
       <div class="modal-content">
@@ -20,7 +21,7 @@
           <input type="text" name="buscar_texto" placeholder="Busqueda por nombre">
           <input type="submit" value="Buscar por nombre">
         </form>
-        <div id="results"></div>
+        <div id="results"></div>        
       </div>
     </div>
     
