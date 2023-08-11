@@ -75,7 +75,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title"><b>Actualizar Datos Académicos</b></h4>
+        <h4 class="modal-title"><b>Actualizar Rama Judicial Procesos</b></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="rama_judicial_edit.php">

@@ -58,7 +58,7 @@ border-radius: 5px;
 }
 
 .hora{
-    margin-left: 44.5%;  
+    margin-left: 43%;  
     color: #fff;
     margin-top: 5px; 
 }
@@ -231,7 +231,8 @@ border: none;
     width: 280px;
     height: 150px;
     margin-top: 10%;
-    margin-left: -23%;
+    margin: auto;
+    margin-left: -15%;
 
 }
 

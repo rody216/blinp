@@ -56,19 +56,18 @@
         <tr>
             <th>ID</th>
             <th>Expediente</th>
-            <th>Fecha Hechos</th>
+            <th>Fecha</th>
             <th>Departamento</th>
             <th>Ciudad</th>
             <th>Municipio</th>
-            <th>Articulo</th>          
-            <th>Personas ID</th>
+            <th>Articulo</th>        
             <th>Acción</th>
-                </tr>
+          </tr>
             </thead>
             <tbody>
                 <?php
                 // Suponiendo que ya tienes la conexión a la base de datos en $conn
-                $sql = "SELECT * FROM rnmcPonal";
+                $sql = "SELECT *, id AS empid FROM rnmcPonal";
                 $query = $conn->query($sql);
                 while ($row = $query->fetch_assoc()) {
                 ?>
@@ -79,12 +78,10 @@
                     <td><?php echo $row['departamento']; ?></td>
                     <td><?php echo $row['ciudad']; ?></td>
                     <td><?php echo $row['municipio']; ?></td>  
-                    <td><?php echo $row['articulo']; ?></td>                 
-                    <td><?php echo $row['fechaActualizacion']; ?></td>
-                    
+                    <td><?php echo $row['articulo']; ?></td>              
                     <td>
-                        <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['id']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                    <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                     </td>
                 </tr>
                 <?php
@@ -109,43 +106,33 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
+    $('.empid').val(id);
     getRow(id);
   });
 
-  $('.delete').click(function(e){
+ $('.delete').click(function(e){
     e.preventDefault();
+    var id = $(this).data('id');
     $('#delete').modal('show');
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
-  $('.photo').click(function(e){
-    e.preventDefault();
-    var id = $(this).data('id');
-    getRow(id);
-  });
-
+    $('.empid').val(id);
+ });
 });
+
+
 
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'employee_row.php',
+    url: 'rnmc_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('.empid').val(response.empid);
-      $('.employee_id').html(response.employee_id);
-      $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
-      $('#edit_firstname').val(response.firstname);
-      $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
-      $('#datepicker_edit').val(response.birthdate);
-      $('#edit_contact').val(response.contact_info);
-      $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
-      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_expediente').val(response.expediente);
+      $('#edit_fechaHechos').val(response.fechaHechos);
+      $('#edit_departamento').val(response.departamento);
+      $('#edit_ciudad').val(response.ciudad);
+      $('#edit_municipio').val(response.municipio);
+      $('#edit_articulo').val(response.articulo);
     }
   });
 }

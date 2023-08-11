@@ -462,7 +462,7 @@ INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `country`
 
 DROP TABLE IF EXISTS `eps`;
 CREATE TABLE IF NOT EXISTS `eps` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -485,7 +485,7 @@ INSERT INTO `eps` (`id`, `nombre`, `personas_id`) VALUES
 
 DROP TABLE IF EXISTS `fondopension`;
 CREATE TABLE IF NOT EXISTS `fondopension` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -508,7 +508,7 @@ INSERT INTO `fondopension` (`id`, `nombre`, `personas_id`) VALUES
 
 DROP TABLE IF EXISTS `foto`;
 CREATE TABLE IF NOT EXISTS `foto` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `foto` blob,
   `fechaFotografia` date DEFAULT NULL,
   `fechaActualizacion` timestamp NULL DEFAULT NULL,
@@ -524,7 +524,7 @@ CREATE TABLE IF NOT EXISTS `foto` (
 
 DROP TABLE IF EXISTS `gsanguineo`;
 CREATE TABLE IF NOT EXISTS `gsanguineo` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `grupo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `rh` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `personas_id` int DEFAULT NULL,
@@ -574,7 +574,7 @@ INSERT INTO `icth` (`id`, `tipo_Examen`, `fecha`, `archivo`, `personas_id`, `fec
 
 DROP TABLE IF EXISTS `juridicos`;
 CREATE TABLE IF NOT EXISTS `juridicos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `noticia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `calidad` date DEFAULT NULL,
   `delito` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -595,6 +595,26 @@ INSERT INTO `juridicos` (`id`, `noticia`, `calidad`, `delito`, `hechos`, `fecha`
 (3, 'Caso de Malversación', '2023-06-30', 'Malversación', 'Se acusó a un empleado de malversar fondos de la empresa.', '2023-06-30', NULL, 103);
 
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `ramaJudicialRadicacion`;
+CREATE TABLE `ramaJudicialRadicacion` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `numeroRadicacion` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+    `delitos` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+    `penaPrivativaAnos` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+    `penaPrivativaMeses` INT DEFAULT NULL,
+    `penaPrivativaDias` INT DEFAULT NULL,
+    `sitioreclusion` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+    `Ciudad` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+    `fecha` DATE DEFAULT NULL
+);
+
+
+INSERT INTO `ramaJudicialRadicacion` (`id`, `numeroRadicacion`, `delitos`, `penaPrivativaAnos`, `penaPrivativaMeses`, `penaPrivativaDias`, `sitioreclusion`, `Ciudad`, `fecha`)
+VALUES
+    (1, '2023-123', 'Robo a mano armada', '10', 6, 15, 'Cárcel Central', 'Ciudad A', '2023-08-10'),
+    (2, '2023-124', 'Homicidio', '20', 0, 0, 'Penitenciaría Norte', 'Ciudad B', '2023-08-11'),
+    (3, '2023-125', 'Estafa', '5', 2, 30, 'Cárcel Sur', 'Ciudad C', '2023-08-12');
+
 
 --
 -- Estructura de tabla para la tabla `mmpponal`
@@ -602,7 +622,7 @@ INSERT INTO `juridicos` (`id`, `noticia`, `calidad`, `delito`, `hechos`, `fecha`
 
 DROP TABLE IF EXISTS `mmpponal`;
 CREATE TABLE IF NOT EXISTS `mmpponal` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `fechaHechos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `lugarHechos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `articulo` int DEFAULT NULL,
@@ -633,7 +653,7 @@ INSERT INTO `mmpponal` (`id`, `fechaHechos`, `lugarHechos`, `articulo`, `numeral
 
 DROP TABLE IF EXISTS `municipios`;
 CREATE TABLE IF NOT EXISTS `municipios` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `departamentos_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)

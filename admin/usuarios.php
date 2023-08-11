@@ -54,11 +54,8 @@
                 <thead>
                   <th>ID</th>
                   <th>Usuario</th>
-                  <th>Contraseña</th>
                   <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Foto</th>               
-                  <th>Acción</th>
+                  <th>Apellido</th>              
                 </thead>
                 <tbody>
                 <?php
@@ -69,13 +66,12 @@
                   ?>
                     <tr>
                       <td><?php echo $row['id']; ?></td>
-                      <td><?php echo $row['username']; ?></td>
-                      <td><?php echo $row['password']; ?></td>
+                      <td><?php echo $row['username']; ?></td>                     
                       <td><?php echo $row['firstname']; ?></td>
                       <td><?php echo $row['lastname']; ?></td>
-                      <td><?php echo $row['photo']; ?></td>
+                      
                       <td>
-                      <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                      <!--<button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>-->
                       </td>
                     </tr>
                   <?php
@@ -102,7 +98,7 @@ $(function(){
     $('#edit').modal('show');
     var id = $(this).data('id');
     $('.empid').val(id);
-    //getRow(id);
+    getRow(id);
   });
 
 
