@@ -14,9 +14,9 @@
         Datos Financieros
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Familia</li>
-        <li class="active">Lista de Vehículos</li>
+        <li class="active">Lista Financiera</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -48,6 +48,7 @@
           <div class="box">
             <div class="box-header with-border">
                <a href="#finanzas" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+               <a href="./views/plantilla_factura.php" class="btn btn-success btn-sm btn-flat"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Imprimir Datos</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
