@@ -31,7 +31,8 @@
             <li><a href="familia.php"><i class="fa fa-circle-o"></i>Datos Familiares</a></li>
             <li><a href="formacion.php"><i class="fa fa-circle-o"></i>Académicos y Profesionales</a></li>
             <li><a href="antecedentes.php"><i class="fa fa-circle-o"></i>Datos Disciplinarios</a></li>
-            <li><a href="rama_judicial_p.php"><i class="fa fa-circle-o"></i>Datos Judiciales</a></li>
+            <li><a href="rama_judicial_p.php"><i class="fa fa-circle-o"></i>Rama Judicial Procesos</a></li>
+            <li><a href="judicial_radicacion.php"><i class="fa fa-circle-o"></i>Rama Judicial Radicación</a></li>
             <li><a href="ponal.php"><i class="fa fa-circle-o"></i>Antecedentes Ponal</a></li>
             <li><a href="spoa.php"><i class="fa fa-circle-o"></i>Datos Spoa</a></li>
             <li><a href="procuraduria.php"><i class="fa fa-circle-o"></i>Procuraduría</a></li>
@@ -74,7 +75,8 @@
             <option class="opcion">Antecedentes Publicos</option>
             <option class="val" value="ponal.php">Antecentes Ponal</option>
             <option class="val" value="procuraduria.php">Procuraduria</option>
-            <option class="val" value="rama_judicial_p.php">Rama Judial P</option>
+            <option class="val" value="
+            hp">Rama Judial P</option>
             <option class="val" value="judicial_radicacion.php">Rama Judial R</option>
             <option class="val" value="simit.php">Simit</option>
             <option class="val" value="contraloria.php">Contraloria</option>
