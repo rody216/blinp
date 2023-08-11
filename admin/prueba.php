@@ -1,65 +1,62 @@
 <!-- Add -->
-<div class="modal fade" id="judicial">
+<div class="modal fade" id="rnmc">
     <div class="modal-dialog">
         <div class="modal-content">
-          	<div class="modal-header">
-            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Rama Judicial Procesos</b></h4>
-          	</div>
-          	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="rama_judicial_p_add.php" enctype="multipart/form-data">
-          		  <div class="form-group">
-                  	<label for="numeroProceso" class="col-sm-3 control-label">Número de Procesos</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="numeroProceso" name="numeroProceso" required>
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="fechaRadicacion" class="col-sm-3 control-label">Fecha</label>
-                  	<div class="col-sm-9">
-                    	<input type="date" class="form-control" id="fechaRadicacion" name="fechaRadicacion" required>
-                  	</div>
-                </div>
-
-				<div class="form-group">
-                  	<label for="tipoProceso" class="col-sm-3 control-label">Tipo de proceso</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="tipoProceso" name="tipoProceso" required>
-                  	</div>
-                </div>		
-                
-				<div class="form-group">
-                  	<label for="clase" class="col-sm-3 control-label">Clase</label>
-                  	<div class="col-sm-9">
-                    <select class="form-control" name="clase" id="clase" required>
-                       <option value="" selected> Seleccionar </option>
-					   <option value="Demandado">Demandado</option>
-                        <option value="Demandante">Demandante</option>   
-                    </select>
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="estatus" class="col-sm-3 control-label">Estatus</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="estatus" name="estatus" required>
-                  	</div>
-                </div>
-
-				<div class="form-group">
-                    <label for="pdf" class="col-sm-3 control-label">Archivo</label>
-                    <div class="col-sm-9">
-                    <input type="file" class="form-control" id="pdf" name="pdf">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"><b>Agregar RNMC</b></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="rnmc_add.php">
+                    <div class="form-group">
+                        <label for="expediente" class="col-sm-3 control-label">Nr. Expediente</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="expediente" name="expediente" required>
+                        </div>
                     </div>
-                </div>
-          	
-          	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
-            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
-            	</form>
-          	</div>
+                    <div class="form-group">
+                        <label for="fechaHechos" class="col-sm-3 control-label">Fecha</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="fechaHechos" name="fechaHechos" required>
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="departamento" class="col-sm-3 control-label">Departamento</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="departamento" name="departamento" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad" class="col-sm-3 control-label">Ciudad</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="municipio" class="col-sm-3 control-label">Municipio</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="municipio" name="municipio" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="articulo" class="col-sm-3 control-label">Artículo:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="articulo" name="articulo" required>
+                        </div>
+                    </div>
+                                   
+                    
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
+                    <i class="fa fa-close"></i> Cerrar
+                </button>
+                <button type="submit" class="btn btn-primary btn-flat" name="add">
+                    <i class="fa fa-save"></i> Guardar
+                </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -71,58 +68,53 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span class="employee_id"></span></b> Editar Procesos</h4>
+            	<h4 class="modal-title"><b>Actualizar Rnmc</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="rama_judicial_edit.php">
+            	<form class="form-horizontal" method="POST" action="rnmc_edit.php">
             		<input type="hidden" class="empid" name="id">
-                    <div class="form-group">
-                  	<label for="numeroProceso" class="col-sm-3 control-label">Número de Procesos</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="numeroProceso" name="numeroProceso" required>
-                  	</div>
-                </div>
-
+                    
                 <div class="form-group">
-                  	<label for="fechaRadicacion" class="col-sm-3 control-label">Fecha</label>
-                  	<div class="col-sm-9">
-                    	<input type="date" class="form-control" id="fechaRadicacion" name="fechaRadicacion" required>
-                  	</div>
-                </div>
+                    <label for="expediente" class="col-sm-3 control-label">Expedientes</label>
 
-				<div class="form-group">
-                  	<label for="tipoProceso" class="col-sm-3 control-label">Tipo de proceso</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="tipoProceso" name="tipoProceso" required>
-                  	</div>
-                </div>		
-                
-				<div class="form-group">
-                  	<label for="clase" class="col-sm-3 control-label">Clase</label>
-                  	<div class="col-sm-9">
-                    <select class="form-control" name="clase" id="clase" required>
-                       <option value="" selected> Seleccionar </option>
-					   <option value="Demandado">Demandado</option>
-                        <option value="Demandante">Demandante</option>   
-                    </select>
-                  	</div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="estatus" class="col-sm-3 control-label">Estatus</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="estatus" name="estatus" required>
-                  	</div>
-                </div>
-
-				<div class="form-group">
-                    <label for="pdf" class="col-sm-3 control-label">Archivo</label>
                     <div class="col-sm-9">
-                    <input type="file" class="form-control" id="pdf" name="pdf">
+                      <input type="text" class="form-control" id="edit_expediente" name="expediente">
                     </div>
                 </div>
-          	      
-                <div class="modal-footer">
+                <div class="form-group">
+                    <label for="fechaHechos" class="col-sm-3 control-label">Fechas Hechos</label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="edit_fechaHechos" name="fechaHechos">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="departamento" class="col-sm-3 control-label">Departamentos</label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="edit_departamento" name="departamento">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad" class="col-sm-3 control-label">Ciudad</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_ciudad" name="ciudad">
+                    </div>
+                </div>
+          	
+              <div class="form-group">
+                    <label for="municipio" class="col-sm-3 control-label">Municipio</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_municipio" name="municipio">
+                    </div>
+                </div>
+          	
+              <div class="form-group">
+                    <label for="articulo" class="col-sm-3 control-label">Articulo</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_articulo" name="articulo">
+                    </div>
+                </div>
+          	
+          	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
             	</form>
@@ -137,18 +129,16 @@
         <div class="modal-content">
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b><span class="employee_id"></span></b></h4>
+              		<span aria-hidden="true">&times;</span></button>            	
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="employee_delete.php">
+            	<form class="form-horizontal" method="POST" action="deduction_delete.php">
             		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de Eliminar ¿</p>
-	                	<h2 class="bold del_employee_name"></h2>
+	                	<p>? Estas seguro de Eliminar</p>
+	                	<h2 id="del_deduction" class="bold"></h2>
 	            	</div>
-          	    </div>
-              </div>
+          	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Eliminar</button>
@@ -158,31 +148,5 @@
     </div>
 </div>
 
-<!-- Update Photo -->
-<div class="modal fade" id="edit_photo">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="del_employee_name"></span></b></h4>
-            </div>
-            <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="employee_edit_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="empid" name="id">
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo" required>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
-              </form>
-            </div>
-        </div>
-    </div>
-</div>    
+     
