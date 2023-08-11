@@ -2,12 +2,17 @@
     include 'includes/session.php';
 
     if (isset($_POST['edit'])) {
-        $empid = $_POST['id'];
-        $entidad = $_POST['entidad'];
-        $tipoProducto = $_POST['tipoProducto'];
-        $numeroProducto = $_POST['numeroProducto'];
+        $id = $_POST['id'];
+        $numeroRadicacion = $_POST['numeroRadicacion'];
+        $delitos = $_POST['delitos'];
+        $penaPrivativaAnos = $_POST['penaPrivativaAnos'];
+        $penaPrivativaMeses = $_POST['penaPrivativaMeses'];
+        $penaPrivativaDias = $_POST['penaPrivativaDias'];
+        $sitioreclusion = $_POST['sitioreclusion'];
+        $Ciudad = $_POST['Ciudad'];
+        $fecha = $_POST['fecha'];
     
-        $sql = "UPDATE ramaJudicialRadicacion  SET entidad = '$entidad', tipoProducto = '$tipoProducto', numeroProducto = '$numeroProducto' WHERE id = '$empid'";
+        $sql = "UPDATE ramaJudicialRadicacion  SET numeroRadicacion = '$numeroRadicacion', delitos = '$delitos', penaPrivativaAnos = '$penaPrivativaAnos', penaPrivativaMeses  = '$penaPrivativaMeses', penaPrivativaDias  = '$penaPrivativaDias', sitioreclusion  = '$sitioreclusion', Ciudad  = '$Ciudad', fecha  = '$fecha', WHERE id = '$id'";
         if ($conn->query($sql)) {
             $_SESSION['success'] = 'Información Judicial Radicacion actualizada con éxito';
         } else {
@@ -19,4 +24,3 @@
     }
 
     header('location: judicial_radicacion.php');
-?>

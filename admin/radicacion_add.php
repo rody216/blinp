@@ -2,24 +2,26 @@
 include 'includes/session.php';
 
 if(isset($_POST['add'])){
-    $numeroProceso = $_POST['numeroProceso'];
-    $fechaRadicacion = $_POST['fechaRadicacion'];
-    $tipoProceso = $_POST['tipoProceso'];
-    $clase = $_POST['clase'];
-    $estatus = $_POST['estatus'];
-    $filename = $_FILES['pdf']['name'];
+    $numeroRadicacion = $_POST['numeroRadicacion'];
+    $delitos = $_POST['delitos'];
+    $penaPrivativaAnos = $_POST['penaPrivativaAnos'];
+    $penaPrivativaMeses = $_POST['penaPrivativaMeses'];
+    $penaPrivativaDias = $_POST['penaPrivativaDias'];
+    $sitioreclusion = $_POST['sitioreclusion'];
+    $Ciudad = $_POST['Ciudad'];
+    $fecha = $_POST['fecha'];
 
     // Assuming you have a valid database connection in $conn
     include '../conn.php';
 
     // Prepare the SQL statement using prepared statements
-    $stmt = $conn->prepare("INSERT INTO ramaJudicialRadicacion (numeroProceso, fechaRadicacion, tipoProceso, clase, estatus, pdf) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO ramaJudicialRadicacion (numeroRadicacion, delitos, penaPrivativaAnos, penaPrivativaMeses, penaPrivativaDias, sitioreclusion, Ciudad. fecha) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
     if (!$stmt) {
         die('Error in SQL query: ' . $conn->error);
     }
     
-    $stmt->bind_param("ssssss", $numeroProceso, $fechaRadicacion, $tipoProceso, $clase, $estatus, $filename);
+    $stmt->bind_param("ssssssss",  $numeroRadicacion, $delitos, $penaPrivativaAnos, $penaPrivativaMeses, $penaPrivativaDia, $sitioreclusion, $Ciudad, $fecha);
 
     if (!empty($filename)) {
         // Move the uploaded file to the desired location
