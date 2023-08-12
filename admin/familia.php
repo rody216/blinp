@@ -52,12 +52,8 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>ID</th>
-                  <th>Conyugue</th>
-                  <th>Hijo</th>
-                  <th>Padre</th>
-                  <th>Madre</th>
-                  <th>Hermano</th>                  
+                  <th>ID</th>                  
+                  <th>Tipo de Parentesco</th>                  
                   <th>Acción</th>
                 </thead>
                 <tbody>
@@ -68,11 +64,7 @@
                       ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>                         
-                          <td><?php echo $row['conyugue']; ?></td> 
-                          <td><?php echo $row['hijo']; ?></td>  
-                          <td><?php echo $row['padre']; ?></td>  
-                          <td><?php echo $row['madre']; ?></td>  
-                          <td><?php echo $row['hermano']; ?></td>                         
+                          <td><?php echo $row['nombre']; ?></td>
                           <td>
                             <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
@@ -120,12 +112,8 @@ function getRow(id){
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('#edit_conyugue').val(response.conyugue);
-      $('#edit_hijo').val(response.hijo);
-      $('#edit_padre').val(response.padre);
-      $('#edit_madre').val(response.madre);
-      $('#edit_hermano').val(response.hermano);
-     
+      $('#edit_nombre').val(response.conyugue);
+          
     }
   });
 }

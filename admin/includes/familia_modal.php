@@ -12,47 +12,32 @@
 
 
 				<div class="form-group">
-                    <label for="edit_rh" class="col-sm-3 control-label">Factor RH</label>
+                    <label for="edit_rh" class="col-sm-3 control-label">Parentesco</label>
                     <div class="col-sm-9">
                     <select class="form-control" name="factor_rh" id="factor_rh">
                         <option value="" selected> Seleccionar </option>
                         <option value="padre">Padre</option>
                         <option value="madre">Madre</option>                    
                         <option value="esposa">Esposa</option>                    
+                        <option value="esposa">Esposo</option>                  
+                        <option value="esposa">Hija</option>                  
+                        <option value="esposa">Hijo</option>
                       </select>
                     </div>
-                </div>
-
-
-                <div class="form-group">
-                  	<label for="hijo" class="col-sm-3 control-label">Hijo</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" placeholder="Nombre del hijo" class="form-control" id="hijo" name="hijo" required>
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label for="padre" class="col-sm-3 control-label">Padre</label>
-                  	<div class="col-sm-9">
-                    <input type="text" placeholder="Nombre del padre" class="form-control" id="padre" name="padre" required>
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label for="madre" class="col-sm-3 control-label">Madre</label>
-                  	<div class="col-sm-9"> 
-                        <input type="text" placeholder="Nombre de la madre" class="form-control" id="madre" name="madre">
-                      </div>
-                </div>
-                <div class="form-group">
+                </div>          
+               
+               
+                <!-- <div class="form-group">
                     <label for="hermano" class="col-sm-3 control-label">Hermano</label>
                     <div class="col-sm-9">
                       <input type="text" placeholder="Nombre del hermano" class="form-control" id="hermano" name="hermano">
                     </div>
-                </div>
+                </div> -->
                 
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
-            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
+            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Ingresar</button>
             	</form>
           	</div>
         </div>
@@ -72,31 +57,31 @@
             	<form class="form-horizontal" method="POST" action="familia_edit.php">
             		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
-                  	<label for="conyugue" class="col-sm-3 control-label">Conyugue</label>
+                  	<label for="conyugue" class="col-sm-3 control-label">Nr. Documento</label>
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="edit_conyugue" name="conyugue" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="hijo" class="col-sm-3 control-label">Hijo</label>
+                  	<label for="hijo" class="col-sm-3 control-label">Nombre</label>
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="edit_hijo" name="hijo" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="padre" class="col-sm-3 control-label">Padre</label>
+                  	<label for="padre" class="col-sm-3 control-label">Apellido</label>
                   	<div class="col-sm-9">
                     <input type="text" class="form-control" id="edit_padre" name="padre" required>
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="madre" class="col-sm-3 control-label">Madre</label>
+                  	<label for="madre" class="col-sm-3 control-label">Parentesco</label>
                   	<div class="col-sm-9"> 
                         <input type="text" class="form-control" id="edit_madre" name="madre">
                       </div>
                 </div>
                 <div class="form-group">
-                    <label for="hermano" class="col-sm-3 control-label">Hermano</label>
+                    <label for="hermano" class="col-sm-3 control-label">Accion</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_hermano" name="hermano">
                     </div>
@@ -125,7 +110,7 @@
             	<form class="form-horizontal" method="POST" action="familia_delete.php">
             		<input type="hidden" class="empid" name="id">
             		<div class="text-center">
-	                	<p>? Estas seguro de eliminar tus datos familiares ¿</p>
+	                	<p>¿Estas seguro de eliminar tus datos familiares?</p>
 	                	<h2 class="bold del_employee_name"></h2>
 	            	</div>
           	</div>
