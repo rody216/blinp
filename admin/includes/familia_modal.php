@@ -9,12 +9,21 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="familia_add.php" enctype="multipart/form-data">
-          		  <div class="form-group">
-                  	<label for="conyugue" class="col-sm-3 control-label">Conyugue</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" placeholder="Nombre del conyugue" class="form-control" id="conyugue" name="conyugue" required>
-                  	</div>
+
+
+				<div class="form-group">
+                    <label for="edit_rh" class="col-sm-3 control-label">Factor RH</label>
+                    <div class="col-sm-9">
+                    <select class="form-control" name="factor_rh" id="factor_rh">
+                        <option value="" selected> Seleccionar </option>
+                        <option value="padre">Padre</option>
+                        <option value="madre">Madre</option>                    
+                        <option value="esposa">Esposa</option>                    
+                      </select>
+                    </div>
                 </div>
+
+
                 <div class="form-group">
                   	<label for="hijo" class="col-sm-3 control-label">Hijo</label>
                   	<div class="col-sm-9">

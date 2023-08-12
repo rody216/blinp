@@ -2,6 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
+.
+30
 -- Servidor: 127.0.0.1:3306
 -- Tiempo de generación: 08-08-2023 a las 19:49:51
 -- Versión del servidor: 8.0.31
